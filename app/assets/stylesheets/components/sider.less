@@ -1,0 +1,32 @@
+.sider-menu {
+  background-color: white;
+
+  & .sider-container {
+    padding: 20px;
+
+    & .sider-main-logo {
+      text-align: center;
+      margin-bottom: 40px;
+      
+      & img {
+        width: 100px;
+      }
+    }
+
+    & .sider-links {
+      & ul {
+        list-style: none;
+        padding-left: 20px;
+        font-weight: bold;
+
+        & li > a {
+          color: @text-color;
+          &:hover {
+            color: @text-color-darker;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}

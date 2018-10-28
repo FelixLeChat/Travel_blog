@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { Layout as AntLayout } from 'antd';
 
-import Header from './Header';
+import SideMenu from './SideMenu';
 import Footer from './Footer';
 
 const { Content } = AntLayout;
@@ -17,10 +17,12 @@ const mapStateToProps = state => ({
 });
 
 const Layout = ({ children }: Props) => (
-  <AntLayout>
-    <Header />
-    <Content>{children}</Content>
-    <Footer />
+  <AntLayout style={{ minHeight: '100vh' }}>
+    <SideMenu />
+    <AntLayout>
+      <Content>{children}</Content>
+      <Footer />
+    </AntLayout>
   </AntLayout>
 );
 

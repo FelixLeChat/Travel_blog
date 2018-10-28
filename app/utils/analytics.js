@@ -33,13 +33,3 @@ export const logException = (description = '', fatal = false) => {
     ReactGA.exception({ description, fatal });
   }
 };
-
-export const logAppointmentConversion = (appointmentLink = '') => {
-  if (appointmentLink) {
-    ReactGA.event({
-      category: 'Appointment',
-      action: 'click',
-      label: appointmentLink,
-    });
-  }
-};

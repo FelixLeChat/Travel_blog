@@ -1,0 +1,13 @@
+{
+  "logo": {
+    "alt": "Logo"
+  },
+  "menu": {
+    "links": [
+      {
+        "label": "Accueil",
+        "route": "index"
+      }
+    ]
+  }
+}
