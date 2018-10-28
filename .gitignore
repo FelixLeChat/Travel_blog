@@ -1,0 +1,18 @@
+# Build Output
+dist
+.next
+.vscode
+.idea
+.DS_Store
+
+# Dependencies
+node_modules/
+package-lock.json
+config.json
+
+.env
+.env*
+*.log
+bundles/
+config/locales/en/*.missing.json
+config/locales/fr/*.missing.json

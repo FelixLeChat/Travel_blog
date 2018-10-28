@@ -1,0 +1,170 @@
+// Name:            Column
+// Description:     Utilities for text columns
+//
+// Component:       `ant-column-*`
+//
+// Sub-objects:     `ant-column-span`
+//
+// Modifiers:       `ant-column-divider`
+//
+// ========================================================================
+
+// Variables
+// ========================================================================
+@global-gutter: 30px;
+@global-small-gutter: 15px;
+@global-medium-gutter: 40px;
+@global-large-gutter: 70px;
+@global-border: #e5e5e5;
+
+@column-gutter: @global-gutter;
+@column-gutter-l: @global-medium-gutter;
+
+@column-divider-rule-color: @global-border;
+@column-divider-rule-width: 1px;
+
+/* ========================================================================
+   Component: Column
+ ========================================================================== */
+
+[class*="ant-column-"] {
+  column-gap: @column-gutter;
+}
+
+/* Desktop and bigger */
+@media (min-width: @screen-xl) {
+  [class*="ant-column-"] {
+    column-gap: @column-gutter-l;
+  }
+}
+
+/*
+ * Fix image 1px line wrapping into the next column in Chrome
+ */
+
+[class*="ant-column-"] img {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Divider
+ ========================================================================== */
+
+/*
+ * 1. Double the column gap
+ */
+
+.ant-column-divider {
+  column-rule: @column-divider-rule-width solid @column-divider-rule-color;
+  /* 1 */
+  column-gap: (@column-gutter * 2);
+}
+
+/* Desktop and bigger */
+@media (min-width: @screen-xl) {
+  .ant-column-divider {
+    column-gap: (@column-gutter-l * 2);
+  }
+}
+
+/* Width modifiers
+ ========================================================================== */
+
+.ant-column-1-2 {
+  column-count: 2;
+}
+.ant-column-1-3 {
+  column-count: 3;
+}
+.ant-column-1-4 {
+  column-count: 4;
+}
+.ant-column-1-5 {
+  column-count: 5;
+}
+.ant-column-1-6 {
+  column-count: 6;
+}
+
+/* Phone landscape and bigger */
+@media (min-width: @screen-sm) {
+  .ant-column-1-2\@s {
+    column-count: 2;
+  }
+  .ant-column-1-3\@s {
+    column-count: 3;
+  }
+  .ant-column-1-4\@s {
+    column-count: 4;
+  }
+  .ant-column-1-5\@s {
+    column-count: 5;
+  }
+  .ant-column-1-6\@s {
+    column-count: 6;
+  }
+}
+
+/* Tablet landscape and bigger */
+@media (min-width: @screen-md) {
+  .ant-column-1-2\@m {
+    column-count: 2;
+  }
+  .ant-column-1-3\@m {
+    column-count: 3;
+  }
+  .ant-column-1-4\@m {
+    column-count: 4;
+  }
+  .ant-column-1-5\@m {
+    column-count: 5;
+  }
+  .ant-column-1-6\@m {
+    column-count: 6;
+  }
+}
+
+/* Desktop and bigger */
+@media (min-width: @screen-xl) {
+  .ant-column-1-2\@l {
+    column-count: 2;
+  }
+  .ant-column-1-3\@l {
+    column-count: 3;
+  }
+  .ant-column-1-4\@l {
+    column-count: 4;
+  }
+  .ant-column-1-5\@l {
+    column-count: 5;
+  }
+  .ant-column-1-6\@l {
+    column-count: 6;
+  }
+}
+
+/* Large screen and bigger */
+@media (min-width: @screen-xxl) {
+  .ant-column-1-2\@xl {
+    column-count: 2;
+  }
+  .ant-column-1-3\@xl {
+    column-count: 3;
+  }
+  .ant-column-1-4\@xl {
+    column-count: 4;
+  }
+  .ant-column-1-5\@xl {
+    column-count: 5;
+  }
+  .ant-column-1-6\@xl {
+    column-count: 6;
+  }
+}
+
+/* Make element span across all columns
+ * Does not work in Firefox yet
+ ========================================================================== */
+
+.ant-column-span {
+  column-span: all;
+}

@@ -1,0 +1,47 @@
+.ant-steps {
+  &-icon {
+    display: flex;
+    justify-content: center;
+    left: 0px !important;
+    width: 40px !important;
+    height: 40px !important;
+  }
+  &-item {
+    margin-right: 0px !important; 
+    &-icon {
+      background-color: #EAEBEE !important;
+      width: 40px !important;
+      height: 40px !important;
+      margin-right: 0px; 
+    }
+    &-title {
+      padding-right: 0px;
+      &-no-line {
+        .ant-steps-item-title::after {
+          width: 0px;
+        }
+      }
+    }
+    &-title::after {
+      top: 20px !important;
+    }
+    &-description {
+      color: #2E3F57 !important;
+      margin-left: -40px;
+      margin-top: 48px;
+      max-width: 160px !important; 
+      @media (min-width: @screen-lg) {
+        max-width: 230px !important;
+      }
+      @media (min-width: 1210px) {
+        max-width: 280px !important;
+      }
+    }
+  }
+}
+
+.magicseat-way {
+  .ant-steps-item-icon {
+    background-color: #E1DEFF !important;
+  }
+}

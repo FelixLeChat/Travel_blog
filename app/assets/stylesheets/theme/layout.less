@@ -1,0 +1,46 @@
+// Layout
+@layout-body-background : #fff;
+@layout-header-background : @secondary-color;
+@layout-footer-background : #2E3F57;
+@layout-header-height : 64px;
+@layout-header-padding : 0;
+@layout-footer-padding : 24px 50px;
+@layout-footer-color-base: rgba(255, 255, 255, 0.8);
+@layout-footer-color-heading: #ffffff;
+@layout-sider-background : @layout-header-background;
+@layout-trigger-height : 48px;
+@layout-trigger-background : #002140;
+@layout-trigger-color : #fff;
+@layout-zero-trigger-width : 36px;
+@layout-zero-trigger-height : 42px;
+// Layout light theme
+@layout-sider-background-light : #fff;
+@layout-trigger-background-light: #fff;
+@layout-trigger-color-light : @text-color;
+
+.@{layout-prefix-cls} {
+  min-width: @screen-md;
+  &-header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background: transparent;
+    padding: 0;
+    height: @layout-header-height;
+    line-height: @layout-header-height;
+    min-width: @screen-md;
+  }
+
+  &-footer {
+
+  }
+
+  &-content {
+    flex: auto;
+    margin-top: @layout-header-height;
+  }
+}
+
+body{
+  min-width: @screen-md;
+}

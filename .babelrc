@@ -1,0 +1,18 @@
+{
+  "presets": [
+    [
+      "next/babel",
+      {
+        "preset-env": {
+          "debug": true,
+          "useBuiltIns": "entry"
+        }
+      }
+    ],
+    "@babel/preset-flow"
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["import", { "libraryName": "antd" }]
+  ]
+}

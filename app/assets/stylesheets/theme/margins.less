@@ -1,0 +1,141 @@
+// Variables
+// ========================================================================
+
+@margin-margin:                                         @global-margin;
+
+@margin-small-margin:                                   @global-small-margin;
+
+@margin-medium-margin:                                  @global-medium-margin;
+
+@margin-large-margin:                                   @global-medium-margin;
+@margin-large-margin-l:                                 @global-large-margin;
+
+@margin-xlarge-margin:                                  @global-large-margin;
+@margin-xlarge-margin-l:                                @global-xlarge-margin;
+
+
+/* ========================================================================
+   Component: Margin
+ ========================================================================== */
+
+/*
+ * Default
+ */
+
+.ant-margin { margin-bottom: @margin-margin; }
+* + .ant-margin { margin-top: @margin-margin !important; }
+
+.ant-margin-top { margin-top: @margin-margin !important; }
+.ant-margin-bottom { margin-bottom: @margin-margin !important; }
+.ant-margin-left { margin-left: @margin-margin !important; }
+.ant-margin-right { margin-right: @margin-margin !important; }
+
+
+/* Small
+ ========================================================================== */
+
+.ant-margin-small { margin-bottom: @margin-small-margin; }
+* + .ant-margin-small { margin-top: @margin-small-margin !important; }
+
+.ant-margin-small-top { margin-top: @margin-small-margin !important; }
+.ant-margin-small-bottom { margin-bottom: @margin-small-margin !important; }
+.ant-margin-small-left { margin-left: @margin-small-margin !important; }
+.ant-margin-small-right { margin-right: @margin-small-margin !important; }
+
+
+/* Medium
+ ========================================================================== */
+
+.ant-margin-medium { margin-bottom: @margin-medium-margin; }
+* + .ant-margin-medium { margin-top: @margin-medium-margin !important; }
+
+.ant-margin-medium-top { margin-top: @margin-medium-margin !important; }
+.ant-margin-medium-bottom { margin-bottom: @margin-medium-margin !important; }
+.ant-margin-medium-left { margin-left: @margin-medium-margin !important; }
+.ant-margin-medium-right { margin-right: @margin-medium-margin !important; }
+
+
+/* Large
+ ========================================================================== */
+
+.ant-margin-large { margin-bottom: @margin-large-margin; }
+* + .ant-margin-large { margin-top: @margin-large-margin !important; }
+
+.ant-margin-large-top { margin-top: @margin-large-margin !important; }
+.ant-margin-large-bottom { margin-bottom: @margin-large-margin !important; }
+.ant-margin-large-left { margin-left: @margin-large-margin !important; }
+.ant-margin-large-right { margin-right: @margin-large-margin !important; }
+
+/* Desktop and bigger */
+@media (min-width: @screen-lg-min) {
+
+    .ant-margin-large { margin-bottom: @margin-large-margin-l; }
+    * + .ant-margin-large { margin-top: @margin-large-margin-l !important; }
+
+    .ant-margin-large-top { margin-top: @margin-large-margin-l !important; }
+    .ant-margin-large-bottom { margin-bottom: @margin-large-margin-l !important; }
+    .ant-margin-large-left { margin-left: @margin-large-margin-l !important; }
+    .ant-margin-large-right { margin-right: @margin-large-margin-l !important; }
+
+}
+
+
+/* XLarge
+ ========================================================================== */
+
+.ant-margin-xlarge { margin-bottom: @margin-xlarge-margin; }
+* + .ant-margin-xlarge { margin-top: @margin-xlarge-margin !important; }
+
+.ant-margin-xlarge-top { margin-top: @margin-xlarge-margin !important; }
+.ant-margin-xlarge-bottom { margin-bottom: @margin-xlarge-margin !important; }
+.ant-margin-xlarge-left { margin-left: @margin-xlarge-margin !important; }
+.ant-margin-xlarge-right { margin-right: @margin-xlarge-margin !important; }
+
+/* Desktop and bigger */
+@media (min-width: @screen-lg-min) {
+
+    .ant-margin-xlarge { margin-bottom: @margin-xlarge-margin-l; }
+    * + .ant-margin-xlarge { margin-top: @margin-xlarge-margin-l !important; }
+
+    .ant-margin-xlarge-top { margin-top: @margin-xlarge-margin-l !important; }
+    .ant-margin-xlarge-bottom { margin-bottom: @margin-xlarge-margin-l !important; }
+    .ant-margin-xlarge-left { margin-left: @margin-xlarge-margin-l !important; }
+    .ant-margin-xlarge-right { margin-right: @margin-xlarge-margin-l !important; }
+
+}
+
+
+/* Remove
+ ========================================================================== */
+
+.ant-margin-remove { margin: 0 !important; }
+.ant-margin-remove-top { margin-top: 0 !important; }
+.ant-margin-remove-bottom { margin-bottom: 0 !important; }
+.ant-margin-remove-left { margin-left: 0 !important; }
+.ant-margin-remove-right { margin-right: 0 !important; }
+
+.ant-margin-remove-vertical {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.ant-margin-remove-adjacent + * { margin-top: 0 !important; }
+
+
+/* Auto
+ ========================================================================== */
+
+.ant-margin-auto {
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.ant-margin-auto-top { margin-top: auto !important; }
+.ant-margin-auto-bottom { margin-bottom: auto !important; }
+.ant-margin-auto-left { margin-left: auto !important; }
+.ant-margin-auto-right { margin-right: auto !important; }
+
+.ant-margin-auto-vertical {
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+}

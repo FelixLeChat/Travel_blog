@@ -1,0 +1,128 @@
+/* ========================================================================
+   Component: Visibility
+ ========================================================================== */
+
+/*
+ * Hidden
+ * `hidden` attribute also set here to make it stronger
+ */
+
+ [hidden],
+ .ant-hidden { display: none !important; }
+
+ /* Phone landscape and bigger */
+ @media (min-width: @screen-sm-min) {
+
+     .ant-hidden\@s { display: none !important; }
+
+ }
+
+ /* Tablet landscape and bigger */
+ @media (min-width: @screen-md-min) {
+
+     .ant-hidden\@m { display: none !important; }
+
+ }
+
+ /* Desktop and bigger */
+ @media (min-width: @screen-lg-min) {
+
+     .ant-hidden\@l { display: none !important; }
+
+ }
+
+ /* Large screen and bigger */
+ @media (min-width: @screen-xl-min) {
+
+     .ant-hidden\@xl { display: none !important; }
+
+ }
+
+ /*
+  * Visible
+  */
+
+ /* Phone portrait and smaller */
+ @media (max-width: @screen-xs-max) {
+
+     .ant-visible\@s { display: none !important; }
+
+ }
+
+ /* Phone landscape and smaller */
+ @media (max-width: @screen-sm-max) {
+
+     .ant-visible\@m { display: none !important; }
+
+ }
+
+ /* Tablet landscape and smaller */
+ @media (max-width: @screen-md-max) {
+
+     .ant-visible\@l { display: none !important; }
+
+ }
+
+ /* Desktop and smaller */
+ @media (max-width: @screen-lg-max) {
+
+     .ant-visible\@xl { display: none !important; }
+
+ }
+
+
+ /* Visibility
+  ========================================================================== */
+
+ .ant-invisible { visibility: hidden !important; }
+
+
+ /* Hover
+  ========================================================================== */
+
+ /*
+  * Hidden
+  * Can't use `display: none` because it's not accessible through keyboard.
+  */
+
+ .ant-visible-toggle:not(:hover):not(.ant-hover) .ant-hidden-hover:not(:focus) {
+     position: absolute !important;
+     width: 0 !important;
+     height: 0 !important;
+     padding: 0 !important;
+     margin: 0 !important;
+     overflow: hidden !important;
+ }
+
+ /*
+  * Invisible
+  * Can't use `visibility: hidden` because it's not accessible through keyboard.
+  */
+
+ .ant-visible-toggle:not(:hover):not(.ant-hover) .ant-invisible-hover:not(:focus) { opacity: 0 !important; }
+
+
+ /* Touch
+  ========================================================================== */
+
+ /*
+  * Hide if primary pointing device has limited accuracy, e.g. a touch screen.
+  * Works on mobile browsers: Safari, Chrome and Android browser
+  */
+
+ @media (pointer: coarse) {
+     .ant-hidden-touch { display: none !important; }
+ }
+
+ /*
+  * Hide if primary pointing device is accurate, e.g. mouse.
+  * 1. Fallback for IE11 and Firefox, because `pointer` is not supported
+  * 2. Reset if supported
+  */
+
+ /* 1 */
+ .ant-hidden-notouch { display: none !important; }
+
+ @media (pointer: coarse) {
+     .ant-hidden-notouch { display: block !important; }
+ }
