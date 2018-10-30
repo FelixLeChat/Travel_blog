@@ -5,7 +5,11 @@
   "menu": {
     "links": [
       {
-        "label": "Accueil",
+        "label": "Voyages",
+        "route": "index"
+      },
+      {
+        "label": "Trucs et astuces",
         "route": "index"
       }
     ]

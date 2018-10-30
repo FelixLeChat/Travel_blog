@@ -18,7 +18,7 @@ export default class _Document extends Document {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta charSet="utf-8" />
           <link
-            href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700"
+            href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700"
             rel="stylesheet"
           />
           <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet" />

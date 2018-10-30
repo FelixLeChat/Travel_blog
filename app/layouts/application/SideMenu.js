@@ -29,6 +29,7 @@ class Header extends React.PureComponent<Props> {
     return (
       <Sider
         className="sider-menu"
+        width="220"
         style={{
           overflow: 'auto',
           height: '100vh',
@@ -40,7 +41,10 @@ class Header extends React.PureComponent<Props> {
           <div className="sider-main-logo">
             <Link route="index" params={{ locale }}>
               <a>
-                <img src="/static/images/logo/logo.svg" alt={t('side_menu:logo.alt')} />
+                <img
+                  src="/static/images/logo/logo_horizontal_2.png"
+                  alt={t('side_menu:logo.alt')}
+                />
               </a>
             </Link>
           </div>

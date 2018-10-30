@@ -5,7 +5,11 @@
   "menu": {
     "links": [
       {
-        "label": "Home",
+        "label": "Travel",
+        "route": "index"
+      },
+      {
+        "label": "Tips & Tricks",
         "route": "index"
       }
     ]
