@@ -25,13 +25,13 @@ class SEOHead extends React.PureComponent<Props> {
     } = this.props;
 
     // Share values
-    const name = 'Chronometriq';
-    const facebookAppId = '412305015964029';
-    const shareImageLink = '/static/images/share/share.png';
-    const primaryColor = '#0076DE';
-    const baseDesktopUrl = 'https://chronometriq.com';
-    const baseMobileUrl = 'https://m.chronometriq.com';
-    const baseUrl = isMobile ? baseMobileUrl : baseDesktopUrl;
+    const name = 'Traveling Maude';
+    const facebookAppId = '';
+    const shareImageLink = '';
+    const primaryColor = '';
+    const baseDesktopUrl = 'https://travelingmaude.com';
+    const baseUrl = baseDesktopUrl;
+
     // HrefLang
     let englishPageUrl = '';
     let frenchPageUrl = '';
@@ -86,15 +86,6 @@ class SEOHead extends React.PureComponent<Props> {
           {/* Cannonical for Desktop page */}
           {isMobile && <link rel="canonical" href={baseDesktopUrl + currentUrl} />}
 
-          {/* Alternate meta to redirect to mobile app */}
-          {!isMobile && (
-            <link
-              rel="alternate"
-              media="only screen and (max-width: 575px)"
-              href={baseMobileUrl + currentUrl}
-            />
-          )}
-
           {/* Twitter meta tags */}
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:site" content={currentPath} />
@@ -141,10 +132,7 @@ class SEOHead extends React.PureComponent<Props> {
           {noIndexPage && <meta name="robots" content="noindex, follow" />}
 
           {/* Google Search Console validation */}
-          <meta
-            name="google-site-verification"
-            content="aNqXZH8q2ule-mPHw8f458bOhBe2rBa5_lxSZUEkqYw"
-          />
+          <meta name="google-site-verification" content="" />
         </Head>
       </div>
     );

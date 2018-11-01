@@ -4,7 +4,15 @@
 @ant-prefix : ant;
 
 // -------- Colors -----------
-@primary-color : #3B1415;
+@primary-color : #334153;
+@text-color : fade(@primary-color, 80%);
+@text-color-darker : fade(@primary-color, 90%);
+@text-color-dark : fade(#fff, 85%);
+
+@primary-dark-color: #0A162C;
+@primary-color-lightest: #C9E3E6;
+
+
 @secondary-color: #00b6e3;
 @info-color : @blue-6;
 @success-color : #00DA7C;
@@ -30,11 +38,10 @@
 @font-family : 'Raleway', -apple-system, BlinkMacSystemFont,"Helvetica Neue", Helvetica, Arial, sans-serif;
 @code-family : "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 @heading-color : fade(#000, 85%);
-@text-color : fade(@primary-color, 80%);
-@text-color-darker : fade(@primary-color, 90%);
+
 @text-color-secondary : fade(#000, 45%);
 @heading-color-dark : fade(#fff, 100%);
-@text-color-dark : fade(#fff, 85%);
+
 @text-color-secondary-dark: fade(#fff, 65%);
 @font-size-lg : @font-size-base + 2px;
 @font-size-base : 16px;

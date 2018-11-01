@@ -7,6 +7,8 @@ import { withI18next } from '../lib/withI18next';
 import SEOHead from '../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../app/utils';
 
+import Home from '../app/home/Home';
+
 type Props = {
   i18n: I18nProps,
   currentRoute: Object,
@@ -18,7 +20,7 @@ const mapStateToProps = state => ({
 
 @withI18next(i18nextNamespaces)
 @connect(mapStateToProps)
-class Home extends React.Component<Props> {
+class Homepage extends React.Component<Props> {
   render() {
     const { i18n, currentRoute } = this.props;
 
@@ -30,9 +32,10 @@ class Home extends React.Component<Props> {
           currentLocale={i18n.language}
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
         />
+        <Home />
       </>
     );
   }
 }
 
-export default Home;
+export default Homepage;

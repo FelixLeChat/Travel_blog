@@ -6,6 +6,8 @@ import { connect } from 'react-redux';
 import { Layout } from 'antd';
 import { Link } from '../../../config/routes';
 
+import LanguageSwitcher from '../LanguageSwitcher';
+
 const { Sider } = Layout;
 
 const mapStateToProps = state => ({
@@ -60,6 +62,10 @@ class Header extends React.PureComponent<Props> {
                   </li>
                 ))}
             </ul>
+          </div>
+
+          <div className="sider-language-switcher">
+            <LanguageSwitcher />
           </div>
         </div>
       </Sider>

@@ -13,12 +13,7 @@ class WebsiteStructured extends React.PureComponent<Props> {
     const orgData = {
       '@context': 'http://schema.org',
       '@type': 'WebSite',
-      url: `https://chronometriq.com/${language}`,
-      potentialAction: {
-        '@type': 'SearchAction',
-        target: `https://chronometriq.com/${language}/search?query={search_term_string}`,
-        'query-input': 'required name=search_term_string',
-      },
+      url: `https://travelingmaude.com/${language}`,
     };
 
     return <JsonLd data={orgData} />;

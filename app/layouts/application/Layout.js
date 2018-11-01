@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { Layout as AntLayout } from 'antd';
 
 import SideMenu from './SideMenu';
-import Footer from './Footer';
+// import Footer from './Footer';
 
 const { Content } = AntLayout;
 
@@ -19,9 +19,9 @@ const mapStateToProps = state => ({
 const Layout = ({ children }: Props) => (
   <AntLayout style={{ minHeight: '100vh' }}>
     <SideMenu />
-    <AntLayout>
+    <AntLayout className="content">
       <Content>{children}</Content>
-      <Footer />
+      {/* <Footer /> */}
     </AntLayout>
   </AntLayout>
 );
