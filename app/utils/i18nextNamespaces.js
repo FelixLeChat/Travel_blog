@@ -1,7 +1,12 @@
 const namespaces = [
   // Common
   'common',
-  'side_menu',
+
+  // Nagivation
+  'header',
+
+  // Pages
+  'home',
 ];
 
 module.exports = namespaces;

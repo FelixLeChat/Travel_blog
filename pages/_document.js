@@ -21,7 +21,7 @@ export default class _Document extends Document {
             href="https://fonts.googleapis.com/css?family=Raleway:300,400,600,700"
             rel="stylesheet"
           />
-          <link href="https://fonts.googleapis.com/css?family=Montserrat:600" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet" />
 
           <link rel="apple-touch-icon" sizes="180x180" href="/static/apple-touch-icon.png" />
           <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon-32x32.png" />

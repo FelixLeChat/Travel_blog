@@ -1,58 +1,73 @@
 // @flow
 import React from 'react';
+import { Menu, Dropdown, Icon } from 'antd';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
-import { withRouter } from 'next/router';
 
 import type { I18nProps } from 'react-i18next';
 import type { GlobalStore } from '../models/global';
 
-import Routes, { Router } from '../../config/routes';
+import { Router } from '../../config/routes';
 
 type Props = {
   i18n: I18nProps,
-  router: any,
+  global: GlobalStore,
 };
 
-@withRouter
-class LanguageSwitcher extends React.PureComponent<Props> {
-  handleLocaleSwitch = (languageKey) => {
-    const {
-      router: { asPath },
-      i18n,
-    } = this.props;
-    const url = Routes.match(asPath);
+const menu = onClickHandler => (
+  <Menu onClick={onClickHandler()} className="header-language-menu">
+    <Menu.Item key="fr" className="header-language-menu-item">
+      <a>FR</a>
+    </Menu.Item>
+    <Menu.Item key="en" className="header-language-menu-item">
+      <a>EN</a>
+    </Menu.Item>
+  </Menu>
+);
 
-    i18n.changeLanguage(languageKey, () => {
-      Router.pushRoute(url.route.name, {
-        locale: languageKey,
-      });
+class LanguageSwitcher extends React.PureComponent<Props> {
+  onChangeLocale = ({ key }) => {
+    const {
+      i18n,
+      global: {
+        data: { currentRoute },
+      },
+    } = this.props;
+
+    i18n.changeLanguage(key, () => {
+      Router.pushRoute(currentRoute.route.name, {
+        ...currentRoute.query,
+        locale: key,
+      }).then(() => window.scrollTo(0, 0));
     });
   };
 
   render() {
     const { i18n } = this.props;
+
     const locale = i18n.language;
+
     return (
-      <div className="language-switcher">
-        <a
-          className={`button-locale ${locale === 'en' ? 'active' : ''}`}
-          onClick={() => this.handleLocaleSwitch('en')}
-          onKeyDown={() => {}}
-        >
-          EN
+      <Dropdown
+        overlay={menu(() => this.onChangeLocale)}
+        placement="bottomRight"
+        trigger={['click']}
+      >
+        <a className="ant-dropdown-link header-link" href="#">
+          <span className="ant-text-uppercase">{locale}</span>
+          <Icon type="down" />
         </a>
-        <a
-          className={`button-locale ${locale === 'fr' ? 'active' : ''}`}
-          onClick={() => this.handleLocaleSwitch('fr')}
-          onKeyDown={() => {}}
-        >
-          FR
-        </a>
-      </div>
+      </Dropdown>
     );
   }
 }
 
-export default compose(withNamespaces(['header']))(LanguageSwitcher);
+const mapStateToProps = state => ({
+  global: state.global,
+});
+
+export default compose(
+  withNamespaces(['header']),
+  connect(mapStateToProps),
+)(LanguageSwitcher);

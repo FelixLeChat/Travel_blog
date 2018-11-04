@@ -3,7 +3,10 @@ import React from 'react';
 import { withRouter } from 'next/router';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
-import { Layout, Row, Col } from 'antd';
+import {
+  Layout, Row, Col, Menu,
+} from 'antd';
+import Sticky from 'react-stickynode';
 
 import Container from '../../components/Container';
 import LanguageSwitcher from '../LanguageSwitcher';
@@ -19,17 +22,28 @@ const mapStateToProps = state => ({
 @connect(mapStateToProps)
 class Header extends React.PureComponent<Props> {
   render() {
+    const { t } = this.props;
     return (
-      <AntHeader className="header">
-        <Container>
-          <Row>
-            <Col span={16} />
-            <Col span={8} className="ant-text-right ie-header-section-fix">
-              <LanguageSwitcher />
-            </Col>
-          </Row>
-        </Container>
-      </AntHeader>
+      <Sticky enabled>
+        <AntHeader className="header">
+          <Container>
+            <Row className="ant-visible@s">
+              <Col span={4} />
+              <Col span={16} className="ant-text-center">
+                <Menu mode="horizontal">
+                  <Menu.Item key="1">{t('header:navigation.home')}</Menu.Item>
+                </Menu>
+              </Col>
+              <Col span={4} className="ant-text-right">
+                <div className="header-language-switch">
+                  <LanguageSwitcher />
+                </div>
+              </Col>
+            </Row>
+            <Row className="ant-hidden@s">MOBILE</Row>
+          </Container>
+        </AntHeader>
+      </Sticky>
     );
   }
 }

@@ -8,6 +8,7 @@
 @menu-highlight-color: @primary-color;
 @menu-item-active-bg: @item-active-bg;
 @menu-item-group-title-color: @text-color-secondary;
+
 // dark theme
 @menu-dark-color: @text-color-secondary-dark;
 @menu-dark-bg: @layout-header-background;
@@ -20,8 +21,17 @@
 .@{menu-prefix-cls} {
   &-horizontal {
     border: 0;
-    border-bottom: @border-width-base @border-style-base @border-color-split;
+    border-bottom: 0px @border-style-base @border-color-split !important;
     box-shadow: none;
     line-height: @layout-header-height;
+    background-color: transparent;
+  }
+}
+
+.ant-dropdown-menu {
+  padding: 0;
+
+  &-item:hover {
+    background-color: @secondary-color !important;
   }
 }
