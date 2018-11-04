@@ -4,31 +4,78 @@ import { withRouter } from 'next/router';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import {
-  Layout, Row, Col, Menu,
+  Layout, Row, Col, Menu, Icon,
 } from 'antd';
 import Sticky from 'react-stickynode';
 
+import { Link } from '../../../config/routes';
 import Container from '../../components/Container';
 import LanguageSwitcher from '../LanguageSwitcher';
+import { setMobileMenuOpenedState } from '../../reducers/ui';
+import type { UIStore } from '../../models/ui';
 
 const AntHeader = Layout.Header;
 
 const mapStateToProps = state => ({
   global: state.global,
+  ui: state.ui,
 });
+
+const mapDispatchToProps = dispatch => ({
+  setMobileMenuState: state => dispatch(setMobileMenuOpenedState(state)),
+});
+
+type Props = {
+  t: TFunction,
+  i18n: I18nProps,
+  ui: UIStore,
+  setMobileMenuState: () => void,
+};
 
 @withNamespaces(['header'])
 @withRouter
-@connect(mapStateToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class Header extends React.PureComponent<Props> {
+  handleMenuTrigger = () => {
+    const {
+      ui: {
+        data: { isMobileMenuOpened },
+      },
+      setMobileMenuState,
+    } = this.props;
+    setMobileMenuState(!isMobileMenuOpened);
+  };
+
   render() {
-    const { t } = this.props;
+    const {
+      t,
+      i18n,
+      ui: {
+        data: { isMobileMenuOpened },
+      },
+    } = this.props;
+    const locale = i18n.language;
     return (
       <Sticky enabled>
         <AntHeader className="header">
           <Container>
+            {/* Menu for Desktop app */}
             <Row className="ant-visible@s">
-              <Col span={4} />
+              <Col span={4}>
+                <Link route="index" params={{ locale }}>
+                  <a>
+                    <img
+                      src="/static/images/logo/logo_3.png"
+                      width="45px"
+                      height="45px"
+                      alt="Traveling Maude Logo"
+                    />
+                  </a>
+                </Link>
+              </Col>
               <Col span={16} className="ant-text-center">
                 <Menu mode="horizontal">
                   <Menu.Item key="1">{t('header:navigation.home')}</Menu.Item>
@@ -40,7 +87,34 @@ class Header extends React.PureComponent<Props> {
                 </div>
               </Col>
             </Row>
-            <Row className="ant-hidden@s">MOBILE</Row>
+
+            {/* Menu for mobile app */}
+            <Row className="ant-hidden@s">
+              <Col span={24} className="ant-text-center">
+                <Link route="index" params={{ locale }}>
+                  <a style={{ marginRight: -70 }}>
+                    <img
+                      src="/static/images/logo/logo_3.png"
+                      width="45px"
+                      height="45px"
+                      alt="Traveling Maude Logo"
+                    />
+                  </a>
+                </Link>
+                <div
+                  className="header-mobile-menu"
+                  onClick={this.handleMenuTrigger}
+                  onKeyPress={() => {}}
+                >
+                  {t('header:menu.label')}
+                  <Icon
+                    type={`menu-${isMobileMenuOpened ? 'un' : ''}fold`}
+                    theme="outlined"
+                    style={{ marginLeft: 10 }}
+                  />
+                </div>
+              </Col>
+            </Row>
           </Container>
         </AntHeader>
       </Sticky>

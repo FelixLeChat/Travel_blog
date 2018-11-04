@@ -1,5 +1,8 @@
 {
   "navigation": {
     "home": "Home"
+  },
+  "menu": {
+    "label": "Menu"
   }
 }

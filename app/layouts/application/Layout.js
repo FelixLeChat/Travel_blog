@@ -5,6 +5,7 @@ import { Layout as AntLayout } from 'antd';
 
 import Header from './Header';
 import Footer from './Footer';
+import SideMenu from './SideMenu';
 
 const { Content } = AntLayout;
 
@@ -21,6 +22,7 @@ const Layout = ({ children }: Props) => (
     <Header />
     <Content>{children}</Content>
     <Footer />
+    <SideMenu />
   </AntLayout>
 );
 
