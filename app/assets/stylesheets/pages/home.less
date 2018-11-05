@@ -2,7 +2,58 @@
   & .home-brand {
     text-align: center;
     padding: @global-large-padding 0;
-    font-size: 50px;
-    font-family: 'Permanent Marker','Times New Roman', Times, serif
+
+    & h1 {
+      font-size: 50px;
+      font-family: 'Permanent Marker','Times New Roman', Times, serif;
+      margin-bottom: 0;
+    }
+  }
+
+  & .home-hero {
+    height: 550px;
+    overflow: hidden;
+
+    @media (max-width: @screen-md) {
+      height: 300px;
+    }
+
+    & .home-hero-image {
+      height: 550px;
+      @media (max-width: @screen-md) {
+        height: 300px;
+      }
+
+      background-image: url('https://res.cloudinary.com/heyjltyh0/image/upload/v1541373962/Hero/home_hero.jpg');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    & .home-hero-text {
+      background-color: @primary-color;
+      height: 550px;
+      padding-left: @global-medium-padding;
+
+      @media (max-width: @screen-md) {
+        height: unset;
+      }
+      & * {
+        color: @text-color-dark;
+      }
+
+      & h2 {
+        margin-bottom: 0px;
+      }
+
+      & .subtitle {
+        font-size: 12px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+
+      & .content {
+        margin-top: 20px;
+      }
+    }
   }
 }

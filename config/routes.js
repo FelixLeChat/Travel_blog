@@ -27,4 +27,5 @@ routes.getRequestHandler = function(app, customHandler) {
 
 module.exports = routes
   .add('index', '/:locale(en|fr)?', 'index')
+  .add('destinations', '/:locale(en|fr)/destinations', 'destinations')
   .add('error', '/:locale(en|fr)/:error', 'error');

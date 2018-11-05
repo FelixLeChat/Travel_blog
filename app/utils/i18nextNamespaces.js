@@ -3,10 +3,10 @@ const namespaces = [
   'common',
 
   // Nagivation
-  'header',
+  'navigation/header',
 
   // Pages
-  'home',
+  'pages/home',
 ];
 
 module.exports = namespaces;

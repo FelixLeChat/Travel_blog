@@ -1,0 +1,9 @@
+{
+  "navigation": {
+    "home": "navigation.home",
+    "destinations": "navigation.destinations"
+  },
+  "menu": {
+    "label": "menu.label"
+  }
+}

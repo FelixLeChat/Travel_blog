@@ -14,6 +14,8 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
 import type { UIStore } from '../../models/ui';
 
+const i18nPrefix = 'navigation/header';
+
 const AntHeader = Layout.Header;
 
 const mapStateToProps = state => ({
@@ -32,7 +34,7 @@ type Props = {
   setMobileMenuState: () => void,
 };
 
-@withNamespaces(['header'])
+@withNamespaces([i18nPrefix])
 @withRouter
 @connect(
   mapStateToProps,
@@ -78,7 +80,8 @@ class Header extends React.PureComponent<Props> {
               </Col>
               <Col span={16} className="ant-text-center">
                 <Menu mode="horizontal">
-                  <Menu.Item key="1">{t('header:navigation.home')}</Menu.Item>
+                  <Menu.Item key="1">{t(`${i18nPrefix}:navigation.home`)}</Menu.Item>
+                  <Menu.Item key="2">{t(`${i18nPrefix}:navigation.destinations`)}</Menu.Item>
                 </Menu>
               </Col>
               <Col span={4} className="ant-text-right">
@@ -106,7 +109,7 @@ class Header extends React.PureComponent<Props> {
                   onClick={this.handleMenuTrigger}
                   onKeyPress={() => {}}
                 >
-                  {t('header:menu.label')}
+                  {t(`${i18nPrefix}:menu.label`)}
                   <Icon
                     type={`menu-${isMobileMenuOpened ? 'un' : ''}fold`}
                     theme="outlined"
