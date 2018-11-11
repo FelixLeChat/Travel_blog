@@ -1,9 +1,4 @@
 {
-  "hero": {
-    "title": "hero.title",
-    "subtitle": "hero.subtitle",
-    "text": "hero.text"
-  },
   "seo": {
     "description": "seo.description"
   }

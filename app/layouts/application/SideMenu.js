@@ -7,6 +7,8 @@ import { Drawer } from 'antd';
 
 import type { UIStore } from '../../models/ui';
 
+const i18nPrefix = 'navigation/sideMenu';
+
 const mapStateToProps = state => ({
   ui: state.ui,
 });
@@ -15,7 +17,7 @@ type Props = {
   ui: UIStore,
 };
 
-@withNamespaces(['side_menu'])
+@withNamespaces([i18nPrefix])
 @withRouter
 @connect(mapStateToProps)
 class Header extends React.PureComponent<Props> {

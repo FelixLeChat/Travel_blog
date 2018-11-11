@@ -4,6 +4,7 @@ const namespaces = [
 
   // Nagivation
   'navigation/header',
+  'navigation/sideMenu',
 
   // Pages
   'pages/home',

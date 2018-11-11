@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import type { I18nProps } from 'react-i18next';
 
+import { fetchHomeStart } from '../app/reducers/home';
 import { withI18next } from '../lib/withI18next';
 import SEOHead from '../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../app/utils';
@@ -21,9 +22,21 @@ const mapStateToProps = state => ({
   currentRoute: state.global.data.currentRoute,
 });
 
+const mapDispatchToProps = dispatch => ({
+  fetchHome: () => dispatch(fetchHomeStart()),
+});
+
 @withI18next(i18nextNamespaces)
-@connect(mapStateToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class Homepage extends React.Component<Props> {
+  static async getInitialProps({ store }: any) {
+    await store.dispatch(fetchHomeStart());
+    return {};
+  }
+
   render() {
     const { i18n, t, currentRoute } = this.props;
 

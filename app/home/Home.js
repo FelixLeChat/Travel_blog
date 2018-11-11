@@ -29,9 +29,9 @@ class Home extends React.Component<Props> {
             <Col xs={24} md={8}>
               <div className="home-hero-text ext-box">
                 <div className="int-box">
-                  <h2>{t(`${i18nPrefix}:hero.title`)}</h2>
+                  {/* <h2>{t(`${i18nPrefix}:hero.title`)}</h2>
                   <div className="subtitle">{t(`${i18nPrefix}:hero.subtitle`)}</div>
-                  <p className="content">{t(`${i18nPrefix}:hero.text`)}</p>
+                  <p className="content">{t(`${i18nPrefix}:hero.text`)}</p> */}
                 </div>
               </div>
             </Col>

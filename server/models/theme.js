@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const Theme = sequelize.define('theme', {
+  const Theme = sequelize.define('Theme', {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,

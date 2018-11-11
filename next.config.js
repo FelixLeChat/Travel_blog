@@ -9,8 +9,11 @@ if (typeof require !== 'undefined') {
 
 const nextConfig = {
   serverRuntimeConfig: {
+    apiUrl: process.env.API_URL,
   },
   publicRuntimeConfig: {
+    host: process.env.HOST,
+    googleAnalyticsCode: process.env.GOOGLE_ANALYTICS_TRACKING_CODE,
   },
   webpack: (config, options) => {
     const originalEntry = config.entry;
