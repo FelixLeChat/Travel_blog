@@ -3,14 +3,33 @@ module.exports = (sequelize, DataTypes) => {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      autoIncrement: true,
+      autoIncrement: false,
     },
-    nameFr: {
+    name: {
       type: DataTypes.STRING,
     },
-    nameEN: {
+    image: {
       type: DataTypes.STRING,
     },
   });
+
+  // Create default themes
+  Theme.sync({ force: true }).then(() => Theme.bulkCreate([
+    {
+      id: 1,
+      name: 'itineary',
+      image: '',
+    },
+    {
+      id: 2,
+      name: 'guide',
+      image: '',
+    },
+    {
+      id: 3,
+      name: 'top',
+      image: '',
+    },
+  ]));
   return Theme;
 };
