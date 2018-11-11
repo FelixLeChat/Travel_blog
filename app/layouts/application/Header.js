@@ -94,16 +94,6 @@ class Header extends React.PureComponent<Props> {
             {/* Menu for mobile app */}
             <Row className="ant-hidden@s">
               <Col span={24} className="ant-text-center">
-                <Link route="index" params={{ locale }}>
-                  <a style={{ marginRight: -70 }}>
-                    <img
-                      src="/static/images/logo/logo_3.png"
-                      width="45px"
-                      height="45px"
-                      alt="Traveling Maude Logo"
-                    />
-                  </a>
-                </Link>
                 <div
                   className="header-mobile-menu"
                   onClick={this.handleMenuTrigger}
@@ -116,6 +106,16 @@ class Header extends React.PureComponent<Props> {
                     style={{ marginLeft: 10 }}
                   />
                 </div>
+                <Link route="index" params={{ locale }}>
+                  <a style={{ marginLeft: -70 }}>
+                    <img
+                      src="/static/images/logo/logo_3.png"
+                      width="45px"
+                      height="45px"
+                      alt="Traveling Maude Logo"
+                    />
+                  </a>
+                </Link>
               </Col>
             </Row>
           </Container>

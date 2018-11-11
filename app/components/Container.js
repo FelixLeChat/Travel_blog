@@ -8,26 +8,28 @@ type Size = $Keys<typeof sizes>;
 type Props = {
   children: React.Node,
   size?: Size,
+  className?: string,
 };
 
-const Container = ({ children, size }: Props) => {
-  let className;
+const Container = ({ children, size, className }: Props) => {
+  let newClassName = className;
 
   switch (size) {
     case sizes.large:
-      className = 'ant-container-large';
+      newClassName = `ant-container-large ${className}`;
       break;
 
     default:
-      className = 'ant-container';
+      newClassName = `ant-container ${className}`;
       break;
   }
 
-  return <div className={className}>{children}</div>;
+  return <div className={newClassName}>{children}</div>;
 };
 
 Container.defaultProps = {
   size: sizes.normal,
+  className: '',
 };
 
 export default Container;

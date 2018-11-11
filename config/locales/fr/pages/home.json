@@ -4,9 +4,7 @@
     "destinations": "Je vous partage les itinéraires de mes meilleures voyages en Europe, Asie et Amérique ainsi que quelques trucs que j'ai découverts pour faciliter la planification de votre prochain voyage."
   },
   "brand": "Traveling Maude",
-  "hero": {
-    "title": "Islande",
-    "subtitle": "Destinations",
-    "text": ""
+  "destinations": {
+    "title": "Destinations"
   }
 }

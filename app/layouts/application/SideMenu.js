@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Drawer } from 'antd';
 
 import type { UIStore } from '../../models/ui';
+import { setMobileMenuOpenedState } from '../../reducers/ui';
 
 const i18nPrefix = 'navigation/sideMenu';
 
@@ -13,15 +14,26 @@ const mapStateToProps = state => ({
   ui: state.ui,
 });
 
+const mapDispatchToProps = dispatch => ({
+  setMobileMenuState: state => dispatch(setMobileMenuOpenedState(state)),
+});
+
 type Props = {
   ui: UIStore,
+  setMobileMenuState: (state: boolean) => void,
 };
 
 @withNamespaces([i18nPrefix])
 @withRouter
-@connect(mapStateToProps)
+@connect(
+  mapStateToProps,
+  mapDispatchToProps,
+)
 class Header extends React.PureComponent<Props> {
-  onClose = () => {};
+  onClose = () => {
+    const { setMobileMenuState } = this.props;
+    setMobileMenuState(false);
+  };
 
   render() {
     const {

@@ -1,5 +1,8 @@
 {
   "seo": {
     "description": "seo.description"
+  },
+  "destinations": {
+    "title": "destinations.title"
   }
 }

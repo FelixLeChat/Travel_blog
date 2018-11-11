@@ -1,2 +1,19 @@
 {
+  "destinations": {
+    "iceland": "Iceland",
+    "portugal": "Portugal",
+    "greece": "Greece",
+    "croatia": "Croatia",
+    "holland": "Holland",
+    "denmark": "Denmark",
+    "italy": "Italy",
+    "philippines": "Philippines",
+    "vietnam": "Vietnam",
+    "argentina": "Argentina"
+  },
+  "continents": {
+    "europe": "Europe",
+    "asia": "Asia",
+    "south_america": "South America"
+  }
 }
