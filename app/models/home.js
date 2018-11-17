@@ -1,9 +1,6 @@
 // @flow
 
-type HomeData = {
-  themes: any[],
-  destinations: any[],
-};
+type HomeData = {};
 
 export type HomeStore = {
   isLoading: boolean,

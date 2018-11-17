@@ -3,14 +3,20 @@ const models = require('../models');
 
 const router = express.Router();
 
-// Get home Themes and Destinations
-router.get('/home', (req, res) => {
+// Get Destinations
+router.get('/destinations', (req, res) => {
+  models.Destination.findAll().then((destinations) => {
+    res.json({
+      destinations,
+    });
+  });
+});
+
+// Get Themes
+router.get('/themes', (req, res) => {
   models.Theme.findAll().then((themes) => {
-    models.Destination.findAll().then((destinations) => {
-      res.json({
-        themes,
-        destinations,
-      });
+    res.json({
+      themes,
     });
   });
 });

@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import type { I18nProps } from 'react-i18next';
 
-import { fetchHomeStart } from '../app/reducers/home';
+import { fetchDestinationsStart } from '../app/reducers/global';
 import { withI18next } from '../lib/withI18next';
 import SEOHead from '../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../app/utils';
@@ -23,7 +23,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchHome: () => dispatch(fetchHomeStart()),
+  fetchHome: () => dispatch(fetchDestinationsStart()),
 });
 
 @withI18next(i18nextNamespaces)
@@ -33,7 +33,7 @@ const mapDispatchToProps = dispatch => ({
 )
 class Homepage extends React.Component<Props> {
   static async getInitialProps({ store }: any) {
-    await store.dispatch(fetchHomeStart());
+    await store.dispatch(fetchDestinationsStart());
     return {};
   }
 

@@ -3,7 +3,8 @@ const Cache = {};
 
 Cache.StoreKeys = {
   GLOBAL: 'GLOBAL',
-  HOME: 'HOME',
+  DESTINATIONS: 'DESTINATIONS',
+  THEMES: 'THEMES',
 };
 
 Cache.setItem = (key: string, data: any) => {

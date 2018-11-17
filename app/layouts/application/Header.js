@@ -61,8 +61,8 @@ class Header extends React.PureComponent<Props> {
     } = this.props;
     const locale = i18n.language;
     return (
-      <Sticky enabled>
-        <AntHeader className="header">
+      <Sticky enabled className="header">
+        <AntHeader>
           <Container>
             {/* Menu for Desktop app */}
             <Row className="ant-visible@s">
