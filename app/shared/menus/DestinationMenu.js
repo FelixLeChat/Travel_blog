@@ -40,7 +40,7 @@ class DestinationMenu extends React.Component<Props> {
             <li key={key}>
               <div className="continent-name">{t(`${i18nCommonPrefix}:continents.${key}`)}</div>
               <ul>
-                {groupedDestinations[key].map(destination => (
+                {groupedDestinations[key].sort().map(destination => (
                   <li key={destination.name}>
                     <div className="destination-with-image">
                       {destination.thumbnail && (
