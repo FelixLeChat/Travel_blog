@@ -34,28 +34,29 @@ class DestinationMenu extends React.Component<Props> {
     }
     return (
       <div className="destinations-menu-container ant-margin-left">
-        <h3 className="border-box">{t(`${i18nCommonPrefix}:destinations.title`)}</h3>
-        <ul>
-          {Object.keys(groupedDestinations).map(key => (
-            <li key={key}>
-              <div className="continent-name">{t(`${i18nCommonPrefix}:continents.${key}`)}</div>
-              <ul>
-                {groupedDestinations[key].sort().map(destination => (
-                  <li key={destination.name}>
-                    <div className="destination-with-image">
-                      {destination.thumbnail && (
-                        <img src={destination.thumbnail} alt={`Thumbnail of ${destination.name}`} />
-                      )}
-                      <div className="destination-name">
-                        {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
-                      </div>
+        {Object.keys(groupedDestinations).map(key => (
+          <>
+            <h3 className="border-box">{t(`${i18nCommonPrefix}:continents.${key}`)}</h3>
+            <ul>
+              {groupedDestinations[key].sort().map((destination, index) => (
+                <li key={destination.name}>
+                  <div
+                    className={`destination-with-image${
+                      index === groupedDestinations[key].length - 1 ? ' remove-border-bottom' : ''
+                    }`}
+                  >
+                    {destination.thumbnail && (
+                      <img src={destination.thumbnail} alt={`Thumbnail of ${destination.name}`} />
+                    )}
+                    <div className="destination-name">
+                      {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
                     </div>
-                  </li>
-                ))}
-              </ul>
-            </li>
-          ))}
-        </ul>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </>
+        ))}
       </div>
     );
   }
