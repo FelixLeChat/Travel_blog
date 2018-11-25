@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 
 @withNamespaces([i18nCommonPrefix])
 @connect(mapStateToProps)
-class DestinationMenu extends React.Component<Props> {
+class DestinationSider extends React.Component<Props> {
   render() {
     const {
       t,
@@ -78,4 +78,4 @@ class DestinationMenu extends React.Component<Props> {
   }
 }
 
-export default DestinationMenu;
+export default DestinationSider;

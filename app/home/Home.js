@@ -4,7 +4,7 @@ import { withNamespaces } from 'react-i18next';
 
 import { Row, Col } from 'antd';
 import Container from '../components/Container';
-import DestinationMenu from '../shared/menus/DestinationMenu';
+import DestinationSider from '../shared/menus/DestinationSider';
 
 const i18nPrefix = 'pages/home';
 const i18nCommonPrefix = 'common';
@@ -45,7 +45,7 @@ class Home extends React.Component<Props> {
               CONTENT
             </Col>
             <Col xs={0} md={8}>
-              <DestinationMenu />
+              <DestinationSider />
             </Col>
           </Row>
         </Container>

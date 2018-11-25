@@ -95,7 +95,7 @@ class Header extends React.PureComponent<Props> {
                 <Menu mode="horizontal">
                   <Menu.Item key="1">
                     <Link route="index" params={{ locale }}>
-                      {t(`${i18nPrefix}:navigation.home`)}
+                      <a>{t(`${i18nPrefix}:navigation.home`)}</a>
                     </Link>
                   </Menu.Item>
                   <SubMenu key="2" title={t(`${i18nPrefix}:navigation.destinations`)}>
@@ -107,7 +107,7 @@ class Header extends React.PureComponent<Props> {
                               route="destination-details"
                               params={{ locale, destination: destination.name }}
                             >
-                              {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
+                              <a>{t(`${i18nCommonPrefix}:destinations.${destination.name}`)}</a>
                             </Link>
                           </Menu.Item>
                         ))}
