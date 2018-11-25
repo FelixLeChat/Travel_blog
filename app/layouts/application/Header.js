@@ -13,10 +13,14 @@ import Container from '../../components/Container';
 import LanguageSwitcher from '../LanguageSwitcher';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
 import type { UIStore } from '../../models/ui';
+import type { GlobalStore } from '../../models/global';
+import { groupBy } from '../../utils/utils';
 
 const i18nPrefix = 'navigation/header';
+const i18nCommonPrefix = 'common';
 
 const AntHeader = Layout.Header;
+const { SubMenu, ItemGroup } = Menu;
 
 const mapStateToProps = state => ({
   global: state.global,
@@ -31,6 +35,7 @@ type Props = {
   t: TFunction,
   i18n: I18nProps,
   ui: UIStore,
+  global: GlobalStore,
   setMobileMenuState: () => void,
 };
 
@@ -58,8 +63,16 @@ class Header extends React.PureComponent<Props> {
       ui: {
         data: { isMobileMenuOpened },
       },
+      global: {
+        data: { destinations },
+      },
     } = this.props;
     const locale = i18n.language;
+
+    let groupedDestinations = {};
+    if (destinations) {
+      groupedDestinations = groupBy(destinations, 'continent');
+    }
     return (
       <Sticky enabled className="header">
         <AntHeader>
@@ -80,8 +93,27 @@ class Header extends React.PureComponent<Props> {
               </Col>
               <Col span={16} className="ant-text-center">
                 <Menu mode="horizontal">
-                  <Menu.Item key="1">{t(`${i18nPrefix}:navigation.home`)}</Menu.Item>
-                  <Menu.Item key="2">{t(`${i18nPrefix}:navigation.destinations`)}</Menu.Item>
+                  <Menu.Item key="1">
+                    <Link route="index" params={{ locale }}>
+                      {t(`${i18nPrefix}:navigation.home`)}
+                    </Link>
+                  </Menu.Item>
+                  <SubMenu key="2" title={t(`${i18nPrefix}:navigation.destinations`)}>
+                    {Object.keys(groupedDestinations).map(key => (
+                      <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
+                        {groupedDestinations[key].sort().map(destination => (
+                          <Menu.Item key={destination.name}>
+                            <Link
+                              route="destination-details"
+                              params={{ locale, destination: destination.name }}
+                            >
+                              {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
+                            </Link>
+                          </Menu.Item>
+                        ))}
+                      </ItemGroup>
+                    ))}
+                  </SubMenu>
                 </Menu>
               </Col>
               <Col span={4} className="ant-text-right">

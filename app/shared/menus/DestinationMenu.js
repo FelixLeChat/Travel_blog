@@ -5,11 +5,13 @@ import { connect } from 'react-redux';
 
 import type { GlobalStore } from '../../models/global';
 import { groupBy } from '../../utils/utils';
+import { Link } from '../../../config/routes';
 
 const i18nCommonPrefix = 'common';
 
 type Props = {
   t: TFunction,
+  i18n: I18nProps,
   global: GlobalStore,
 };
 
@@ -23,10 +25,12 @@ class DestinationMenu extends React.Component<Props> {
   render() {
     const {
       t,
+      i18n,
       global: {
         data: { destinations },
       },
     } = this.props;
+    const locale = i18n.language;
 
     let groupedDestinations = {};
     if (destinations) {
@@ -35,27 +39,39 @@ class DestinationMenu extends React.Component<Props> {
     return (
       <div className="destinations-menu-container ant-margin-left">
         {Object.keys(groupedDestinations).map(key => (
-          <>
+          <div key={key}>
             <h3 className="border-box">{t(`${i18nCommonPrefix}:continents.${key}`)}</h3>
             <ul>
               {groupedDestinations[key].sort().map((destination, index) => (
                 <li key={destination.name}>
-                  <div
-                    className={`destination-with-image${
-                      index === groupedDestinations[key].length - 1 ? ' remove-border-bottom' : ''
-                    }`}
+                  <Link
+                    route="destination-details"
+                    params={{ locale, destination: destination.name }}
                   >
-                    {destination.thumbnail && (
-                      <img src={destination.thumbnail} alt={`Thumbnail of ${destination.name}`} />
-                    )}
-                    <div className="destination-name">
-                      {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
-                    </div>
-                  </div>
+                    <a style={{ display: 'block' }}>
+                      <div
+                        className={`destination-with-image${
+                          index === groupedDestinations[key].length - 1
+                            ? ' remove-border-bottom'
+                            : ''
+                        }`}
+                      >
+                        {destination.thumbnail && (
+                          <img
+                            src={destination.thumbnail}
+                            alt={`Thumbnail of ${destination.name}`}
+                          />
+                        )}
+                        <div className="destination-name">
+                          {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
+                        </div>
+                      </div>
+                    </a>
+                  </Link>
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         ))}
       </div>
     );

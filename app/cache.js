@@ -4,6 +4,7 @@ const Cache = {};
 Cache.StoreKeys = {
   GLOBAL: 'GLOBAL',
   DESTINATIONS: 'DESTINATIONS',
+  DESTINATION: 'DESTINATION',
   THEMES: 'THEMES',
 };
 
