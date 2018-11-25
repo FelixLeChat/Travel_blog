@@ -38,10 +38,8 @@ class _App extends App {
     initGA();
     logPageView();
     Router.router.events.on('routeChangeComplete', logPageView);
-    Router.router.events.on('routeChangeStart', (url) => {
-      if (!url.includes('search')) {
-        this.props.store.dispatch(setMobileMenuOpenedState(false));
-      }
+    Router.router.events.on('routeChangeStart', () => {
+      this.props.store.dispatch(setMobileMenuOpenedState(false));
     });
 
     // Intercept back and next browser button event to force a SSR.

@@ -8,6 +8,7 @@ const namespaces = [
 
   // Pages
   'pages/home',
+  'pages/destination',
 ];
 
 module.exports = namespaces;

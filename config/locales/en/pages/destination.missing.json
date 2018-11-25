@@ -1,0 +1,11 @@
+{
+  "hero": {
+    "greece": {
+      "title": "hero.greece.title"
+    }
+  },
+  "beadcrumb": {
+    "home": "beadcrumb.home",
+    "destinations": "beadcrumb.destinations"
+  }
+}

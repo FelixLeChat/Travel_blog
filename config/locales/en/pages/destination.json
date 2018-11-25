@@ -1,0 +1,38 @@
+{
+  "hero": {
+    "iceland": {
+      "title": "Iceland"
+    },
+    "portugal": {
+      "title": "Portugal"
+    },
+    "greece": {
+      "title": "Greece"
+    },
+    "croatia": {
+      "title": "Croatia"
+    },
+    "holland": {
+      "title": "Holland"
+    },
+    "denmark": {
+      "title": "Denmark"
+    },
+    "italy": {
+      "title": "Italy"
+    },
+    "philippines": {
+      "title": "Philippines"
+    },
+    "vietnam": {
+      "title": "Vietnam"
+    },
+    "argentina": {
+      "title": "Argentina"
+    }
+  },
+  "beadcrumb": {
+    "home": "Home",
+    "destinations": "Destinations"
+  }
+}

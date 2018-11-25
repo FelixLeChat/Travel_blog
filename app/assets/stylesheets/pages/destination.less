@@ -1,0 +1,62 @@
+.destination {
+  &-hero {
+    height: 350px;
+    @media (max-width: @screen-md) {
+      height: 200px;
+    }
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+
+    &:before {
+      content: "";
+      background-image: linear-gradient(rgba(0,0,0,.01),rgba(0,0,0,.4),#000);
+      opacity: .6;
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+    }
+
+    & > div {
+      position: relative;
+    }
+
+    & h1 {
+      color: @text-color-dark;
+      text-transform: uppercase;
+    }
+
+    & .hero-text-background {
+      position: absolute;
+      top: 25px;
+      z-index: 0;
+      pointer-events: none;
+
+      & h2 {
+        font-size: 150px;
+        color: @text-color-dark;
+        opacity: 0.15;
+        text-transform: uppercase;
+        font-weight: 700;
+      }
+    }
+
+    & .breadcrumb {
+      margin-top: -25px;
+      & span {
+        color: white;
+      }
+      & a {
+        color: white;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
