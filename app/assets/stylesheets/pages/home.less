@@ -2,9 +2,15 @@
   & .home-brand {
     text-align: center;
     padding: @global-large-padding 0;
-
+    @media (max-width: @screen-md) {
+      padding: @global-padding 0;
+    }
+    
     & h1 {
       font-size: 50px;
+      @media (max-width: @screen-md) {
+        font-size: 35px;
+      }
       font-family: 'Permanent Marker','Times New Roman', Times, serif;
       margin-bottom: 0;
     }

@@ -14,22 +14,25 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   // Create default themes
-  Theme.sync({ force: true }).then(() => Theme.bulkCreate([
-    {
-      id: 1,
-      name: 'itineary',
-      image: '',
-    },
-    {
-      id: 2,
-      name: 'guide',
-      image: '',
-    },
-    {
-      id: 3,
-      name: 'top',
-      image: '',
-    },
-  ]));
+  if (process.env.NODE_ENV !== 'production') {
+    // Theme.sync({ force: true }).then(() => Theme.bulkCreate([
+    //   {
+    //     id: 1,
+    //     name: 'itineary',
+    //     image: '',
+    //   },
+    //   {
+    //     id: 2,
+    //     name: 'guide',
+    //     image: '',
+    //   },
+    //   {
+    //     id: 3,
+    //     name: 'top',
+    //     image: '',
+    //   },
+    // ]));
+  }
+
   return Theme;
 };

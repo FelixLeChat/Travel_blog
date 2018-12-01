@@ -3,8 +3,10 @@ import { createActions, handleActions } from 'redux-actions';
 const defaultState = {
   error: null,
   data: {
+    id: null,
     destination: null,
     hero: null,
+    articles: [],
   },
   isLoading: false,
 };
