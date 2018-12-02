@@ -120,7 +120,10 @@ class Home extends React.Component<Props> {
                       )}
                     </div>
                     <div style={{ marginTop: 20 }}>
-                      <Link>
+                      <Link
+                        route="article"
+                        params={{ article: heroArticle.slug, destination: heroArticle.destination }}
+                      >
                         <a>
                           <Button type="secondary">{t(`${i18nPrefix}:read_article`)}</Button>
                         </a>

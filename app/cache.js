@@ -6,6 +6,7 @@ Cache.StoreKeys = {
   DESTINATIONS: 'DESTINATIONS',
   DESTINATION: 'DESTINATION',
   THEMES: 'THEMES',
+  ARTICLES: 'ARTICLES',
 };
 
 Cache.setItem = (key: string, data: any) => {

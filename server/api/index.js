@@ -46,6 +46,35 @@ router.get('/destination/:destination', (req, res) => {
   });
 });
 
+router.get('/article/:article', (req, res) => {
+  models.Article.findAll({
+    limit: 1,
+    where: {
+      slug: req.params.article,
+    },
+    attributes: [
+      'id',
+      'image',
+      'thumbnail',
+      'title',
+      'content',
+      'theme_id',
+      'destination_id',
+      'published_at',
+      'slug',
+    ],
+  }).then((articles) => {
+    if (articles && articles.length === 1) {
+      const article = articles[0];
+      res.json({
+        article,
+      });
+    } else {
+      res.status(404).send('Not found');
+    }
+  });
+});
+
 router.get('/home', (req, res) => {
   models.Article.findAll({
     attributes: [

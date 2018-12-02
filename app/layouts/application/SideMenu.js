@@ -89,7 +89,9 @@ class Header extends React.PureComponent<Props> {
           mode="inline"
         >
           <Menu.Item key="home">
-            <span>{t(`${i18nPrefix}:navigation.home`)}</span>
+            <Link route="index">
+              <a>{t(`${i18nPrefix}:navigation.home`)}</a>
+            </Link>
           </Menu.Item>
           <SubMenu
             key="sub-destinations"
