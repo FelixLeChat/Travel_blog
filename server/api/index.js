@@ -37,22 +37,32 @@ router.get('/destination/:destination', (req, res) => {
           id: destination.id,
           destination: destination.name,
           hero: destination.image,
-          articles: articles.map(article => ({
-            id: article.id,
-            title: article.title,
-            slug: article.slug,
-            image: article.image,
-            thumbnail: article.thumbnail,
-            theme_id: article.theme_id,
-            destination_id: article.destination_id,
-            content: article.content,
-            published_at: article.published_at,
-          })),
+          articles,
         });
       });
     } else {
       res.status(404).send('Not found');
     }
+  });
+});
+
+router.get('/home', (req, res) => {
+  models.Article.findAll({
+    attributes: [
+      'id',
+      'image',
+      'thumbnail',
+      'title',
+      'content',
+      'theme_id',
+      'destination_id',
+      'published_at',
+      'slug',
+    ],
+  }).then((articles) => {
+    res.json({
+      articles,
+    });
   });
 });
 

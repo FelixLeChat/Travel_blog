@@ -21,7 +21,7 @@ export function* fetchHomeDetails() {
   }
 }
 
-export function* watchFetchDestination() {
+export function* watchFetchHome() {
   while (true) {
     yield take(fetchHomeStart);
     yield call(fetchHomeDetails);

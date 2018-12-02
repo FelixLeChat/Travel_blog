@@ -15,7 +15,6 @@ const i18nCommonPrefix = 'common';
 
 type Props = {
   t: TFunction,
-  i18n: I18nProps,
   article: any,
   global: any,
 };
@@ -42,14 +41,12 @@ class ArticleCard extends React.Component<Props, State> {
   render() {
     const {
       t,
-      i18n,
       article,
       global: {
         data: { themes, destinations },
       },
     } = this.props;
     const { isMounted } = this.state;
-    const locale = i18n.language;
 
     let theme = null;
     for (let i = 0; i < themes.length; i += 1) {
@@ -60,8 +57,6 @@ class ArticleCard extends React.Component<Props, State> {
     for (let i = 0; i < destinations.length; i += 1) {
       if (destinations[i].id === article.destination_id) destination = t(`${i18nCommonPrefix}:destinations.${destinations[i].name}`);
     }
-
-    const dateFormat = locale === 'en' ? 'MMM D YYYY' : 'D MMM YYYY';
 
     return (
       <Link route="article" params={{ destination, article: article.slug }}>
@@ -90,7 +85,7 @@ class ArticleCard extends React.Component<Props, State> {
                 <Row>
                   <Col span={12}>
                     {isMounted && <FontAwesomeIcon icon={faClock} />}
-                    {isMounted && <Moment format={dateFormat} date={article.published_at} />}
+                    {isMounted && <Moment format="MMM D YYYY" date={article.published_at} />}
                   </Col>
                   <Col span={12}>
                     {isMounted && <FontAwesomeIcon icon={faMap} />}

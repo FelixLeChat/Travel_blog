@@ -6,6 +6,7 @@ import type { I18nProps } from 'react-i18next';
 import { withI18next } from '../lib/withI18next';
 import SEOHead from '../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../app/utils';
+import { fetchHomeStart } from '../app/reducers/home';
 
 import Home from '../app/home/Home';
 
@@ -24,6 +25,11 @@ const mapStateToProps = state => ({
 @withI18next(i18nextNamespaces)
 @connect(mapStateToProps)
 class Homepage extends React.Component<Props> {
+  static async getInitialProps({ store }: any) {
+    await store.dispatch(fetchHomeStart());
+    return {};
+  }
+
   render() {
     const { i18n, t, currentRoute } = this.props;
 

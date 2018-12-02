@@ -1,6 +1,11 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
+import Dotdotdot from 'react-dotdotdot';
+import Moment from 'react-moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faClock, faMap } from '@fortawesome/free-regular-svg-icons';
 
 import { Row, Col } from 'antd';
 import Container from '../components/Container';
@@ -11,34 +16,107 @@ const i18nCommonPrefix = 'common';
 
 type Props = {
   t: TFunction,
+  home: any,
+  global: any,
 };
 
+const mapStateToProps = state => ({
+  home: state.home,
+  global: state.global,
+});
+
 @withNamespaces([i18nPrefix, i18nCommonPrefix])
+@connect(mapStateToProps)
 class Home extends React.Component<Props> {
+  state = {
+    isMounted: false,
+  };
+
+  componentDidMount() {
+    this.setState({ isMounted: true });
+  }
+
   render() {
-    const { t } = this.props;
+    const {
+      t,
+      home: {
+        data: { articles },
+      },
+      global: {
+        data: { destinations },
+      },
+    } = this.props;
+    const { isMounted } = this.state;
+
+    // Set destinations for all articles
+    for (let articleId = 0; articleId < articles.length; articleId += 1) {
+      for (let i = 0; i < destinations.length; i += 1) {
+        if (destinations[i].id === articles[articleId].destination_id) {
+          articles[articleId].destination = t(
+            `${i18nCommonPrefix}:destinations.${destinations[i].name}`,
+          );
+        }
+      }
+    }
+
+    // Get Hero article
+    let heroArticle = null;
+    if (articles && articles.length > 0) {
+      [heroArticle] = articles;
+    }
 
     return (
       <div className="home">
         <div className="home-brand">
           <h1>{t(`${i18nPrefix}:brand`)}</h1>
         </div>
-        <div className="home-hero">
-          <Row>
-            <Col xs={24} md={16}>
-              <div className="home-hero-image" />
-            </Col>
-            <Col xs={24} md={8}>
-              <div className="home-hero-text ext-box">
-                <div className="int-box">
-                  {/* <h2>{t(`${i18nPrefix}:hero.title`)}</h2>
-                  <div className="subtitle">{t(`${i18nPrefix}:hero.subtitle`)}</div>
-                  <p className="content">{t(`${i18nPrefix}:hero.text`)}</p> */}
+        {heroArticle && (
+          <div className="home-hero">
+            <Row>
+              <Col xs={24} md={16}>
+                <div
+                  className="home-hero-image"
+                  style={{ backgroundImage: `url(${heroArticle.image})` }}
+                />
+              </Col>
+              <Col xs={24} md={8}>
+                <div className="home-hero-text ext-box">
+                  <div className="int-box">
+                    <h2>{heroArticle.title}</h2>
+                    <div className="subtitle">
+                      <Row>
+                        <Col span={12}>
+                          {isMounted && (
+                            <FontAwesomeIcon icon={faClock} style={{ marginRight: 10 }} />
+                          )}
+                          {isMounted && (
+                            <Moment format="MMM D YYYY" date={heroArticle.published_at} />
+                          )}
+                        </Col>
+                        <Col span={12}>
+                          {isMounted && (
+                            <FontAwesomeIcon icon={faMap} style={{ marginRight: 10 }} />
+                          )}
+                          {isMounted && heroArticle.destination}
+                        </Col>
+                      </Row>
+                    </div>
+                    <div className="content" style={{ height: 95 }}>
+                      {isMounted && (
+                        <Dotdotdot clamp={4}>
+                          <p
+                            style={{ marginBottom: 0 }}
+                            dangerouslySetInnerHTML={{ __html: heroArticle.content }}
+                          />
+                        </Dotdotdot>
+                      )}
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </div>
+              </Col>
+            </Row>
+          </div>
+        )}
         <Container className="ant-margin-large-top ant-margin-medium-bottom">
           <Row>
             <Col xs={24} md={16}>
