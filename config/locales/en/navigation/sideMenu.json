@@ -1,1 +1,6 @@
-{}
+{
+  "navigation": {
+    "home": "Home",
+    "destinations": "Destinations"
+  }
+}

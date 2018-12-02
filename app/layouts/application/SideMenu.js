@@ -51,7 +51,7 @@ class Header extends React.PureComponent<Props> {
         data: { isMobileMenuOpened },
       },
       global: {
-        data: { destinations },
+        data: { destinations, currentRoute },
       },
     } = this.props;
 
@@ -59,6 +59,19 @@ class Header extends React.PureComponent<Props> {
     if (destinations) {
       groupedDestinations = groupBy(destinations, 'continent');
     }
+
+    const selectedKeys = [];
+    const openedKeys = [];
+    if (currentRoute.route.name === 'destination-details') {
+      openedKeys.push('sub-destinations');
+
+      if (currentRoute.query.destination) {
+        selectedKeys.push(currentRoute.query.destination);
+      }
+    } else if (currentRoute.route.name === 'index') {
+      selectedKeys.push('home');
+    }
+
     return (
       <Drawer
         title="Traveling Maude"
@@ -71,18 +84,19 @@ class Header extends React.PureComponent<Props> {
         <Menu
           style={{ width: '100%' }}
           defaultSelectedKeys={['1']}
-          defaultOpenKeys={[]}
+          selectedKeys={selectedKeys}
+          defaultOpenKeys={openedKeys}
           mode="inline"
         >
-          <Menu.Item key="1">
-            <span>Option 1</span>
+          <Menu.Item key="home">
+            <span>{t(`${i18nPrefix}:navigation.home`)}</span>
           </Menu.Item>
           <SubMenu
             key="sub-destinations"
             title={(
               <span>
                 <FontAwesomeIcon icon={faMap} className="submenu-menu-icon" />
-                Destinations
+                {t(`${i18nPrefix}:navigation.destinations`)}
               </span>
 )}
           >

@@ -1,7 +1,7 @@
 // Buttons
 @btn-font-weight : normal;
-@btn-border-radius-base : @border-radius-base;
-@btn-border-radius-sm : @border-radius-base;
+@btn-border-radius-base : 0px;
+@btn-border-radius-sm : 0px;
 
 @btn-primary-color : #fff;
 @btn-primary-bg : @primary-color;
@@ -43,25 +43,6 @@
 .ant-btn {
   letter-spacing: 0.3px;
   text-transform: uppercase;
-
-  // TODO: The primary button hover is broken when pressing the button and releasing it without trigering the action (press, darg outside, release)
-
-  // background-color: @btn-primary-bg;
-  // &:hover {
-  //   color: white;
-  //   border-color: @btn-primary-hover-bg;
-  //   background-color: @btn-primary-hover-bg;
-  // }
-  // &:active {
-  //   color: white;
-  //   border-color: @btn-primary-active-bg !important;
-  //   background-color: @btn-primary-active-bg !important;
-  // }
-  // &:focus {
-  //   color: white;
-  //   border-color: @btn-primary-bg;
-  //   background-color: @btn-primary-bg;
-  // }
 }
 
 .ant-btn-accent {
@@ -104,4 +85,21 @@
   padding-top: 10px;
   padding-bottom: 10px;
   font-weight: 600;
+}
+
+.ant-btn-secondary {
+  background-color: @white;
+  font-size: 13px;
+  font-weight: 600;
+  
+  & * {
+    color: @primary-color !important;
+  }
+
+  &:hover {
+    background-color: @lightest-grey;
+  }
+  &:active {
+    background-color: @lightest-grey;
+  }
 }

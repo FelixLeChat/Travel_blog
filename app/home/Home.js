@@ -7,9 +7,10 @@ import Moment from 'react-moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMap } from '@fortawesome/free-regular-svg-icons';
 
-import { Row, Col } from 'antd';
+import { Row, Col, Button } from 'antd';
 import Container from '../components/Container';
 import DestinationSider from '../shared/menus/DestinationSider';
+import { Link } from '../../config/routes';
 
 const i18nPrefix = 'pages/home';
 const i18nCommonPrefix = 'common';
@@ -52,9 +53,7 @@ class Home extends React.Component<Props> {
     for (let articleId = 0; articleId < articles.length; articleId += 1) {
       for (let i = 0; i < destinations.length; i += 1) {
         if (destinations[i].id === articles[articleId].destination_id) {
-          articles[articleId].destination = t(
-            `${i18nCommonPrefix}:destinations.${destinations[i].name}`,
-          );
+          articles[articleId].destination = destinations[i].name;
         }
       }
     }
@@ -97,11 +96,20 @@ class Home extends React.Component<Props> {
                           {isMounted && (
                             <FontAwesomeIcon icon={faMap} style={{ marginRight: 10 }} />
                           )}
-                          {isMounted && heroArticle.destination}
+                          {isMounted && (
+                            <Link
+                              route="destination-details"
+                              params={{ destination: heroArticle.destination }}
+                            >
+                              <a>
+                                {t(`${i18nCommonPrefix}:destinations.${heroArticle.destination}`)}
+                              </a>
+                            </Link>
+                          )}
                         </Col>
                       </Row>
                     </div>
-                    <div className="content" style={{ height: 95 }}>
+                    <div className="content" style={{ height: 110 }}>
                       {isMounted && (
                         <Dotdotdot clamp={4}>
                           <p
@@ -110,6 +118,13 @@ class Home extends React.Component<Props> {
                           />
                         </Dotdotdot>
                       )}
+                    </div>
+                    <div style={{ marginTop: 20 }}>
+                      <Link>
+                        <a>
+                          <Button type="secondary">{t(`${i18nPrefix}:read_article`)}</Button>
+                        </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
