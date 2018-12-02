@@ -4,6 +4,7 @@ import { Menu, Dropdown, Icon } from 'antd';
 import { compose } from 'redux';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
+import moment from 'moment';
 
 import type { I18nProps } from 'react-i18next';
 import type { GlobalStore } from '../models/global';
@@ -36,10 +37,14 @@ class LanguageSwitcher extends React.PureComponent<Props> {
     } = this.props;
 
     i18n.changeLanguage(key, () => {
+      moment.locale(key);
+
       Router.pushRoute(currentRoute.route.name, {
         ...currentRoute.query,
         locale: key,
-      }).then(() => window.scrollTo(0, 0));
+      }).then(() => {
+        window.scrollTo(0, 0);
+      });
     });
   };
 

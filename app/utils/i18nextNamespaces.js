@@ -9,6 +9,9 @@ const namespaces = [
   // Pages
   'pages/home',
   'pages/destination',
+
+  // Articles
+  'articles/common',
 ];
 
 module.exports = namespaces;

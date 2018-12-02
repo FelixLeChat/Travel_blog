@@ -21,7 +21,16 @@ router.get('/destination/:destination', (req, res) => {
         where: {
           destination_id: destination.id,
         },
-        attributes: ['id', 'image', 'title', 'content', 'theme_id', 'destination_id'],
+        attributes: [
+          'id',
+          'image',
+          'title',
+          'content',
+          'theme_id',
+          'destination_id',
+          'published_at',
+          'slug',
+        ],
       }).then((articles) => {
         res.json({
           id: destination.id,
@@ -30,7 +39,12 @@ router.get('/destination/:destination', (req, res) => {
           articles: articles.map(article => ({
             id: article.id,
             title: article.title,
+            slug: article.slug,
             image: article.image,
+            theme_id: article.theme_id,
+            destination_id: article.destination_id,
+            content: article.content,
+            published_at: article.published_at,
           })),
         });
       });

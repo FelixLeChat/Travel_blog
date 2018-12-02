@@ -11,7 +11,7 @@ import {
 // Query server for data
 export function* fetchDestinationDetails({ params }) {
   const url = `/destination/${params.destination}`;
-  const cacheKey = `${Cache.StoreKeys.DESTINATIONS}-${params.destination}`;
+  const cacheKey = `${Cache.StoreKeys.DESTINATIONS}-${params.destination}-${params.locale}`;
   try {
     if (Cache.exists(cacheKey)) {
       yield put(fetchDestinationDetailsSuccess(Cache.getItem(cacheKey)));

@@ -16,5 +16,10 @@
     "europe": "Europe",
     "asia": "Asie",
     "south_america": "Amérique du sud"
+  },
+  "themes": {
+    "itineary": "Itinéraire",
+    "guide": "Guide",
+    "top": "Top"
   }
 }
