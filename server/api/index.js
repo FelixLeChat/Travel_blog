@@ -24,6 +24,7 @@ router.get('/destination/:destination', (req, res) => {
         attributes: [
           'id',
           'image',
+          'thumbnail',
           'title',
           'content',
           'theme_id',
@@ -41,6 +42,7 @@ router.get('/destination/:destination', (req, res) => {
             title: article.title,
             slug: article.slug,
             image: article.image,
+            thumbnail: article.thumbnail,
             theme_id: article.theme_id,
             destination_id: article.destination_id,
             content: article.content,

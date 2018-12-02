@@ -67,7 +67,7 @@ class ArticleCard extends React.Component<Props, State> {
       <Link params={{ locale, article: article.slug }}>
         <a>
           <div className="article-card">
-            <div className="article-card-image">
+            <div className="article-card-image ant-visible@m">
               <div
                 className="article-card-image-background"
                 style={{ backgroundImage: `url(${article.image})` }}
@@ -99,6 +99,13 @@ class ArticleCard extends React.Component<Props, State> {
                 </Row>
               </div>
             </div>
+          </div>
+          <div className="article-card-image-mobile ant-hidden@m">
+            <div
+              className="article-card-image-background"
+              style={{ backgroundImage: `url(${article.image})` }}
+            />
+            {theme && <div className="article-card-theme">{theme}</div>}
           </div>
         </a>
       </Link>

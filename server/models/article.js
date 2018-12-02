@@ -16,6 +16,9 @@ module.exports = (sequelize, DataTypes) => {
     image: {
       type: DataTypes.STRING,
     },
+    thumbnail: {
+      type: DataTypes.STRING,
+    },
     theme_id: {
       type: DataTypes.INTEGER,
       // references: {
@@ -50,6 +53,7 @@ module.exports = (sequelize, DataTypes) => {
         slug: 'the-lopapeysa',
         image:
             'https://res.cloudinary.com/heyjltyh0/image/upload/v1543702414/Articles/The_lopapeysa.jpg',
+        thumbnail: '',
         theme_id: 2,
         destination_id: 1,
         content:
