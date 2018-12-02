@@ -3,8 +3,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
 
+import { Row, Col } from 'antd';
 import type { DestinationStore } from '../models/destination';
 import { Link } from '../../config/routes';
+import Container from '../components/Container';
+import ArticleCard from '../shared/articles/ArticleCard';
 
 const i18nPrefix = 'pages/destination';
 
@@ -26,7 +29,7 @@ class Destination extends React.Component<Props> {
       t,
       i18n,
       destination: {
-        data: { destination, hero },
+        data: { destination, hero, articles },
       },
     } = this.props;
     const locale = i18n.language;
@@ -61,6 +64,16 @@ class Destination extends React.Component<Props> {
             </div>
           </div>
         )}
+        <Container className="ant-margin-large-top ant-margin-medium-bottom destination-body">
+          <Row>
+            <Col xs={24} md={16}>
+              <div className="destination-articles">
+                {articles
+                  && articles.map(article => <ArticleCard article={article} key={article.id} />)}
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }

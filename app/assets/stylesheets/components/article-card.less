@@ -1,0 +1,27 @@
+@article-card-image-witdh: 220px;
+@article-card-image-height: 250px;
+
+.article-card {
+  border: 1px solid @light-border;
+  border-radius: @border-radius-base;
+  overflow: hidden;
+  display: inline-flex;
+  width: 100%;
+
+  & > * {
+    display: inline-flex;
+  }
+
+  &-image {
+    height: @article-card-image-height;
+    width: @article-card-image-witdh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &-content {
+    width: calc(100% - @article-card-image-witdh);
+    padding: 30px;
+  }
+}

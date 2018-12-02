@@ -59,4 +59,26 @@
       }
     }
   }
+
+  &-articles {
+    & .article-container {
+      border: 1px solid @light-border;
+      border-radius: @border-radius-base;
+      overflow: hidden;
+      display: inline-flex;
+      width: 100%;
+
+      & > * {
+        display: inline-flex;
+      }
+
+      & .article-image {
+        height: 250px;
+        width: 220px;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
 }

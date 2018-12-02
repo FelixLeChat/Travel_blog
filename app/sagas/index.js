@@ -1,10 +1,10 @@
 import { all } from 'redux-saga/effects';
-import { watchFetchGlobal } from './global';
+import { watchFetchDestinations, watchFetchThemes } from './global';
 import { watchFetchDestination } from './destination';
 
 export default function* rootSaga() {
   try {
-    yield all([watchFetchGlobal(), watchFetchDestination()]);
+    yield all([watchFetchDestinations(), watchFetchThemes(), watchFetchDestination()]);
   } catch (err) {
     // TODO: Handle error, maybe show on alert...
   }

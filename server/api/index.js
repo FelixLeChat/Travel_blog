@@ -3,17 +3,6 @@ const models = require('../models');
 
 const router = express.Router();
 
-// Get Destinations
-router.get('/destinations', (req, res) => {
-  models.Destination.findAll({
-    attributes: ['name', 'continent', 'thumbnail'],
-  }).then((destinations) => {
-    res.json({
-      destinations,
-    });
-  });
-});
-
 // Get Destination details
 router.get('/destination/:destination', (req, res) => {
   models.Destination.findAll({
@@ -53,9 +42,22 @@ router.get('/destination/:destination', (req, res) => {
 
 // Get Themes
 router.get('/themes', (req, res) => {
-  models.Theme.findAll().then((themes) => {
+  models.Theme.findAll({
+    attributes: ['id', 'name'],
+  }).then((themes) => {
     res.json({
       themes,
+    });
+  });
+});
+
+// Get Destinations
+router.get('/destinations', (req, res) => {
+  models.Destination.findAll({
+    attributes: ['id', 'name', 'continent', 'thumbnail'],
+  }).then((destinations) => {
+    res.json({
+      destinations,
     });
   });
 });
