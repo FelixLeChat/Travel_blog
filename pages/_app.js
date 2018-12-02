@@ -4,7 +4,6 @@ import { I18nextProvider } from 'react-i18next';
 import { Provider } from 'react-redux';
 import withRedux from 'next-redux-wrapper';
 import withReduxSaga from 'next-redux-saga';
-import moment from 'moment';
 
 import { setMobileMenuOpenedState } from '../app/reducers/ui';
 import configureStore from '../app/store';
@@ -37,22 +36,12 @@ class _App extends App {
   }
 
   componentDidMount() {
-    const { pageProps } = this.props;
-    const { i18n } = pageProps || {};
-
     initGA();
     logPageView();
     Router.router.events.on('routeChangeComplete', logPageView);
     Router.router.events.on('routeChangeStart', () => {
       this.props.store.dispatch(setMobileMenuOpenedState(false));
     });
-
-    // moment
-    if (i18n) {
-      moment.locale(i18n.language);
-    } else if (initialI18nInstance) {
-      moment.locale(initialI18nInstance.language);
-    }
 
     // Intercept back and next browser button event to force a SSR.
     Router.beforePopState(({ as }) => {

@@ -26,10 +26,7 @@ routes.getRequestHandler = function(app, customHandler) {
 };
 
 module.exports = routes
-  .add('index', '/:locale(en|fr)?', 'index')
-  .add(
-    'destination-details',
-    '/:locale(en|fr)/destinations/:destination',
-    'destinations/destination',
-  )
-  .add('error', '/:locale(en|fr)/:error', 'error');
+  .add('index', '/', 'index')
+  .add('destination-details', '/destinations/:destination', 'destinations/destination')
+  .add('article', '/destinations/:destination/:article')
+  .add('error', '/:error', 'error');

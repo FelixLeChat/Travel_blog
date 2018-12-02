@@ -13,7 +13,6 @@ const i18nPrefix = 'pages/destination';
 
 type Props = {
   t: TFunction,
-  i18n: I18nProps,
   destination: DestinationStore,
 };
 
@@ -27,12 +26,10 @@ class Destination extends React.Component<Props> {
   render() {
     const {
       t,
-      i18n,
       destination: {
         data: { destination, hero, articles },
       },
     } = this.props;
-    const locale = i18n.language;
 
     return (
       <div className="destination">
@@ -42,13 +39,13 @@ class Destination extends React.Component<Props> {
               <div className="int-box">
                 <h1>{t(`${i18nPrefix}:hero.${destination}.title`)}</h1>
                 <div className="breadcrumb">
-                  <Link route="index" params={{ locale }}>
+                  <Link route="index">
                     <a>{t(`${i18nPrefix}:beadcrumb.home`)}</a>
                   </Link>
                   <span> / </span>
                   <a>{t(`${i18nPrefix}:beadcrumb.destinations`)}</a>
                   <span> / </span>
-                  <Link route="destination-details" params={{ locale, destination }}>
+                  <Link route="destination-details" params={{ destination }}>
                     <a>{t(`${i18nPrefix}:hero.${destination}.title`)}</a>
                   </Link>
                 </div>

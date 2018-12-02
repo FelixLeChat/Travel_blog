@@ -10,7 +10,6 @@ import Sticky from 'react-stickynode';
 
 import { Link } from '../../../config/routes';
 import Container from '../../components/Container';
-import LanguageSwitcher from '../LanguageSwitcher';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
 import type { UIStore } from '../../models/ui';
 import type { GlobalStore } from '../../models/global';
@@ -59,7 +58,6 @@ class Header extends React.PureComponent<Props> {
   render() {
     const {
       t,
-      i18n,
       ui: {
         data: { isMobileMenuOpened },
       },
@@ -67,7 +65,6 @@ class Header extends React.PureComponent<Props> {
         data: { destinations },
       },
     } = this.props;
-    const locale = i18n.language;
 
     let groupedDestinations = {};
     if (destinations) {
@@ -80,7 +77,7 @@ class Header extends React.PureComponent<Props> {
             {/* Menu for Desktop app */}
             <Row className="ant-visible@s">
               <Col span={4}>
-                <Link route="index" params={{ locale }}>
+                <Link route="index">
                   <a>
                     <img
                       src="/static/images/logo/logo_3.png"
@@ -94,7 +91,7 @@ class Header extends React.PureComponent<Props> {
               <Col span={16} className="ant-text-center">
                 <Menu mode="horizontal">
                   <Menu.Item key="1">
-                    <Link route="index" params={{ locale }}>
+                    <Link route="index">
                       <a>{t(`${i18nPrefix}:navigation.home`)}</a>
                     </Link>
                   </Menu.Item>
@@ -105,7 +102,7 @@ class Header extends React.PureComponent<Props> {
                           <Menu.Item key={destination.name}>
                             <Link
                               route="destination-details"
-                              params={{ locale, destination: destination.name }}
+                              params={{ destination: destination.name }}
                             >
                               <a>{t(`${i18nCommonPrefix}:destinations.${destination.name}`)}</a>
                             </Link>
@@ -116,11 +113,7 @@ class Header extends React.PureComponent<Props> {
                   </SubMenu>
                 </Menu>
               </Col>
-              <Col span={4} className="ant-text-right">
-                <div className="header-language-switch">
-                  <LanguageSwitcher />
-                </div>
-              </Col>
+              <Col span={4} className="ant-text-right" />
             </Row>
 
             {/* Menu for mobile app */}
@@ -138,7 +131,7 @@ class Header extends React.PureComponent<Props> {
                     style={{ marginLeft: 10 }}
                   />
                 </div>
-                <Link route="index" params={{ locale }}>
+                <Link route="index">
                   <a style={{ marginLeft: -70 }}>
                     <img
                       src="/static/images/logo/logo_3.png"

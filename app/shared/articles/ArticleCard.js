@@ -64,7 +64,7 @@ class ArticleCard extends React.Component<Props, State> {
     const dateFormat = locale === 'en' ? 'MMM D YYYY' : 'D MMM YYYY';
 
     return (
-      <Link params={{ locale, article: article.slug }}>
+      <Link route="article" params={{ destination, article: article.slug }}>
         <a>
           <div className="article-card">
             <div className="article-card-image ant-visible@m">

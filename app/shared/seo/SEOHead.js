@@ -26,16 +26,11 @@ class SEOHead extends React.PureComponent<Props> {
 
     // Share values
     const name = 'Traveling Maude';
-    const facebookAppId = '';
-    const shareImageLink = '';
-    const primaryColor = '';
+    const facebookAppId = '1843938182390871';
+    const shareImageLink = 'https://res.cloudinary.com/heyjltyh0/image/upload/v1543774392/facebook_share.png';
+    const primaryColor = '#0C0C0E';
     const baseDesktopUrl = 'https://travelingmaude.com';
     const baseUrl = baseDesktopUrl;
-
-    // HrefLang
-    let englishPageUrl = '';
-    let frenchPageUrl = '';
-    let cannonicalUrl = '';
 
     // root path is '/', we want ''
     let currentPath = baseUrl;
@@ -43,27 +38,9 @@ class SEOHead extends React.PureComponent<Props> {
       currentPath += currentUrl;
     }
 
-    // determine translation, cannonical and current url
-    if (currentLocale === 'fr') {
-      // Translation to english page : /fr/search -> /en/search, /fr -> ''
-      frenchPageUrl = currentPath;
-      if (currentUrl === '/fr') {
-        englishPageUrl = baseUrl;
-      } else {
-        englishPageUrl = currentPath.replace('/fr/', '/en/');
-      }
-      cannonicalUrl = frenchPageUrl;
-    } else {
-      // Translation to french page : /en/search -> /fr/search, /en/search -> /fr/search, /fr ->
-      if (currentUrl === '/en' || currentUrl === '') {
-        frenchPageUrl = `${baseUrl}/fr`;
-        cannonicalUrl = baseUrl;
-      } else {
-        frenchPageUrl = currentPath.replace('/en/', '/fr/');
-        cannonicalUrl = currentPath;
-      }
-      englishPageUrl = currentPath;
-    }
+    // HrefLang
+    const englishPageUrl = currentPath;
+    const cannonicalUrl = currentPath;
 
     return (
       <div>
@@ -74,17 +51,13 @@ class SEOHead extends React.PureComponent<Props> {
           <meta name="author" content={name} />
 
           {/* Hreflang */}
-          <link rel="alternate" hrefLang="fr" href={frenchPageUrl} />
-          <link rel="alternate" hrefLang="fr-ca" href={frenchPageUrl} />
           <link rel="alternate" hrefLang="en" href={englishPageUrl} />
           <link rel="alternate" hrefLang="en-ca" href={englishPageUrl} />
           <link rel="alternate" hrefLang="en-us" href={englishPageUrl} />
           <link rel="alternate" hrefLang="x-default" href={englishPageUrl} />
 
           {/* Cannonical */}
-          {!isMobile && <link rel="canonical" href={cannonicalUrl} />}
-          {/* Cannonical for Desktop page */}
-          {isMobile && <link rel="canonical" href={baseDesktopUrl + currentUrl} />}
+          <link rel="canonical" href={cannonicalUrl} />
 
           {/* Twitter meta tags */}
           <meta name="twitter:card" content="summary_large_image" />
@@ -132,7 +105,10 @@ class SEOHead extends React.PureComponent<Props> {
           {noIndexPage && <meta name="robots" content="noindex, follow" />}
 
           {/* Google Search Console validation */}
-          <meta name="google-site-verification" content="" />
+          <meta
+            name="google-site-verification"
+            content="tKzDoJ7uXE7z56qrBMQU1Y0rbAnsaRKXhbpX5sqs7Xk"
+          />
         </Head>
       </div>
     );

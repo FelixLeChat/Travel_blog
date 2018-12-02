@@ -4,6 +4,8 @@ import { withRouter } from 'next/router';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
 import { Drawer, Menu } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMap } from '@fortawesome/free-regular-svg-icons';
 
 import type { UIStore } from '../../models/ui';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
@@ -25,7 +27,6 @@ const mapDispatchToProps = dispatch => ({
 
 type Props = {
   t: TFunction,
-  i18n: I18nProps,
   ui: UIStore,
   global: GlobalStore,
   setMobileMenuState: (state: boolean) => void,
@@ -46,7 +47,6 @@ class Header extends React.PureComponent<Props> {
   render() {
     const {
       t,
-      i18n,
       ui: {
         data: { isMobileMenuOpened },
       },
@@ -54,7 +54,6 @@ class Header extends React.PureComponent<Props> {
         data: { destinations },
       },
     } = this.props;
-    const locale = i18n.language;
 
     let groupedDestinations = {};
     if (destinations) {
@@ -72,18 +71,26 @@ class Header extends React.PureComponent<Props> {
         <Menu
           style={{ width: '100%' }}
           defaultSelectedKeys={['1']}
-          defaultOpenKeys={['sub1']}
+          defaultOpenKeys={[]}
           mode="inline"
         >
-          <SubMenu key="sub1" title="Destinations">
+          <Menu.Item key="1">
+            <span>Option 1</span>
+          </Menu.Item>
+          <SubMenu
+            key="sub-destinations"
+            title={(
+              <span>
+                <FontAwesomeIcon icon={faMap} className="submenu-menu-icon" />
+                Destinations
+              </span>
+)}
+          >
             {Object.keys(groupedDestinations).map(key => (
               <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
                 {groupedDestinations[key].sort().map(destination => (
                   <Menu.Item key={destination.name}>
-                    <Link
-                      route="destination-details"
-                      params={{ locale, destination: destination.name }}
-                    >
+                    <Link route="destination-details" params={{ destination: destination.name }}>
                       <a>{t(`${i18nCommonPrefix}:destinations.${destination.name}`)}</a>
                     </Link>
                   </Menu.Item>
