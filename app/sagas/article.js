@@ -24,7 +24,6 @@ export function* fetchArticleDetails({ data: { params } }) {
 export function* watchFetchArticle() {
   while (true) {
     const { payload } = yield take(fetchArticleStart);
-    debugger;
     yield call(fetchArticleDetails, payload);
   }
 }

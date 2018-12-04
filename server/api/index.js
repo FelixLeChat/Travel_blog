@@ -46,6 +46,7 @@ router.get('/destination/:destination', (req, res) => {
   });
 });
 
+// Get Article
 router.get('/article/:article', (req, res) => {
   models.Article.findAll({
     limit: 1,
@@ -57,11 +58,15 @@ router.get('/article/:article', (req, res) => {
       'image',
       'thumbnail',
       'title',
+      'description',
       'content',
       'theme_id',
       'destination_id',
       'published_at',
       'slug',
+      'top_title',
+      'top_items',
+      'top_images',
     ],
   }).then((articles) => {
     if (articles && articles.length === 1) {
@@ -75,6 +80,7 @@ router.get('/article/:article', (req, res) => {
   });
 });
 
+// Get home details
 router.get('/home', (req, res) => {
   models.Article.findAll({
     attributes: [

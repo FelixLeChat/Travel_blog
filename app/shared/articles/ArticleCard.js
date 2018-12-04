@@ -65,7 +65,7 @@ class ArticleCard extends React.Component<Props, State> {
             <div className="article-card-image ant-visible@m">
               <div
                 className="article-card-image-background"
-                style={{ backgroundImage: `url(${article.image})` }}
+                style={{ backgroundImage: `url(${article.thumbnail})` }}
               />
               {theme && <div className="article-card-theme">{theme}</div>}
             </div>
@@ -98,7 +98,7 @@ class ArticleCard extends React.Component<Props, State> {
           <div className="article-card-image-mobile ant-hidden@m">
             <div
               className="article-card-image-background"
-              style={{ backgroundImage: `url(${article.image})` }}
+              style={{ backgroundImage: `url(${article.thumbnail})` }}
             />
             {theme && <div className="article-card-theme">{theme}</div>}
           </div>

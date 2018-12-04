@@ -10,6 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     title: {
       type: DataTypes.STRING,
     },
+    description: {
+      type: DataTypes.STRING,
+    },
     slug: {
       type: DataTypes.STRING,
     },
@@ -39,8 +42,8 @@ module.exports = (sequelize, DataTypes) => {
     top_items: {
       type: DataTypes.ARRAY(DataTypes.TEXT),
     },
-    language: {
-      type: DataTypes.STRING,
+    top_images: {
+      type: DataTypes.ARRAY(DataTypes.STRING),
     },
     published_at: DataTypes.DATE,
   });
@@ -51,15 +54,17 @@ module.exports = (sequelize, DataTypes) => {
     //     id: 1,
     //     title: 'The Lopapeysa',
     //     slug: 'the-lopapeysa',
+    //     description:
+    //         'Lopapeysa is the name of the traditional wool sweater of Iceland. What is its origin and how to find the original one ? Find out on Traveling Maude.',
     //     image:
     //         'https://res.cloudinary.com/heyjltyh0/image/upload/v1543702414/Articles/The_lopapeysa.jpg',
-    //     thumbnail: '',
+    //     thumbnail:
+    //         'https://res.cloudinary.com/heyjltyh0/image/upload/v1543888416/Articles/The_lopapeysa_thumbnail.jpg',
     //     theme_id: 2,
     //     destination_id: 1,
     //     content:
     //         'This is the traditional wool sweater that you will find all over Iceland. They are easy to spot by their distinct decorative patterns around the neck opening. Whether you are a local or a tourist, everyone wear them proudly in the streets of Reykjavik or in the many trails of this peaceful island.<br/><br/>The Icelandic name Lopapeysa is a literal translation of "wool sweater" ("lopa"=wool, "peysa"=sweater) but they are not made from your average wool. The unique breed of sheep, native from Iceland and protected from centuries of isolation, from where the wool is make these sweater uniques! It will keep you warm whatever the weather.<br/><br/>As their popularity grew, more variety began to appear in stores all over the country. If you want to find the original Lopapeysa, here are some tips that may help you:',
     //     published_at: new Date(2018, 11, 1),
-    //     language: 'en',
     //     top_title: 'Things to look to find the original Lopapeysa:',
     //     top_items: [
     //       'Watch out the tags! If you find the indication “Designed in Iceland” it may not be either hand made in Iceland or contain Icelandic wool.',
@@ -67,6 +72,13 @@ module.exports = (sequelize, DataTypes) => {
     //       'Price! A hand made Lopapeysa with Icelandic wool is expensive. It will likely set you back 250-350$ (CAD). If you find a much lower price, it can be made elsewhere or from lower quality materials.',
     //       'Check for the decorative neck patterns. If do not have those, you probably won’t have a Lopapeysa sweater.',
     //       'Symmetry! This is mostly if you want a hand knitted one. They usually are symmetrical (no difference between the front and the back), by the way they are knitted.',
+    //     ],
+    //     top_images: [
+    //       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543890846/Articles/Iceland_flag.jpg',
+    //       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543890940/Articles/Natural_wool.jpg',
+    //       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543891046/Articles/Price_tag.jpg',
+    //       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543892678/Articles/Lopapeysa_sweater.jpg',
+    //       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543891199/Articles/Lopapeysa_pattern.jpg',
     //     ],
     //   },
     // ]));
