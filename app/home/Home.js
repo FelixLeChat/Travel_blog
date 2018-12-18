@@ -11,6 +11,7 @@ import { Row, Col, Button } from 'antd';
 import Container from '../components/Container';
 import DestinationSider from '../shared/menus/DestinationSider';
 import { Link } from '../../config/routes';
+import { compareValues } from '../utils/utils';
 
 const i18nPrefix = 'pages/home';
 const i18nCommonPrefix = 'common';
@@ -61,7 +62,7 @@ class Home extends React.Component<Props> {
     // Get Hero article
     let heroArticle = null;
     if (articles && articles.length > 0) {
-      [heroArticle] = articles;
+      [heroArticle] = articles.sort(compareValues('published_at', 'desc'));
     }
 
     return (

@@ -37,7 +37,7 @@
   }
 }
 
-.article-top {
+.article-top-list {
   & .article-top-image {
     width: 100px;
     height: 100px;
@@ -47,6 +47,10 @@
     border-radius: 50%;
     position: relative;
     overflow: hidden;
+    @media (max-width: @screen-md) {
+      margin: auto;
+      margin-bottom: @global-margin;
+    }
 
     &:before {
       content: '';
@@ -67,5 +71,26 @@
       margin-top: 12px;
       text-align: center;
     }
+  }
+
+  & .article-top-text {
+    @media (max-width: @screen-md) {
+      text-align: center;
+    }
+  }
+}
+
+.article-top {
+  & .img {
+    height: 350px;
+    width: 100%;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  & .emphasis {
+    color: @highlight-color;
   }
 }

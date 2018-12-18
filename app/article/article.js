@@ -9,6 +9,7 @@ import { faClock, faMap } from '@fortawesome/free-regular-svg-icons';
 
 import Container from '../components/Container';
 import { Link } from '../../config/routes';
+import TopList from './parts/topList';
 import Top from './parts/top';
 
 const i18nPrefix = 'articles/common';
@@ -73,8 +74,10 @@ class Article extends React.Component<Props, State> {
         </div>
         <Container>
           <Row>
-            <Col xs={24} md={16}>
+            <Col span={24}>
               <div className="article-hero" style={{ backgroundImage: `url(${article.image})` }} />
+            </Col>
+            <Col xs={24} md={16}>
               <h1 className="ant-margin-top ant-margin-small-bottom">{article.title}</h1>
               <Row className="ant-margin-bottom article-details-bar">
                 <Col span={24}>
@@ -100,7 +103,8 @@ class Article extends React.Component<Props, State> {
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
 
-              {article.top_images && article.top_items && <Top article={article} />}
+              {article.top_list_images && article.top_list_items && <TopList article={article} />}
+              {article.top_images && article.top_contents && <Top article={article} />}
             </Col>
             <Col xs={24} md={8} />
           </Row>

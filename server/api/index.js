@@ -64,9 +64,12 @@ router.get('/article/:article', (req, res) => {
       'destination_id',
       'published_at',
       'slug',
-      'top_title',
-      'top_items',
+      'top_titles',
+      'top_contents',
       'top_images',
+      'top_list_title',
+      'top_list_items',
+      'top_list_images',
     ],
   }).then((articles) => {
     if (articles && articles.length === 1) {

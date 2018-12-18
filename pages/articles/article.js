@@ -38,13 +38,15 @@ class ArticlePage extends React.Component<Props> {
     } = this.props;
     return (
       <>
-        <SEOHead
-          title={`${article.title} - Traveling Maude`}
-          description={article.description}
-          currentLocale={i18n.language}
-          currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
-        />
-        <Article />
+        {article && (
+          <SEOHead
+            title={`${article.title} - Traveling Maude`}
+            description={article.description}
+            currentLocale={i18n.language}
+            currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
+          />
+        )}
+        {article && <Article />}
       </>
     );
   }

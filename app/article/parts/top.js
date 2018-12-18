@@ -1,53 +1,46 @@
 // @flow
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
-import { Col, Row } from 'antd';
+import { Col, Row, Divider } from 'antd';
 
 const i18nPrefix = 'articles/common';
 
 type Props = {
-  t: TFunction,
   article: any,
 };
 
-type State = {
-  isMounted: boolean,
-};
-
 @withNamespaces([i18nPrefix])
-class Article extends React.Component<Props, State> {
-  state = {
-    isMounted: false,
-  };
-
-  componentDidMount() {
-    this.setState({ isMounted: true });
-  }
-
+class Top extends React.Component<Props> {
   render() {
-    const { t, article } = this.props;
-    const { isMounted } = this.state;
+    const { article } = this.props;
 
     return (
-      <div className="article-top ant-margin-large-top">
-        <h2>{article.top_title}</h2>
-        {article.top_items
-          && article.top_items.map((item, index) => (
-            <Row className="ant-margin-medium-top" type="flex" align="middle">
-              <Col span={4}>
-                <div
-                  className="article-top-image"
-                  style={{ backgroundImage: `url(${article.top_images[index]})` }}
-                >
-                  <div className="article-top-image-index">{index + 1}</div>
-                </div>
-              </Col>
-              <Col span={20}>{item}</Col>
-            </Row>
-          ))}
+      <div className="article-top">
+        {article.top_titles.map((item, index) => (
+          <Row key={item} className="ant-margin-medium-top">
+            <Col span={24}>
+              <h2>
+                <span className="emphasis">{`${index + 1}.`}</span>
+                {item}
+              </h2>
+            </Col>
+            <Col span={24}>
+              <div
+                className="img"
+                style={{ backgroundImage: `url('${article.top_images[index]}')` }}
+              />
+            </Col>
+            <Col
+              span={24}
+              dangerouslySetInnerHTML={{ __html: article.top_contents[index] }}
+              className="ant-margin-top ant-margin-medium-bottom"
+            />
+            <Divider style={{ marginBottom: 0 }} />
+          </Row>
+        ))}
       </div>
     );
   }
 }
 
-export default Article;
+export default Top;
