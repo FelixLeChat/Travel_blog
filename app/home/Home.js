@@ -12,6 +12,7 @@ import Container from '../components/Container';
 import DestinationSider from '../shared/menus/DestinationSider';
 import { Link } from '../../config/routes';
 import { compareValues } from '../utils/utils';
+import ArticleCard from '../shared/articles/ArticleCard';
 
 const i18nPrefix = 'pages/home';
 const i18nCommonPrefix = 'common';
@@ -45,7 +46,7 @@ class Home extends React.Component<Props> {
         data: { articles },
       },
       global: {
-        data: { destinations },
+        data: { destinations, themes },
       },
     } = this.props;
     const { isMounted } = this.state;
@@ -139,7 +140,34 @@ class Home extends React.Component<Props> {
         <Container className="ant-margin-large-top ant-margin-medium-bottom">
           <Row>
             <Col xs={24} md={16}>
-              CONTENT
+              <Row className="home-themes">
+                {themes
+                  && themes.map((theme, index) => (
+                    <Col span={24} key={theme.name} className="ant-margin-large-bottom">
+                      <Row>
+                        <Col span={12}>
+                          <div className="theme-title">
+                            {t(`${i18nCommonPrefix}:themes.${theme.name}`)}
+                          </div>
+                        </Col>
+                        <Col className="ant-text-right" span={12}>
+                          {/* {t(`${i18nPrefix}:read_more`)} */}
+                        </Col>
+                        <Col span={24}>
+                          <Row>
+                            {articles
+                              .filter(article => article.theme_id === theme.id)
+                              .map(article => (
+                                <Col span={24} key={article.title}>
+                                  <ArticleCard article={article} />
+                                </Col>
+                              ))}
+                          </Row>
+                        </Col>
+                      </Row>
+                    </Col>
+                  ))}
+              </Row>
             </Col>
             <Col xs={0} md={8}>
               <DestinationSider />

@@ -17,6 +17,7 @@ type Props = {
   t: TFunction,
   article: any,
   global: any,
+  className: string,
 };
 
 type State = {
@@ -42,6 +43,7 @@ class ArticleCard extends React.Component<Props, State> {
     const {
       t,
       article,
+      className,
       global: {
         data: { themes, destinations },
       },
@@ -60,7 +62,7 @@ class ArticleCard extends React.Component<Props, State> {
 
     return (
       <Link route="article" params={{ destination, article: article.slug }}>
-        <a>
+        <a className={className || ''} style={{ display: 'block' }}>
           <div className="article-card">
             <div className="article-card-image ant-visible@m">
               <div

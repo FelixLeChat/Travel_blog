@@ -66,7 +66,9 @@ class Destination extends React.Component<Props> {
             <Col md={24} lg={16}>
               <div className="destination-articles">
                 {articles
-                  && articles.map(article => <ArticleCard article={article} key={article.id} />)}
+                  && articles.map(article => (
+                    <ArticleCard article={article} key={article.id} className="ant-margin-bottom" />
+                  ))}
               </div>
             </Col>
           </Row>
