@@ -105,6 +105,13 @@ class Article extends React.Component<Props, State> {
 
               {article.top_list_images && article.top_list_items && <TopList article={article} />}
               {article.top_images && article.top_contents && <Top article={article} />}
+
+              {article.bottom_content && (
+                <div
+                  className="article-bottom-content ant-margin-medium-top"
+                  dangerouslySetInnerHTML={{ __html: article.bottom_content }}
+                />
+              )}
             </Col>
             <Col xs={24} md={8} />
           </Row>

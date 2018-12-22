@@ -60,6 +60,7 @@ router.get('/article/:article', (req, res) => {
       'title',
       'description',
       'content',
+      'bottom_content',
       'theme_id',
       'destination_id',
       'published_at',

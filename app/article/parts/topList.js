@@ -15,7 +15,7 @@ class TopList extends React.Component<Props> {
     const { article } = this.props;
 
     return (
-      <div className="article-top-list ant-margin-large-top">
+      <div className="article-top-list ant-margin-medium-top">
         <h2>{article.top_list_title}</h2>
         {article.top_list_items
           && article.top_list_items.map((item, index) => (
