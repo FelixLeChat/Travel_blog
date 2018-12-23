@@ -20,8 +20,8 @@ class Top extends React.Component<Props> {
           <Row key={item} className="ant-margin-medium-top">
             <Col span={24}>
               <h2>
-                <span className="emphasis">{`${index + 1}.`}</span>
-                {item}
+                <span className="emphasis">{`${index + 1}. `}</span>
+                <span dangerouslySetInnerHTML={{ __html: item }} />
               </h2>
             </Col>
             <Col span={24}>

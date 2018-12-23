@@ -149,9 +149,9 @@ module.exports = (sequelize, DataTypes) => {
         theme_id: 2,
         destination_id: 2,
         content:
-            'The city in front of Porto (Vila Nova de Gaia) is well known for its Port cellars. Even nowadays, if not a single drop of Port Wine is produced there, the city contains a rich history in making this wine.<br/><br/>All alongside the Douro river in this city, you will find many “Barco Rabelo”, old wooden boats that were once used to transfer the port from the vineyards upstream to the city for storage and aging. These are now used for marketing about the different Port House you may want to visit.<br/><br/>When choosing a Port Cellar visit, there are some characteristics you may want to consider, depending on the experience you want to have.<br/><br/>',
+            'The city in front of Porto (Vila Nova de Gaia) is well known for its Port cellars. Even nowadays, if not a single drop of Port Wine is produced there, the city contains a rich history in making this wine.<br/><br/>All alongside the Douro river in this city, you will find many “Barco Rabelo”, old wooden boats that were once used to transfer the port from the vineyards upstream to the city for storage and aging. These are now used for marketing about the different Port House you may want to visit.<br/><br/>When choosing a Port Cellar visit, there are some characteristics you may want to consider, depending on the experience you want to have.',
         bottom_content:
-            'As for our experience, we highly recommend you check out the “<a href="http://portoaugustos.pt/site/?lang=en&utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener">Porto Augusto\'s</a>” cellar, as it is a small Portuguese family owned cellar with a great guided tour and a great selection of tasting option. It cost 5 euros per person (The fee is reimbursed if you buy a bottle), and you can book your desired tour directly at their cellar with your desired tour language.',
+            'As for our experience, we highly recommend you check out the “<a href="http://portoaugustos.pt/site/?lang=en&utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Porto Augusto\'s</a>” cellar, as it is a small Portuguese family owned cellar with a great guided tour and a great selection of tasting option. It cost 5 euros per person (The fee is reimbursed if you buy a bottle), and you can book your desired tour directly at their cellar with your desired tour language.',
         published_at: new Date(2018, 11, 22),
         top_list_title: 'Things to look for while booking your Port Cellar visit:',
         top_list_items: [
@@ -167,6 +167,57 @@ module.exports = (sequelize, DataTypes) => {
           'https://res.cloudinary.com/heyjltyh0/image/upload/v1545515117/Articles/Tasting.jpg',
           'https://res.cloudinary.com/heyjltyh0/image/upload/v1545515207/Articles/VIntage_port.jpg',
           'https://res.cloudinary.com/heyjltyh0/image/upload/v1543891046/Articles/Price_tag.jpg',
+        ],
+      },
+      {
+        id: 4,
+        title: 'A weekend in Amsterdam',
+        slug: 'a-weekend-in-amsterdam',
+        description:
+            'If you plan a Weekend in Amsterdam, here a couple of things you need to know and placed you will definitely want to visit.',
+        image:
+            'https://res.cloudinary.com/heyjltyh0/image/upload/v1545585827/Articles/Amsterdam.jpg',
+        thumbnail:
+            'https://res.cloudinary.com/heyjltyh0/image/upload/v1545585827/Articles/Amsterdam_thuhmbnail.jpg',
+        theme_id: 1,
+        destination_id: 5,
+        content:
+            'As the iconic city of the Netherland, Amsterdam is a magnific city where canals, bike lanes and old buildings intertwine. You can easily lose yourself walking alongside those canals up till late at night, where everything is still well animated.<br/><br/>From museums, parks, tours to night clubs and coffee shops, you can easily stay in Amsterdam for 2-3 days and not run out of things to do. We compiled a list of things to know about the city as well as a couple of we loved to explore in the city.',
+        published_at: new Date(2018, 11, 23),
+        top_list_title: 'Things to know about Amsterdam:',
+        top_list_items: [
+          '<b>Brown coffee shops.</b> These are your traditional “Dutch pubs” where you can grab a beer. The name comes from their dark, cozy interiors with lots of dark wood.',
+          '<b>Coffee shops.</b> This is a misleading name for a westerner, as they do not serve coffee, but instead are the place where you can get your hands on the legal cannabis of Amsterdam. You will usually find them in the “Red light”, the “Pijp” of the “Jordaan” district.',
+          'Public transports are the best way to travel. You can travel all across the city by using trams, bus or Metro. For longer distances, the train is your way to go. You can access all those methods of transport and even more (Ferry, Bike rental) at the Amsterdam Central station. We highly recommend you get your hands on the rechargeable OV card (<a href="https://www.transportspublics.amsterdam/en/tickets-fares/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Public transport website</a>) that is required to use public transports. Remember, you will need to check in and check out or every transport or else you will be charged the maximum fee for the transport type.',
+        ],
+        top_list_images: [
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545586231/Articles/Beer.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545586446/Articles/Cannabis.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545586539/Articles/OV-card.jpg',
+        ],
+        top_titles: [
+          'Visit the canals',
+          'Van Gogh museum',
+          'Climb at the top of the NEMO',
+          'Visit the north banks',
+          'Ann Frank house',
+          "Grab a beer at Brouwerij 't IJ",
+        ],
+        top_contents: [
+          'This is why you visit Amsterdam. The unique way the city was built from the Old city alongside the Ij river and expanded inwards with canals, is truly one of a kind. No need to book a boat ride as you will enjoy them as much while striding alongside them.',
+          'Truly an amazing museum, the Van Gogh museum will show you the life, though it’s painting, of this Dutch Post-Impressionist painter. He is renowned amongst the most famous and influential figures in the history of Western art. To access the museum, you need to book your tickets online <a href="https://tickets.vangoghmuseum.com/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">here</a>.',
+          'This is the science museum of the city, but you go these mostly for the view. At the top of the stairs, leading to the NEMO terrace, you will find one of the greatest views of the city. Be there at the opening (10:00) to be able to snatch a picture without too many tourists.',
+          'From Amsterdam central, you can take a free ferry to “Veer Buiksloterweg” and visit the northern banks of the Ij river. There, you can have a great view of the city and find an amazing place for a picnic or to watch a sunset.',
+          'This renowned museum is a must do in Amsterdam. Be prepared to get a bit emotional by discovering the story of this place and of its owner. You will need to get there early to skip the wait (and you will probably still wait a bit), as it is one of the most popular attraction in the city. You can grab your tickets online <a href="https://www.annefrank.org/en/museum/tickets/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">here</a>.',
+          'If you want to grab a great beer at a decent price in a traditional Dutch windmill, this is the place to go. Even if it’s a 30 min walk from Amsterdam central station, this is worth it. They also serve traditional Dutch cheese and charcuterie.',
+        ],
+        top_images: [
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545587010/Articles/Amsterdam_canals.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545587010/Articles/Van_Gogh_museum.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545587358/Articles/Nemo_museum.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545587717/Articles/Amsterdam_lookout.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545587876/Articles/Ann_Frank_house.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545588042/Articles/BrouwerijtIJ.jpg',
         ],
       },
     ]));

@@ -21,13 +21,19 @@
     overflow: hidden;
 
     @media (max-width: @screen-md) {
-      height: 300px;
+      height: unset;
+
+      & h2 { 
+        font-size: 24px;
+        line-height: 30px;
+        margin-top: 20px;
+      }
     }
 
     & .home-hero-image {
       height: 550px;
       @media (max-width: @screen-md) {
-        height: 300px;
+        height: 200px;
       }
 
       background-repeat: no-repeat;
@@ -60,6 +66,13 @@
 
       & .content {
         margin-top: 20px;
+      }
+    }
+
+    & .ant-btn {
+      margin-top: 20px;
+      @media (max-width: @screen-md) {
+        margin-bottom: 20px;
       }
     }
   }

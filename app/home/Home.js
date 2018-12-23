@@ -111,7 +111,7 @@ class Home extends React.Component<Props> {
                         </Col>
                       </Row>
                     </div>
-                    <div className="content" style={{ height: 110 }}>
+                    <div className="content ant-visible@s" style={{ height: 110 }}>
                       {isMounted && (
                         <Dotdotdot clamp={4}>
                           <p
@@ -121,7 +121,7 @@ class Home extends React.Component<Props> {
                         </Dotdotdot>
                       )}
                     </div>
-                    <div style={{ marginTop: 20 }}>
+                    <div>
                       <Link
                         route="article"
                         params={{ article: heroArticle.slug, destination: heroArticle.destination }}
@@ -142,12 +142,12 @@ class Home extends React.Component<Props> {
             <Col xs={24} md={16}>
               <Row className="home-themes">
                 {themes
-                  && themes.map((theme, index) => (
+                  && themes.map(theme => (
                     <Col span={24} key={theme.name} className="ant-margin-large-bottom">
                       <Row>
                         <Col span={12}>
                           <div className="theme-title">
-                            {t(`${i18nCommonPrefix}:themes.${theme.name}`)}
+                            {t(`${i18nCommonPrefix}:themes_plural.${theme.name}`)}
                           </div>
                         </Col>
                         <Col className="ant-text-right" span={12}>

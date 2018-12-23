@@ -21,5 +21,10 @@
     "itineary": "Itineary",
     "guide": "Guide",
     "top": "Top"
+  },
+  "themes_plural": {
+    "itineary": "Itinearies",
+    "guide": "Guides",
+    "top": "Tops"
   }
 }

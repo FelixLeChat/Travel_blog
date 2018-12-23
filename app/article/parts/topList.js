@@ -29,7 +29,7 @@ class TopList extends React.Component<Props> {
                 </div>
               </Col>
               <Col span={24} md={{ span: 18 }} lg={{ span: 20 }} className="article-top-text">
-                {item}
+                <span dangerouslySetInnerHTML={{ __html: item }} />
               </Col>
             </Row>
           ))}
