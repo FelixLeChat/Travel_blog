@@ -220,6 +220,31 @@ module.exports = (sequelize, DataTypes) => {
           'https://res.cloudinary.com/heyjltyh0/image/upload/v1545588042/Articles/BrouwerijtIJ.jpg',
         ],
       },
+      {
+        id: 5,
+        title: 'Pastéis de nata',
+        slug: 'pasteis-de-nata',
+        description:
+            'If you visit Portugal, you cannot leave without tasting the famous “pastéis de nata”! Find out what they are and the best places to get them in Lisbon.',
+        image:
+            'https://res.cloudinary.com/heyjltyh0/image/upload/v1545924500/Articles/Pasteis_de_nata.jpg',
+        thumbnail:
+            'https://res.cloudinary.com/heyjltyh0/image/upload/v1545924583/Articles/Pasteis_de_nata_thumbnail.jpg',
+        theme_id: 2,
+        destination_id: 2,
+        content:
+            'If you visit Portugal, you cannot leave without tasting the famous “pastéis de nata”! Their name translates to “pastry with cream”, as they’re filling are mostly egg and cream. You can easily compare it to an egg flan in a crunchy pastry.<br/><br/>This little desert is found on the tables of almost every family and Portuguese restaurants, coffee shops, come from Lisbon, where they were created. Around 1837, in the city of Belém, a neighborhood of Lisbon, a group of monks starting making those pastries to finance their order. The pastéis were such a hit that they soon were spread all across Portugal where the recipe was recreated and adapted.<br/><br/>When tasting pastéis on the spot, tradition still wants today to sprinkle sugar and cinnamon, as they pair extremely well with those two.<br/><br/>The original recipe is still kept secret and sold at the original shop in Belém, where they take the name “pastéis de Belém”. If you want the original taste of those pastries, we highly recommend you visit this shop.<br/><br/>Here are a couple of places you may want to visit to get your hands on the pastéis:',
+        published_at: new Date(2018, 11, 27),
+        top_titles: ['The original “Pastéis de Belém”', 'Manteigaria'],
+        top_contents: [
+          'This is where you will find the original recipe. As this spot is famous, there is always a line to get to the counter, but it’s worth it. They also give you cinnamon and sugar to put on top. You can find them on Google Map <a href="https://goo.gl/maps/8VAuoGYUKfP2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">here</a>.',
+          'At the center of Lisbon, this small factory of pastéis is where you can find one of the best adaptation of the original recipe. Even if the shop is small, you have access to a section where you can eat your pastry while watching pastry masters making the thousands of pastéis they sell each day.You can find them on Google Map <a href="https://goo.gl/maps/tip8KkEAUen?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">here</a>. They can also be found in the Lisbon Time Out Market.',
+        ],
+        top_images: [
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545924502/Articles/Pasteis_de_belem.jpg',
+          'https://res.cloudinary.com/heyjltyh0/image/upload/v1545924500/Articles/Pasteis_mantegaria.jpg',
+        ],
+      },
     ]));
   }
   return Article;
