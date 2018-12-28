@@ -158,7 +158,7 @@ class Home extends React.Component<Props> {
                             {articles
                               .filter(article => article.theme_id === theme.id)
                               .map(article => (
-                                <Col span={24} key={article.title}>
+                                <Col span={24} key={article.title} className="ant-margin-bottom">
                                   <ArticleCard article={article} />
                                 </Col>
                               ))}

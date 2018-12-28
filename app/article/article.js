@@ -81,7 +81,7 @@ class Article extends React.Component<Props, State> {
               <div className="article-hero" style={{ backgroundImage: `url(${article.image})` }} />
             </Col>
           </Row>
-          <Row className="ant-margin-medium-top">
+          <Row className="ant-margin-medium-top ant-margin-large-bottom">
             <Col xs={24} md={16}>
               <h1 className="ant-margin-small-bottom">{article.title}</h1>
               <Row className="ant-margin-bottom article-details-bar">
@@ -95,12 +95,17 @@ class Article extends React.Component<Props, State> {
                     />
                   )}
                   {' · '}
-                  {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
+                  {isMounted && (
+                    <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10, marginRight: 10 }} />
+                  )}
                   {isMounted && (
                     <Link route="destination-details" params={{ destination: destinationSlug }}>
                       <a>{destinationTranslation}</a>
                     </Link>
                   )}
+                  {' · '}
+                  {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
+                  {isMounted && <a>{theme}</a>}
                 </Col>
               </Row>
               <div

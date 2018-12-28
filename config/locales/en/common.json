@@ -20,12 +20,14 @@
   "themes": {
     "itineary": "Itineary",
     "guide": "Guide",
-    "top": "Top"
+    "top": "Top",
+    "food": "Food"
   },
   "themes_plural": {
     "itineary": "Itinearies",
     "guide": "Guides",
-    "top": "Tops"
+    "top": "Tops",
+    "food": "Food"
   },
   "location": "Location"
 }
