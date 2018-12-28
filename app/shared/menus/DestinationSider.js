@@ -25,12 +25,10 @@ class DestinationSider extends React.Component<Props> {
   render() {
     const {
       t,
-      i18n,
       global: {
         data: { destinations },
       },
     } = this.props;
-    const locale = i18n.language;
 
     let groupedDestinations = {};
     if (destinations) {
@@ -44,10 +42,7 @@ class DestinationSider extends React.Component<Props> {
             <ul>
               {groupedDestinations[key].sort().map((destination, index) => (
                 <li key={destination.name}>
-                  <Link
-                    route="destination-details"
-                    params={{ locale, destination: destination.name }}
-                  >
+                  <Link route="destination-details" params={{ destination: destination.name }}>
                     <a style={{ display: 'block' }}>
                       <div
                         className={`destination-with-image${

@@ -11,6 +11,7 @@ import Container from '../components/Container';
 import { Link } from '../../config/routes';
 import TopList from './parts/topList';
 import Top from './parts/top';
+import MapSider from '../shared/menus/MapSider';
 
 const i18nPrefix = 'articles/common';
 const i18nCommonPrefix = 'common';
@@ -54,10 +55,12 @@ class Article extends React.Component<Props, State> {
     const { isMounted } = this.state;
 
     let destination = null;
+    let destinationTranslation = null;
     let destinationSlug = null;
     for (let i = 0; i < destinations.length; i += 1) {
       if (destinations[i].id === article.destination_id) {
-        destination = t(`${i18nCommonPrefix}:destinations.${destinations[i].name}`);
+        destination = destinations[i].name;
+        destinationTranslation = t(`${i18nCommonPrefix}:destinations.${destination}`);
         destinationSlug = destinations[i].name;
       }
     }
@@ -77,8 +80,10 @@ class Article extends React.Component<Props, State> {
             <Col span={24}>
               <div className="article-hero" style={{ backgroundImage: `url(${article.image})` }} />
             </Col>
+          </Row>
+          <Row className="ant-margin-medium-top">
             <Col xs={24} md={16}>
-              <h1 className="ant-margin-top ant-margin-small-bottom">{article.title}</h1>
+              <h1 className="ant-margin-small-bottom">{article.title}</h1>
               <Row className="ant-margin-bottom article-details-bar">
                 <Col span={24}>
                   {isMounted && <FontAwesomeIcon icon={faClock} />}
@@ -93,7 +98,7 @@ class Article extends React.Component<Props, State> {
                   {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
                   {isMounted && (
                     <Link route="destination-details" params={{ destination: destinationSlug }}>
-                      <a>{destination}</a>
+                      <a>{destinationTranslation}</a>
                     </Link>
                   )}
                 </Col>
@@ -113,7 +118,9 @@ class Article extends React.Component<Props, State> {
                 />
               )}
             </Col>
-            <Col xs={24} md={8} />
+            <Col xs={0} md={8}>
+              <MapSider destination={destination} />
+            </Col>
           </Row>
         </Container>
       </div>

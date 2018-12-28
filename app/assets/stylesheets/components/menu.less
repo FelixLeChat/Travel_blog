@@ -1,0 +1,60 @@
+.destinations-menu-container {
+  & h3 {
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  & div > ul {
+    list-style: none;
+    padding-left: 10px;
+
+    & ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    & .destination-with-image {
+      padding-bottom: 10px;
+      padding-top: 10px;
+      border-bottom: 1px solid @light-border;
+      cursor: pointer;
+
+      &.remove-border-bottom {
+        border-bottom-width: 0px !important;
+      }
+
+      & img {
+        display: inline-block;
+        width: 75px;
+        height: 75px;
+      }
+      & .destination-name {
+        display: inline;
+        vertical-align: top;
+        margin-left: 20px;
+        font-weight: 600;
+      }
+
+      &:hover {
+        background-color: @grey-background;
+      }
+    }
+  }
+}
+
+.map-menu-container {
+  & h3 {
+    margin-bottom: 20px;
+    font-size: 13px;
+    font-weight: 700;
+  }
+
+  & .map-container {
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 100%;
+  }
+}

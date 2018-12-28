@@ -8,6 +8,7 @@ import type { DestinationStore } from '../models/destination';
 import { Link } from '../../config/routes';
 import Container from '../components/Container';
 import ArticleCard from '../shared/articles/ArticleCard';
+import MapSider from '../shared/menus/MapSider';
 
 const i18nPrefix = 'pages/destination';
 
@@ -43,7 +44,9 @@ class Destination extends React.Component<Props> {
                     <a>{t(`${i18nPrefix}:beadcrumb.home`)}</a>
                   </Link>
                   <span> / </span>
-                  <a>{t(`${i18nPrefix}:beadcrumb.destinations`)}</a>
+                  <Link route="destinations-index">
+                    <a>{t(`${i18nPrefix}:beadcrumb.destinations`)}</a>
+                  </Link>
                   <span> / </span>
                   <Link route="destination-details" params={{ destination }}>
                     <a>{t(`${i18nPrefix}:hero.${destination}.title`)}</a>
@@ -70,6 +73,9 @@ class Destination extends React.Component<Props> {
                     <ArticleCard article={article} key={article.id} className="ant-margin-bottom" />
                   ))}
               </div>
+            </Col>
+            <Col md={0} lg={8}>
+              <MapSider destination={destination} />
             </Col>
           </Row>
         </Container>

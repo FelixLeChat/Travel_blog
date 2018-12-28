@@ -32,7 +32,6 @@ const mapDispatchToProps = dispatch => ({
 
 type Props = {
   t: TFunction,
-  i18n: I18nProps,
   ui: UIStore,
   global: GlobalStore,
   setMobileMenuState: () => void,
@@ -95,7 +94,14 @@ class Header extends React.PureComponent<Props> {
                       <a>{t(`${i18nPrefix}:navigation.home`)}</a>
                     </Link>
                   </Menu.Item>
-                  <SubMenu key="2" title={t(`${i18nPrefix}:navigation.destinations`)}>
+                  <SubMenu
+                    key="2"
+                    title={(
+                      <Link route="destinations-index">
+                        <a>{t(`${i18nPrefix}:navigation.destinations`)}</a>
+                      </Link>
+)}
+                  >
                     {Object.keys(groupedDestinations).map(key => (
                       <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
                         {groupedDestinations[key].sort().map(destination => (

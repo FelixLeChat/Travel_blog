@@ -27,6 +27,7 @@ routes.getRequestHandler = function(app, customHandler) {
 
 module.exports = routes
   .add('index', '/', 'index')
+  .add('destinations-index', '/destinations', 'destinations/index')
   .add('destination-details', '/destinations/:destination', 'destinations/destination')
   .add('article', '/destinations/:destination/:article', 'articles/article')
   .add('error', '/:error', 'error');
