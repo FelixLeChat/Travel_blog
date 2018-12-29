@@ -18,7 +18,12 @@ export const { fetchArticleStart, fetchArticleSuccess, fetchArticleFail } = crea
 // Reducer
 export const reducer = handleActions(
   {
-    [fetchArticleStart]: state => ({ ...state, error: null, isLoading: true }),
+    [fetchArticleStart]: state => ({
+      ...state,
+      data: { article: null },
+      error: null,
+      isLoading: true,
+    }),
     [fetchArticleSuccess]: (state, { payload: { articlePayload } }) => ({
       error: null,
       isLoading: false,

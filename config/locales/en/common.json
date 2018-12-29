@@ -12,6 +12,18 @@
     "vietnam": "Vietnam",
     "argentina": "Argentina"
   },
+  "destination_description": {
+    "iceland": "Iceland is one of the most relaxing country you can visit. With its amazing views, impressive waterfalls and unique landscapes, the natural beauty of this place is undeniable. We propose some itineraries and guides to help you explore Iceland.",
+    "portugal": "From its renowned wine and Porto to the magnificent Azulejos that adorn the facades of buildings, Portugal is very rich in culture. We propose some itineraries and guides to help you explore the many cities in Portugal.",
+    "greece": "",
+    "croatia": "",
+    "holland": "",
+    "denmark": "",
+    "italy": "",
+    "philippines": "",
+    "vietnam": "",
+    "argentina": ""
+  },
   "continents": {
     "europe": "Europe",
     "asia": "Asia",

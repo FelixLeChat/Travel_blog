@@ -7,16 +7,21 @@ import { fetchDestinationDetailsStart } from '../../app/reducers/destination';
 import { withI18next } from '../../lib/withI18next';
 import SEOHead from '../../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../../app/utils';
-
+import DestinationStructured from '../../app/shared/seo/DestinationsStructured';
 import Destination from '../../app/destinations/Destination';
 
+const i18nCommonPrefix = 'common';
+
 type Props = {
+  t: TFunction,
   i18n: I18nProps,
   currentRoute: Object,
+  destination: DestinationStore,
 };
 
 const mapStateToProps = state => ({
   currentRoute: state.global.data.currentRoute,
+  destination: state.destination,
 });
 
 @withI18next(i18nextNamespaces)
@@ -28,17 +33,27 @@ class Destinations extends React.Component<Props> {
   }
 
   render() {
-    const { i18n, currentRoute } = this.props;
+    const {
+      t,
+      i18n,
+      currentRoute,
+      destination: {
+        data: { destination },
+      },
+    } = this.props;
 
     return (
       <>
         <SEOHead
-          title=""
-          description=""
+          title={`Destination : ${t(
+            `${i18nCommonPrefix}:destinations.${destination}`,
+          )} | Traveling Maude`}
+          description={t(`${i18nCommonPrefix}:destination_description.${destination}`)}
           currentLocale={i18n.language}
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
         />
         <Destination />
+        <DestinationStructured destination={destination} />
       </>
     );
   }

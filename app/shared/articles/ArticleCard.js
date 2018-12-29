@@ -56,12 +56,16 @@ class ArticleCard extends React.Component<Props, State> {
     }
 
     let destination = null;
+    let destinationSlug = null;
     for (let i = 0; i < destinations.length; i += 1) {
-      if (destinations[i].id === article.destination_id) destination = t(`${i18nCommonPrefix}:destinations.${destinations[i].name}`);
+      if (destinations[i].id === article.destination_id) {
+        destinationSlug = destinations[i].name;
+        destination = t(`${i18nCommonPrefix}:destinations.${destinationSlug}`);
+      }
     }
 
     return (
-      <Link route="article" params={{ destination, article: article.slug }}>
+      <Link route="article" params={{ destination: destinationSlug, article: article.slug }}>
         <a className={className || ''} style={{ display: 'block' }}>
           <div className="article-card">
             <div className="article-card-image ant-visible@m">

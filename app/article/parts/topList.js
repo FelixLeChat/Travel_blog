@@ -15,11 +15,11 @@ class TopList extends React.Component<Props> {
     const { article } = this.props;
 
     return (
-      <div className="article-top-list ant-margin-medium-top">
+      <div className="article-top-list ant-margin-large-top">
         <h2>{article.top_list_title}</h2>
         {article.top_list_items
           && article.top_list_items.map((item, index) => (
-            <Row key={item} className="ant-margin-medium-top" type="flex" align="middle">
+            <Row key={item} className="ant-margin-large-top" type="flex" align="middle">
               <Col span={24} md={{ span: 6 }} lg={{ span: 4 }}>
                 <div
                   className="article-top-image"

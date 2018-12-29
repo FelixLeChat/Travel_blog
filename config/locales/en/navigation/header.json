@@ -1,7 +1,8 @@
 {
   "navigation": {
     "home": "Home",
-    "destinations": "Destinations"
+    "destinations": "Destinations",
+    "all_destinations": "All destinations"
   },
   "menu": {
     "label": "Menu"

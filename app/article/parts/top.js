@@ -17,7 +17,7 @@ class Top extends React.Component<Props> {
     return (
       <div className="article-top">
         {article.top_titles.map((item, index) => (
-          <Row key={item} className="ant-margin-medium-top">
+          <Row key={item} className="ant-margin-large-top">
             <Col span={24}>
               <h2>
                 <span className="emphasis">{`${index + 1}. `}</span>
@@ -33,7 +33,7 @@ class Top extends React.Component<Props> {
             <Col
               span={24}
               dangerouslySetInnerHTML={{ __html: article.top_contents[index] }}
-              className="ant-margin-top ant-margin-medium-bottom"
+              className="ant-margin-top ant-margin-large-bottom"
             />
             <Divider style={{ marginBottom: 0 }} />
           </Row>

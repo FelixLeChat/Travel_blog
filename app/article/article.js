@@ -6,6 +6,7 @@ import { Row, Col } from 'antd';
 import Moment from 'react-moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMap } from '@fortawesome/free-regular-svg-icons';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 
 import Container from '../components/Container';
 import { Link } from '../../config/routes';
@@ -56,12 +57,10 @@ class Article extends React.Component<Props, State> {
 
     let destination = null;
     let destinationTranslation = null;
-    let destinationSlug = null;
     for (let i = 0; i < destinations.length; i += 1) {
       if (destinations[i].id === article.destination_id) {
         destination = destinations[i].name;
         destinationTranslation = t(`${i18nCommonPrefix}:destinations.${destination}`);
-        destinationSlug = destinations[i].name;
       }
     }
 
@@ -95,16 +94,14 @@ class Article extends React.Component<Props, State> {
                     />
                   )}
                   {' · '}
+                  {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
                   {isMounted && (
-                    <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10, marginRight: 10 }} />
-                  )}
-                  {isMounted && (
-                    <Link route="destination-details" params={{ destination: destinationSlug }}>
-                      <a>{destinationTranslation}</a>
+                    <Link route="destination-details" params={{ destination }}>
+                      <a style={{ marginRight: 10 }}>{destinationTranslation}</a>
                     </Link>
                   )}
                   {' · '}
-                  {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
+                  {isMounted && <FontAwesomeIcon icon={faCameraRetro} style={{ marginLeft: 10 }} />}
                   {isMounted && <a>{theme}</a>}
                 </Col>
               </Row>
@@ -118,7 +115,7 @@ class Article extends React.Component<Props, State> {
 
               {article.bottom_content && (
                 <div
-                  className="article-bottom-content ant-margin-medium-top"
+                  className="article-bottom-content ant-margin-large-top"
                   dangerouslySetInnerHTML={{ __html: article.bottom_content }}
                 />
               )}

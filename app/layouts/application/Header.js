@@ -94,14 +94,12 @@ class Header extends React.PureComponent<Props> {
                       <a>{t(`${i18nPrefix}:navigation.home`)}</a>
                     </Link>
                   </Menu.Item>
-                  <SubMenu
-                    key="2"
-                    title={(
+                  <SubMenu key="2" title={t(`${i18nPrefix}:navigation.destinations`)}>
+                    <Menu.Item>
                       <Link route="destinations-index">
-                        <a>{t(`${i18nPrefix}:navigation.destinations`)}</a>
+                        <a>{t(`${i18nPrefix}:navigation.all_destinations`)}</a>
                       </Link>
-)}
-                  >
+                    </Menu.Item>
                     {Object.keys(groupedDestinations).map(key => (
                       <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
                         {groupedDestinations[key].sort().map(destination => (

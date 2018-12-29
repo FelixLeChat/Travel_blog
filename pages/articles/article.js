@@ -8,6 +8,7 @@ import { withI18next } from '../../lib/withI18next';
 import SEOHead from '../../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../../app/utils';
 import Article from '../../app/article/article';
+import ArticleStructured from '../../app/shared/seo/ArticleStructured';
 
 type Props = {
   i18n: I18nProps,
@@ -47,6 +48,8 @@ class ArticlePage extends React.Component<Props> {
           />
         )}
         {article && <Article />}
+
+        {article && <ArticleStructured article={article} />}
       </>
     );
   }

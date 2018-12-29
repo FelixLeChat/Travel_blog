@@ -15,6 +15,9 @@ const namespaces = [
 
   // Articles
   'articles/common',
+
+  // SEO
+  'seo/breadcrumb',
 ];
 
 module.exports = namespaces;
