@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
 import Dotdotdot from 'react-dotdotdot';
-import { Col, Row } from 'antd';
+import { Col, Row, Skeleton } from 'antd';
 import Moment from 'react-moment';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faClock, faMap } from '@fortawesome/free-regular-svg-icons';
@@ -84,7 +84,12 @@ class ArticleCard extends React.Component<Props, State> {
     }
 
     return (
-      <div className="article-card" onClick={this.handleArticleCardClick} onKeyPress={() => {}}>
+      <div
+        className="article-card"
+        onClick={this.handleArticleCardClick}
+        onKeyPress={() => {}}
+        style={{ cursor: 'pointer' }}
+      >
         <div className="article-card-image ant-visible@m">
           <div
             className="article-card-image-background"
@@ -93,9 +98,17 @@ class ArticleCard extends React.Component<Props, State> {
           {theme && <div className="article-card-theme">{theme}</div>}
         </div>
         <div className="article-card-content">
-          <Dotdotdot clamp={2}>
-            <h2>{article.title}</h2>
-          </Dotdotdot>
+          {isMounted && (
+            <Dotdotdot clamp={2}>
+              <h2>{article.title}</h2>
+            </Dotdotdot>
+          )}
+          {!isMounted && (
+            <div style={{ marginBottom: 20 }}>
+              <Skeleton paragraph={false} active title={{ width: '50%' }} />
+            </div>
+          )}
+
           {isMounted && (
             <Dotdotdot clamp={3}>
               <p
@@ -104,34 +117,41 @@ class ArticleCard extends React.Component<Props, State> {
               />
             </Dotdotdot>
           )}
+          {!isMounted && <Skeleton title={false} active paragraph={{ rows: 3, width: '100%' }} />}
           <div className="info-block">
-            <Row>
-              <Col span={0} md={8}>
-                <Link
-                  route="article"
-                  params={{ destination: destinationSlug, article: article.slug }}
-                >
-                  <a className={className || ''} style={{ display: 'block' }}>
-                    <span style={{ marginRight: 10 }} className="ant-text-bold">
-                      {t(`${i18nPrefix}:read_more`)}
-                    </span>
-                    <FontAwesomeIcon icon={faArrowRight} />
-                  </a>
-                </Link>
-              </Col>
-              <Col span={24} md={16} className="ant-text-right@m ant-text-center">
-                {isMounted && <FontAwesomeIcon icon={faClock} />}
-                {isMounted && (
+            <Row style={{ height: 22, overflow: 'hidden' }}>
+              {!isMounted && (
+                <Skeleton title={false} active paragraph={{ rows: 1, width: '100%' }} />
+              )}
+
+              {isMounted && (
+                <Col span={0} md={8}>
+                  <Link
+                    route="article"
+                    params={{ destination: destinationSlug, article: article.slug }}
+                  >
+                    <a className={className || ''} style={{ display: 'block' }}>
+                      <span style={{ marginRight: 10 }} className="ant-text-bold">
+                        {t(`${i18nPrefix}:read_more`)}
+                      </span>
+                      <FontAwesomeIcon icon={faArrowRight} />
+                    </a>
+                  </Link>
+                </Col>
+              )}
+              {isMounted && (
+                <Col span={24} md={16} className="ant-text-right@m ant-text-center">
+                  <FontAwesomeIcon icon={faClock} />
                   <Moment
                     format="MMM D YYYY"
                     date={article.published_at}
                     style={{ marginRIght: 10 }}
                   />
-                )}
-                {' · '}
-                {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
-                {isMounted && destination}
-              </Col>
+                  {' · '}
+                  <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />
+                  {destination}
+                </Col>
+              )}
             </Row>
           </div>
         </div>

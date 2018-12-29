@@ -139,19 +139,16 @@ class Home extends React.Component<Props> {
         )}
         <Container className="ant-margin-large-top ant-margin-medium-bottom">
           <Row>
-            <Col xs={24} md={16}>
+            <Col span={24} lg={16}>
               <Row className="home-themes">
                 {themes
                   && themes.map(theme => (
                     <Col span={24} key={theme.name} className="ant-margin-large-bottom">
                       <Row>
-                        <Col span={12}>
+                        <Col span={24}>
                           <div className="theme-title">
                             {t(`${i18nCommonPrefix}:themes_plural.${theme.name}`)}
                           </div>
-                        </Col>
-                        <Col className="ant-text-right" span={12}>
-                          {/* {t(`${i18nPrefix}:read_more`)} */}
                         </Col>
                         <Col span={24}>
                           <Row>
@@ -169,7 +166,7 @@ class Home extends React.Component<Props> {
                   ))}
               </Row>
             </Col>
-            <Col xs={0} md={8}>
+            <Col span={0} lg={8}>
               <DestinationSider />
             </Col>
           </Row>
