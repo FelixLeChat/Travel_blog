@@ -42,7 +42,10 @@ class _App extends App {
     Router.router.events.on('routeChangeStart', () => {
       this.props.store.dispatch(setMobileMenuOpenedState(false));
     });
-
+    Router.events.on('routeChangeComplete', () => {
+      // Scroll to top
+      window.scrollTo(0, 0);
+    });
     // Intercept back and next browser button event to force a SSR.
     Router.beforePopState(({ as }) => {
       // If route is unrecognized by the router, that's a 404

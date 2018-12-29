@@ -4,10 +4,15 @@
 .ant-container {
   box-sizing: content-box;
   max-width: @container-max-width-base;
-  padding-left: @padding-lg;
-  padding-right: @padding-lg;
+  padding-left: @padding-sm;
+  padding-right: @padding-sm;
   margin-right: auto;
   margin-left: auto;
+
+  @media (min-width: @screen-md) {
+    padding-left: @padding-lg;
+    padding-right: @padding-lg;
+  }
 }
 
 .ant-container-large {

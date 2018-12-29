@@ -70,11 +70,13 @@ class Destination extends React.Component<Props> {
               <div className="destination-articles">
                 {articles
                   && articles.map(article => (
-                    <ArticleCard article={article} key={article.id} className="ant-margin-bottom" />
+                    <div className="ant-margin-bottom" key={article.id}>
+                      <ArticleCard article={article} />
+                    </div>
                   ))}
               </div>
             </Col>
-            <Col md={0} lg={8}>
+            <Col span={0} lg={8}>
               <MapSider destination={destination} />
             </Col>
           </Row>
