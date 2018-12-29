@@ -14,7 +14,7 @@ type Props = {
 };
 
 @withNamespaces([i18nPrefix, i18nCommonPrefix])
-class DestinationStructured extends React.PureComponent<Props> {
+class DestinationBreadcrumb extends React.PureComponent<Props> {
   render() {
     const { destination, t } = this.props;
 
@@ -48,4 +48,4 @@ class DestinationStructured extends React.PureComponent<Props> {
   }
 }
 
-export default DestinationStructured;
+export default DestinationBreadcrumb;

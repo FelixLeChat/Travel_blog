@@ -7,7 +7,7 @@ import type { I18nProps } from 'react-i18next';
 import { withI18next } from '../../lib/withI18next';
 import SEOHead from '../../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../../app/utils';
-import DestinationStructured from '../../app/shared/seo/DestinationsStructured';
+import DestinationBreadcrumb from '../../app/shared/seo/DestinationsBreadcrumb';
 import DestinationsIndex from '../../app/destinations/DestinationsIndex';
 
 const i18nPrefix = 'pages/destinations';
@@ -36,7 +36,7 @@ class Index extends React.Component<Props> {
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
         />
         <DestinationsIndex />
-        <DestinationStructured />
+        <DestinationBreadcrumb />
       </>
     );
   }

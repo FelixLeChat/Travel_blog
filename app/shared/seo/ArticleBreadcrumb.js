@@ -21,7 +21,7 @@ const mapStateToProps = state => ({
 
 @withNamespaces([i18nPrefix, i18nCommonPrefix])
 @connect(mapStateToProps)
-class ArticleStructured extends React.PureComponent<Props> {
+class ArticleBreadcrumb extends React.PureComponent<Props> {
   render() {
     const {
       t,
@@ -79,4 +79,4 @@ class ArticleStructured extends React.PureComponent<Props> {
   }
 }
 
-export default ArticleStructured;
+export default ArticleBreadcrumb;

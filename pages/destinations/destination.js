@@ -7,7 +7,7 @@ import { fetchDestinationDetailsStart } from '../../app/reducers/destination';
 import { withI18next } from '../../lib/withI18next';
 import SEOHead from '../../app/shared/seo/SEOHead';
 import { i18nextNamespaces } from '../../app/utils';
-import DestinationStructured from '../../app/shared/seo/DestinationsStructured';
+import DestinationBreadcrumb from '../../app/shared/seo/DestinationBreadcrumb';
 import Destination from '../../app/destinations/Destination';
 
 const i18nCommonPrefix = 'common';
@@ -53,7 +53,7 @@ class Destinations extends React.Component<Props> {
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
         />
         <Destination />
-        <DestinationStructured destination={destination} />
+        <DestinationBreadcrumb destination={destination} />
       </>
     );
   }
