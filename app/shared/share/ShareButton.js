@@ -53,7 +53,11 @@ class ShareButton extends React.Component<Props, State> {
         </div>
         {media && (
           <div className={`sub-share-button pinterest-share-button ${isOpen ? 'opened' : ''}`}>
-            <PinterestShareButton url={url} media={media} description={title || ''}>
+            <PinterestShareButton
+              url={url}
+              media={media}
+              description={title ? `${title} | Traveling Maude` : ''}
+            >
               <PinterestIcon size={40} round />
             </PinterestShareButton>
           </div>
