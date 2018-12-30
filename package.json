@@ -50,6 +50,7 @@
     "react-redux": "^5.0.7",
     "react-share": "^2.4.0",
     "react-stickynode": "^2.0.1",
+    "react-svg": "^7.2.2",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",

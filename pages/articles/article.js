@@ -42,10 +42,11 @@ class ArticlePage extends React.Component<Props> {
       <>
         {article && (
           <SEOHead
-            title={`${article.title} - Traveling Maude`}
+            title={`${article.title} | Traveling Maude`}
             description={article.description}
             currentLocale={i18n.language}
             currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
+            shareImageLink={article.image}
           />
         )}
         {article && <Article />}

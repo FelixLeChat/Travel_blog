@@ -1,0 +1,70 @@
+@share-button-index: 5;
+@share-height-increment: 50px;
+@share-height-base: 20px;
+
+.share-button {
+  position: relative;
+
+  & .main-share-button {
+    width: 55px;
+    height: 55px;
+    background-color: #fff !important;
+    z-index: @share-button-index;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+
+    & svg {
+      fill: #424242;
+      width: 26px;
+      margin-left: 14px;
+      margin-top: 14px;
+    }
+  }
+
+  .facebook-share-button {
+    &.opened {
+      bottom: @share-height-base + 1*@share-height-increment;
+    }
+  }
+
+  .google-share-button {
+    &.opened {
+      bottom: @share-height-base + 2*@share-height-increment;
+    }
+  }
+
+  .pinterest-share-button {
+    &.opened {
+      bottom: @share-height-base + 3*@share-height-increment;
+    }
+  }
+
+  .mail-share-button {
+    &.opened {
+      bottom: @share-height-base + 4*@share-height-increment;
+    }
+  }
+
+  .sub-share-button {
+    position: absolute;
+    right: 7px;
+    bottom: 7px;
+    z-index: @share-button-index - 1;
+    transition: .3s;
+    cursor: pointer;
+
+    &.opened {
+      transition: .3s;
+    }
+  }
+}
+
+.article-share-button {
+
+
+
+}

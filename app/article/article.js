@@ -13,6 +13,7 @@ import { Link } from '../../config/routes';
 import TopList from './parts/topList';
 import Top from './parts/top';
 import MapSider from '../shared/menus/MapSider';
+import ArticleShareButton from '../shared/articles/ArticleShareButton';
 
 const i18nPrefix = 'articles/common';
 const i18nCommonPrefix = 'common';
@@ -76,11 +77,17 @@ class Article extends React.Component<Props, State> {
         </div>
         <Container>
           <Row>
-            <Col span={24}>
+            <Col span={24} className="ant-position-relative">
               <div className="article-hero" style={{ backgroundImage: `url(${article.image})` }} />
+              <div
+                className="ant-visible@m ant-position-absolute"
+                style={{ bottom: -27, right: 20 }}
+              >
+                <ArticleShareButton article={article} />
+              </div>
             </Col>
           </Row>
-          <Row className="ant-margin-medium-top ant-margin-large-bottom">
+          <Row className="ant-margin-large-top ant-margin-large-bottom">
             <Col xs={24} md={16}>
               <h1 className="ant-margin-small-bottom">{article.title}</h1>
               <Row className="ant-margin-bottom article-details-bar">
@@ -125,6 +132,10 @@ class Article extends React.Component<Props, State> {
             </Col>
           </Row>
         </Container>
+
+        <div className="ant-hidden@m ant-position-fixed" style={{ bottom: 20, right: 20 }}>
+          <ArticleShareButton article={article} />
+        </div>
       </div>
     );
   }

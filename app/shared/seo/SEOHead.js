@@ -2,14 +2,13 @@
 import React from 'react';
 import Head from 'next/head';
 
-const isMobile = false;
-
 type Props = {
   title: string,
   description: string,
   currentLocale?: string,
   currentUrl?: string,
   noIndexPage?: boolean,
+  shareImageLink?: string,
 };
 
 class SEOHead extends React.PureComponent<Props> {
@@ -17,17 +16,23 @@ class SEOHead extends React.PureComponent<Props> {
     currentLocale: '',
     currentUrl: '',
     noIndexPage: false,
+    shareImageLink:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1543774392/facebook_share.png',
   };
 
   render() {
     const {
-      title, description, currentLocale = '', currentUrl = '', noIndexPage,
+      title,
+      description,
+      currentLocale = '',
+      currentUrl = '',
+      noIndexPage,
+      shareImageLink,
     } = this.props;
 
     // Share values
     const name = 'Traveling Maude';
     const facebookAppId = '1843938182390871';
-    const shareImageLink = 'https://res.cloudinary.com/heyjltyh0/image/upload/v1543774392/facebook_share.png';
     const primaryColor = '#0C0C0E';
     const baseDesktopUrl = 'https://travelingmaude.com';
     const baseUrl = baseDesktopUrl;
