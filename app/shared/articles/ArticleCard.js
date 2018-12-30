@@ -145,7 +145,7 @@ class ArticleCard extends React.Component<Props, State> {
                   <Moment
                     format="MMM D YYYY"
                     date={article.published_at}
-                    style={{ marginRIght: 10 }}
+                    style={{ marginRight: 10 }}
                   />
                   {' · '}
                   <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />

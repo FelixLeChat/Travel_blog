@@ -179,3 +179,74 @@
     'https://res.cloudinary.com/heyjltyh0/image/upload/v1545924500/Articles/Pasteis_mantegaria.jpg',
   ],
 },
+{
+  id: 6,
+  title: 'Stroopwafel',
+  slug: 'stroopwafel',
+  description:
+      "Stroopwafel is one of the pastries you must try in Holland, and you won't have a hard time finding them as they are everywhere! Learn more about their history and where to get the best ones.",
+  image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546188884/Articles/Stroopwafel.jpg',
+  thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546188884/Articles/Stroopwafel_thumbnail.jpg',
+  theme_id: 4,
+  destination_id: 5,
+  content:
+      'Originally from the Gouda town in Holland, this delicious treat is a local specialty that you must try. The literal translation of "Stroopwafel" to English gives "Syrup Waffle", and that is pretty much what they are, caramel spreading between two thin waffle.<br/><br/>The oldest recipe for the Stroopwafel was found in a bakery in Gouda around 1840. Since then, they are still widely available in the town as well as all across the country. Many varieties now exist, from waffle dipped in chocolate to the Stroopkoeken, the recipe differs from town to town.<br/><br/>Here a couple of places where you can find a great Stroopwafel:',
+  published_at: new Date(2018, 11, 29),
+  top_titles: [
+    'Kamphuisen Siroopwafelfabriek',
+    'Original Stroopwafels',
+    'Van Wonderen Stroopwafels Kalverstraat',
+  ],
+  top_contents: [
+    'If you want to taste the original recipe, we recommend you head out to Gouda and try the Waffle at <a href="https://goo.gl/maps/sxqsFScYNFT2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Kamphuisen Siroopwafelfabriek</a>. Their recipe follows the original one and you can visit their installation and their making process.',
+    'A great Stroopwafel in Amsterdam can be found in the <a href="https://goo.gl/maps/aVsbmYaFACA2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Albert Cuypmarkt</a> where you will find the stand <a href="https://goo.gl/maps/HKeJwri4GDz?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Original Stroopwafels</a> closer to Amsterdam than Gouda.',
+    'For a new take on the Stroopwafel, <a href="https://goo.gl/maps/Yet1HsLdZgx?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Van Wonderen Stroopwafels Kalverstraat</a> is a great place to go. They take a modern twist on the recipe and offer many toppings that pair great with it.',
+  ],
+  top_images: [
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546189440/Articles/Kamphuisen.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546189774/Articles/Original_stroolwafel.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546189873/Articles/Van_Wonderen_Stroopwafels.jpg',
+  ],
+},
+{
+  id: 7,
+  title: 'Great places to eat in Iceland',
+  slug: 'eat-in-iceland',
+  description:
+      "Eating out in Iceland can be quite expensive, so if you want to treat yourself, we have a couple of places all across Iceland that you may want to check out thar won't break your bank.",
+  image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546198215/Articles/Iceland_hotdogs.jpg',
+  thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546199146/Articles/Iceland_hotdogs_thumbnail.jpg',
+  theme_id: 4,
+  destination_id: 1,
+  content:
+      'Eating out in Iceland can be quite expensive, so if you want to treat yourself, we have a couple of places all across Iceland that you may want to check out. Most of the ones we propose are great deals and won’t break your bank, but are worth the detour.',
+  published_at: new Date(2018, 11, 30),
+  top_titles: [
+    '<a href="https://goo.gl/maps/dCXNv5ohMxo?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Ramen Momo</a>',
+    '<a href="https://goo.gl/maps/uvVeDtFcXFm?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Bæjarins Beztu Pylsur</a>',
+    '<a href="https://goo.gl/maps/vWArXSW26qp?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Von mathús</a>',
+    '<a href="https://goo.gl/maps/cvRceFQ73Pn?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Reykjavik Roasters</a>',
+    '<a href="https://goo.gl/maps/ZbrFDR43B2C2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Hafnarbuðin</a>',
+    '<a href="https://goo.gl/maps/6CnVshN7Ke32?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Akureyri Backpackers</a>',
+  ],
+  top_contents: [
+    'Yes, we start the list with one of the least "Icelandic" place you can find in Reykjavik, but here is why. Most of the ingredients they use are from Iceland, making them a one of a kind ramen flavor! And on top of that, they are the only ramen shop in Iceland as of 2018. Their menu is available on their website <a href="https://ramenmomo.is/home/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">here</a>.',
+    'This local phenomenon only serves hot dogs, the Icelandic style. Great for a lunch, this place always has a line of locals and tourists, so be prepared to wait a bit. Served with a sweet mustard, fried onions and the local “remolaði”, you haven’t tasted a hot dog like it before.',
+    'A bit west from Reykjavik, <a href="http://vonmathus.is/?lang=en?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Von mathús</a> is a great place to take a cocktail and experience a seasonal Icelandic cuisine. We went there early on a saturday and both the brunch and the Icelandic waffle with salmon were delicious.',
+    'Without doubt the best coffee shop in Reykjavik. They import their own beans from across the world and roast them on the site. They have three shops in Reykjavik so watch out for them is you need your daily dose of caffeine before starting your day! More details about them is available on their <a href="https://reykjavikroasters.is/en/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">website</a>.',
+    'Are you ready to eat the best lobster baguettes or fish and chips? This local place in Höfn serves fish and seafoods caught by boats in the harbour not 100m away. You can’t get any fresher that this! If you go around the ring road and stop in this small village to visit or get a Lopapeysa, make sure you stop by this place.',
+    'This hostel also contains a restaurant downstairs where they serve beer from microbreweries all over Iceland as well as <a href="https://www.akureyribackpackers.com/en/bar-restaurant?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">great food</a>. To grab a beer, this is the place in Akureyri.',
+  ],
+  top_images: [
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546198120/Articles/Ramen_Momo.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546198215/Articles/Iceland_hotdogs.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546198470/Articles/Von_mathus.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546196725/Articles/Reykjavik_roasters.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546198750/Articles/Hafnarbudin.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546197853/Articles/Akureiri_backpackers_2.jpg',
+  ],
+},
