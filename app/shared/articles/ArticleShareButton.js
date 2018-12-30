@@ -20,7 +20,11 @@ class ArticleShareButton extends React.Component<Props> {
     return (
       <div className="article-share-button">
         <ShareButton
-          url={currentRoute ? encodeURI(`travelingmaude.com${currentRoute.parsedUrl.path}`) : ''}
+          url={
+            currentRoute
+              ? encodeURI(`https://www.travelingmaude.com${currentRoute.parsedUrl.path}`)
+              : ''
+          }
           media={article.image}
           title={article.title}
         />
