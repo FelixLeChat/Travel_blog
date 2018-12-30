@@ -48,6 +48,7 @@
     "react-i18next": "^8.0.7",
     "react-moment": "^0.8.4",
     "react-redux": "^5.0.7",
+    "react-share": "^2.4.0",
     "react-stickynode": "^2.0.1",
     "recompose": "^0.30.0",
     "redux": "^4.0.0",

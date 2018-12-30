@@ -31,6 +31,7 @@
 },
 {
   id: 2,
+  hero_article: true,
   title: 'Icelandic Foss',
   slug: 'icelandic-foss',
   description:

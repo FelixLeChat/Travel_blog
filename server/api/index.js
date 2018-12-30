@@ -89,6 +89,7 @@ router.get('/home', (req, res) => {
   models.Article.findAll({
     attributes: [
       'id',
+      'hero_article',
       'image',
       'thumbnail',
       'title',

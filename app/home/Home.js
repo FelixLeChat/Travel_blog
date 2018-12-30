@@ -63,7 +63,9 @@ class Home extends React.Component<Props> {
     // Get Hero article
     let heroArticle = null;
     if (articles && articles.length > 0) {
-      [heroArticle] = articles.sort(compareValues('published_at', 'desc'));
+      [heroArticle] = articles
+        .filter(article => article.hero_article)
+        .sort(compareValues('published_at', 'desc'));
     }
 
     return (
@@ -167,7 +169,9 @@ class Home extends React.Component<Props> {
               </Row>
             </Col>
             <Col span={0} lg={8}>
-              <DestinationSider />
+              <div style={{ marginTop: 44 }}>
+                <DestinationSider />
+              </div>
             </Col>
           </Row>
         </Container>

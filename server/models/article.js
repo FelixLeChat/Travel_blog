@@ -7,6 +7,10 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       autoIncrement: false,
     },
+    hero_article: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
+    },
     title: {
       type: DataTypes.STRING,
     },
@@ -59,7 +63,8 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   if (process.env.NODE_ENV !== 'production') {
-    Article.sync({ force: false }).then(() => Article.bulkCreate([]));
+    // Article.sync({ force: false }).then(() => Article.bulkCreate([]));
+    // Article.sync({ force: true }).then(() => Article.bulkCreate([]));
   }
   return Article;
 };
