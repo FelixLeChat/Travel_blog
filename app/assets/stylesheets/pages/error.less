@@ -28,7 +28,10 @@
 
   & .error-link-section {
     margin-top: 40px;
-    margin-left: calc(50% - 183px);
+
+    @media (min-width: @screen-sm) {
+      margin-left: calc(50% - 183px);
+    }
     & * {
       color: white;
     }
