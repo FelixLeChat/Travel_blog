@@ -68,6 +68,9 @@ class Header extends React.PureComponent<Props> {
       if (currentRoute.query.destination) {
         selectedKeys.push(currentRoute.query.destination);
       }
+    } else if (currentRoute.route.name === 'destinations-index') {
+      openedKeys.push('sub-destinations');
+      selectedKeys.push('all-destinations');
     } else if (currentRoute.route.name === 'index') {
       selectedKeys.push('home');
     }
@@ -102,6 +105,11 @@ class Header extends React.PureComponent<Props> {
               </span>
 )}
           >
+            <Menu.Item key="all-destinations">
+              <Link route="destinations-index">
+                <a>{t(`${i18nPrefix}:navigation.all_destinations`)}</a>
+              </Link>
+            </Menu.Item>
             {Object.keys(groupedDestinations).map(key => (
               <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
                 {groupedDestinations[key].sort().map(destination => (
