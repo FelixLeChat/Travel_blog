@@ -6,6 +6,7 @@ import { withI18next } from '../lib/withI18next';
 import SEOHead from '../app/shared/seo/SEOHead';
 import Container from '../app/components/Container';
 import { i18nextNamespaces } from '../app/utils';
+import { Link } from '../config/routes';
 
 type Props = {
   t: any,
@@ -54,8 +55,10 @@ class Error extends React.Component<Props, State> {
       statusCode = '500';
     }
 
+    const helpLinks = t('error:links', { returnObjects: true });
+
     return (
-      <>
+      <div className="error-page-container">
         <SEOHead
           title={t('error:seo.title')}
           description={t('error:seo.description')}
@@ -65,11 +68,26 @@ class Error extends React.Component<Props, State> {
         />
         <Container>
           <section className="error ant-section">
-            {/* Message for 404 page */}
-            {statusCode >= 500 || hasError ? <div>{statusCode}</div> : <div>{statusCode}</div>}
+            <h1>{t('error:lost')}</h1>
+            <div className="error-code">
+              {statusCode >= 500 || hasError ? <div>{statusCode}</div> : <div>{statusCode}</div>}
+            </div>
+            <div className="error-link-section">
+              <h3>{t('error:help_links')}</h3>
+              <ul>
+                {Array.isArray(helpLinks)
+                  && helpLinks.map(link => (
+                    <li key={link.title}>
+                      <Link route={link.route}>
+                        <a>{link.title}</a>
+                      </Link>
+                    </li>
+                  ))}
+              </ul>
+            </div>
           </section>
         </Container>
-      </>
+      </div>
     );
   }
 }

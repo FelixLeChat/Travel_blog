@@ -1,6 +1,18 @@
 {
   "seo": {
-    "title": "",
-    "description": ""
-  }
+    "title": "Page not found | Traveling Maude",
+    "description": "We can't seem to find the page you're looking for."
+  },
+  "lost": "Look's like you are lost!",
+  "help_links": "Here are some helpful links that may help:",
+  "links": [
+    {
+      "title": "Home",
+      "route": "index"
+    },
+    {
+      "title": "Destinations",
+      "route": "destinations-index"
+    }
+  ]
 }
