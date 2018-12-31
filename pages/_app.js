@@ -14,6 +14,7 @@ import { initGA, logPageView } from '../app/utils/analytics';
 import ErrorPage from './_error';
 
 import '../app/assets/stylesheets/styles.less';
+import GoogleAds from '../app/shared/ads/GoogleAds';
 
 import ApplicationLayout from '../app/layouts/application/Layout';
 
@@ -56,6 +57,18 @@ class _App extends App {
       }
       return true;
     });
+
+    // Ads
+    const installGoogleAds = () => {
+      const elem = document.createElement('script');
+      elem.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+      elem.async = true;
+      elem.defer = true;
+      document.body.insertBefore(elem, document.body.firstChild);
+    };
+    installGoogleAds();
+    const adsbygoogle = window.adsbygoogle || [];
+    adsbygoogle.push({});
   }
 
   componentDidCatch() {}
@@ -81,7 +94,10 @@ class _App extends App {
         >
           <React.Fragment>
             <Provider store={store}>
-              <Layout>{component}</Layout>
+              <Layout>
+                {component}
+                <GoogleAds />
+              </Layout>
             </Provider>
           </React.Fragment>
         </I18nextProvider>
