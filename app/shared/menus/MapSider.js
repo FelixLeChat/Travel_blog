@@ -1,6 +1,8 @@
 // @flow
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMapMarkedAlt } from '@fortawesome/free-solid-svg-icons';
 
 const i18nCommonPrefix = 'common';
 
@@ -52,7 +54,10 @@ class DestinationSider extends React.Component<Props> {
 
     return (
       <div className="map-menu-container ant-margin-left">
-        <h3 className="border-box">{t(`${i18nCommonPrefix}:location`)}</h3>
+        <h3 className="border-bottom-box">
+          <FontAwesomeIcon icon={faMapMarkedAlt} />
+          {t(`${i18nCommonPrefix}:location`)}
+        </h3>
         <div
           className="map-container"
           style={{

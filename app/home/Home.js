@@ -169,7 +169,7 @@ class Home extends React.Component<Props> {
               </Row>
             </Col>
             <Col span={0} lg={8}>
-              <div style={{ marginTop: 44 }}>
+              <div style={{ marginTop: -10 }}>
                 <DestinationSider />
               </div>
             </Col>

@@ -2,6 +2,8 @@
 import React from 'react';
 import { withNamespaces } from 'react-i18next';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMap } from '@fortawesome/free-regular-svg-icons';
 
 import type { GlobalStore } from '../../models/global';
 import { groupBy } from '../../utils/utils';
@@ -11,7 +13,6 @@ const i18nCommonPrefix = 'common';
 
 type Props = {
   t: TFunction,
-  i18n: I18nProps,
   global: GlobalStore,
 };
 
@@ -38,7 +39,10 @@ class DestinationSider extends React.Component<Props> {
       <div className="destinations-menu-container ant-margin-left">
         {Object.keys(groupedDestinations).map(key => (
           <div key={key}>
-            <h3 className="border-box">{t(`${i18nCommonPrefix}:continents.${key}`)}</h3>
+            <h3 className="border-bottom-box">
+              <FontAwesomeIcon icon={faMap} />
+              {t(`${i18nCommonPrefix}:continents.${key}`)}
+            </h3>
             <ul>
               {groupedDestinations[key].sort().map((destination, index) => (
                 <li key={destination.name}>
@@ -57,8 +61,10 @@ class DestinationSider extends React.Component<Props> {
                             alt={`Thumbnail of ${destination.name}`}
                           />
                         )}
-                        <div className="destination-name">
-                          {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
+                        <div className="destination-name ext-box">
+                          <div className="int-box">
+                            {t(`${i18nCommonPrefix}:destinations.${destination.name}`)}
+                          </div>
                         </div>
                       </div>
                     </a>
