@@ -44,17 +44,11 @@ class DestinationSider extends React.Component<Props> {
               {t(`${i18nCommonPrefix}:continents.${key}`)}
             </h3>
             <ul>
-              {groupedDestinations[key].sort().map((destination, index) => (
+              {groupedDestinations[key].sort().map(destination => (
                 <li key={destination.name}>
                   <Link route="destination-details" params={{ destination: destination.name }}>
                     <a style={{ display: 'block' }}>
-                      <div
-                        className={`destination-with-image${
-                          index === groupedDestinations[key].length - 1
-                            ? ' remove-border-bottom'
-                            : ''
-                        }`}
-                      >
+                      <div className="destination-with-image">
                         {destination.thumbnail && (
                           <img
                             src={destination.thumbnail}
