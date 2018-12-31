@@ -3,6 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ShareButton from '../share/ShareButton';
+import { logEvent } from '../../utils/analytics';
 
 type Props = {
   article: any,
@@ -15,6 +16,16 @@ const mapStateToProps = state => ({
 
 @connect(mapStateToProps)
 class ArticleShareButton extends React.Component<Props> {
+  handleShareButtonOpen = () => {
+    const { article } = this.props;
+    logEvent('Article Share Button', 'Open', article.title);
+  };
+
+  handleShareButtonClick = (shareButtonName: string) => {
+    const { article } = this.props;
+    logEvent('Article Share Button', `click - ${shareButtonName}`, article.title);
+  };
+
   render() {
     const { article, currentRoute } = this.props;
     return (
@@ -27,6 +38,9 @@ class ArticleShareButton extends React.Component<Props> {
           }
           media={article.image}
           title={article.title}
+          shareOpenFunction={this.handleShareButtonOpen}
+          shareClickFunction={this.handleShareButtonClick}
+          copyLinkText="Article link copied"
         />
       </div>
     );
