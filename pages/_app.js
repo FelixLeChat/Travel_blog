@@ -72,19 +72,19 @@ class _App extends App {
 
       // Google AdSense
       if (!adsInitialized) {
-        // const installGoogleAds = () => {
-        //   const elem = document.createElement('script');
-        //   elem.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-        //   elem.async = true;
-        //   elem.defer = true;
-        //   document.body.insertBefore(elem, document.body.firstChild);
-        // };
-        // installGoogleAds();
-        // const adsbygoogle = window.adsbygoogle || [];
-        // adsbygoogle.push({
-        //   google_ad_client: 'pub-7083575751291349',
-        //   enable_page_level_ads: true,
-        // });
+        const installGoogleAds = () => {
+          const elem = document.createElement('script');
+          elem.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+          elem.async = true;
+          elem.defer = true;
+          document.body.insertBefore(elem, document.body.firstChild);
+        };
+        installGoogleAds();
+        const adsbygoogle = window.adsbygoogle || [];
+        adsbygoogle.push({
+          google_ad_client: 'pub-7083575751291349',
+          enable_page_level_ads: true,
+        });
         this.setState({ adsInitialized: true });
       }
     }
