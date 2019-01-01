@@ -14,11 +14,15 @@ import { initGA, logPageView } from '../app/utils/analytics';
 import ErrorPage from './_error';
 
 import '../app/assets/stylesheets/styles.less';
-import GoogleAds from '../app/shared/ads/GoogleAds';
 
 import ApplicationLayout from '../app/layouts/application/Layout';
 
 class _App extends App {
+  state = {
+    adsInitialized: false,
+    gaInitialized: false,
+  };
+
   static async getInitialProps({ Component, ctx }) {
     const route = Routes.match(ctx.asPath);
     let pageProps = {};
@@ -37,8 +41,8 @@ class _App extends App {
   }
 
   componentDidMount() {
-    initGA();
-    logPageView();
+    const { adsInitialized, gaInitialized } = this.state;
+
     Router.router.events.on('routeChangeComplete', logPageView);
     Router.router.events.on('routeChangeStart', () => {
       this.props.store.dispatch(setMobileMenuOpenedState(false));
@@ -58,17 +62,32 @@ class _App extends App {
       return true;
     });
 
-    // Ads
-    const installGoogleAds = () => {
-      const elem = document.createElement('script');
-      elem.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
-      elem.async = true;
-      elem.defer = true;
-      document.body.insertBefore(elem, document.body.firstChild);
-    };
-    installGoogleAds();
-    const adsbygoogle = window.adsbygoogle || [];
-    adsbygoogle.push({});
+    if (typeof window !== 'undefined') {
+      // Google Analytics
+      if (!gaInitialized) {
+        initGA();
+        logPageView();
+        this.setState({ gaInitialized: true });
+      }
+
+      // Google AdSense
+      if (!adsInitialized) {
+        // const installGoogleAds = () => {
+        //   const elem = document.createElement('script');
+        //   elem.src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js';
+        //   elem.async = true;
+        //   elem.defer = true;
+        //   document.body.insertBefore(elem, document.body.firstChild);
+        // };
+        // installGoogleAds();
+        // const adsbygoogle = window.adsbygoogle || [];
+        // adsbygoogle.push({
+        //   google_ad_client: 'pub-7083575751291349',
+        //   enable_page_level_ads: true,
+        // });
+        this.setState({ adsInitialized: true });
+      }
+    }
   }
 
   componentDidCatch() {}
@@ -94,10 +113,7 @@ class _App extends App {
         >
           <React.Fragment>
             <Provider store={store}>
-              <Layout>
-                {component}
-                <GoogleAds />
-              </Layout>
+              <Layout>{component}</Layout>
             </Provider>
           </React.Fragment>
         </I18nextProvider>
