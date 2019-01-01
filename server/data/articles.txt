@@ -250,3 +250,19 @@
     'https://res.cloudinary.com/heyjltyh0/image/upload/v1546197853/Articles/Akureiri_backpackers_2.jpg',
   ],
 },
+{
+  id: 8,
+  title: 'Off the Beaten Path in Gêres National Park',
+  slug: 'geres-national-park',
+  description:
+      'The Gerês National park is one of the hidden gems of Portugal. Learn more about its hidden lagoons and how to access it.',
+  image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546369341/Articles/Geres_lagoons.jpg',
+  thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546369340/Articles/Geres_lagoons_thumbnail.jpg',
+  theme_id: 2,
+  destination_id: 2,
+  content:
+      'The Gerês National park is one of the hidden gems of Portugal with its rocky mountains and old Roman trails that extend all the way to Spain. One of the many attractions it harbour are crystal clear <a href="https://goo.gl/maps/KpA99KyhthJ2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">lagoons</a>, hidden away off the trail. A series of 7 lagoons spread out downhills, from an old hydroelectric facility that is no longer in use. The clear cold water of those lagoons, on a hot sunny day with the mountains all around, is amazing.<br/><br/>If you want to access the lagoons by yourself, a trail start from the nearest village (<a href="https://goo.gl/maps/fDHUBdqDzgA2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Azevedo</a>), where you can park your car on a paved road. From there, a 1h30 walk, that is quite easy, will get you directly to them. A dirt road also exists, that does directly to the lagoons, but is quite rocky at some point so beware if you take your car.<br/><br/>If you do not rent a car while visiting Portugal, many semi-private tours can bring you there from Porto. We personally did the “<a href="https://www.airbnb.ca/experiences/178565?locale=en&utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Hike and Swim in Gerês National Park</a>)” in the Airbnb experiences, and both the trip and the guide were great. The guide was particularly knowledgeable when asked questions about the history of Portugal and the national park. The tour starts early morning in Porto and a 2h ride separates you from Gerês park.<br/><br/>Bring a bathing suit, lunch and some comfortable shoes for the trail and you will have a great time there.',
+  published_at: new Date(2019, 0, 1),
+},
