@@ -14,6 +14,7 @@ import TopList from './parts/topList';
 import Top from './parts/top';
 import MapSider from '../shared/menus/MapSider';
 import ArticleShareButton from '../shared/articles/ArticleShareButton';
+import SimilarArticle from './parts/similarArticle';
 
 const i18nPrefix = 'articles/common';
 const i18nCommonPrefix = 'common';
@@ -48,7 +49,7 @@ class Article extends React.Component<Props, State> {
     const {
       t,
       currentArticle: {
-        data: { article },
+        data: { article, relatedArticles },
       },
       global: {
         data: { themes, destinations },
@@ -119,7 +120,10 @@ class Article extends React.Component<Props, State> {
               />
 
               {article.top_list_images && article.top_list_items && <TopList article={article} />}
-              {article.top_images && article.top_contents && <Top article={article} />}
+              {article.top_images
+                && article.top_contents && (
+                  <Top article={article} hideBottomBorder={!article.bottom_content} />
+              )}
 
               {article.bottom_content && (
                 <div
@@ -134,6 +138,25 @@ class Article extends React.Component<Props, State> {
             </Col>
           </Row>
         </Container>
+
+        {/* Similar Articles */}
+        {relatedArticles
+          && relatedArticles.length > 0 && (
+            <div className="related-articles">
+              <Container>
+                <h2>{t(`${i18nPrefix}:related_articles.title`)}</h2>
+              </Container>
+              <div>
+                <Row>
+                  {relatedArticles.map((relatedArticle, index) => (
+                    <Col span={index < 2 ? 12 : 0} md={index < 3 ? 8 : 0} lg={6}>
+                      <SimilarArticle article={relatedArticle} />
+                    </Col>
+                  ))}
+                </Row>
+              </div>
+            </div>
+        )}
 
         <div className="ant-hidden@m ant-position-fixed" style={{ bottom: 20, right: 20 }}>
           <ArticleShareButton article={article} />

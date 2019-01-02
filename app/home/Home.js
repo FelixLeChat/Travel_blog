@@ -76,66 +76,73 @@ class Home extends React.Component<Props> {
         {heroArticle && (
           <div className="home-hero">
             <Row>
-              <Col xs={24} md={16}>
+              <Col xs={24} style={{ position: 'relative' }}>
                 <div
                   className="home-hero-image"
                   style={{ backgroundImage: `url(${heroArticle.image})` }}
                 />
-              </Col>
-              <Col xs={24} md={8}>
-                <div className="home-hero-text ext-box">
-                  <div className="int-box">
-                    <h2>{heroArticle.title}</h2>
-                    <div className="subtitle">
-                      <Row>
-                        <Col span={12}>
+                <Row>
+                  <Col xs={24} md={12} lg={8} className="home-hero-text-container">
+                    <div className="home-hero-text ext-box">
+                      <div className="int-box">
+                        <h2>{heroArticle.title}</h2>
+                        <div className="subtitle">
+                          <Row>
+                            <Col span={12}>
+                              {isMounted && (
+                                <FontAwesomeIcon icon={faClock} style={{ marginRight: 10 }} />
+                              )}
+                              {isMounted && (
+                                <Moment format="MMM D YYYY" date={heroArticle.published_at} />
+                              )}
+                            </Col>
+                            <Col span={12}>
+                              {isMounted && (
+                                <FontAwesomeIcon icon={faMap} style={{ marginRight: 10 }} />
+                              )}
+                              {isMounted && (
+                                <Link
+                                  route="destination-details"
+                                  params={{ destination: heroArticle.destination }}
+                                >
+                                  <a>
+                                    {t(
+                                      `${i18nCommonPrefix}:destinations.${heroArticle.destination}`,
+                                    )}
+                                  </a>
+                                </Link>
+                              )}
+                            </Col>
+                          </Row>
+                        </div>
+                        <div className="content ant-visible@s" style={{ height: 110 }}>
                           {isMounted && (
-                            <FontAwesomeIcon icon={faClock} style={{ marginRight: 10 }} />
+                            <Dotdotdot clamp={4}>
+                              <p
+                                style={{ marginBottom: 0 }}
+                                // eslint-disable-next-line
+                                dangerouslySetInnerHTML={{ __html: heroArticle.content }}
+                              />
+                            </Dotdotdot>
                           )}
-                          {isMounted && (
-                            <Moment format="MMM D YYYY" date={heroArticle.published_at} />
-                          )}
-                        </Col>
-                        <Col span={12}>
-                          {isMounted && (
-                            <FontAwesomeIcon icon={faMap} style={{ marginRight: 10 }} />
-                          )}
-                          {isMounted && (
-                            <Link
-                              route="destination-details"
-                              params={{ destination: heroArticle.destination }}
-                            >
-                              <a>
-                                {t(`${i18nCommonPrefix}:destinations.${heroArticle.destination}`)}
-                              </a>
-                            </Link>
-                          )}
-                        </Col>
-                      </Row>
+                        </div>
+                        <div>
+                          <Link
+                            route="article"
+                            params={{
+                              article: heroArticle.slug,
+                              destination: heroArticle.destination,
+                            }}
+                          >
+                            <a>
+                              <Button type="secondary">{t(`${i18nPrefix}:read_article`)}</Button>
+                            </a>
+                          </Link>
+                        </div>
+                      </div>
                     </div>
-                    <div className="content ant-visible@s" style={{ height: 110 }}>
-                      {isMounted && (
-                        <Dotdotdot clamp={4}>
-                          <p
-                            style={{ marginBottom: 0 }}
-                            // eslint-disable-next-line
-                            dangerouslySetInnerHTML={{ __html: heroArticle.content }}
-                          />
-                        </Dotdotdot>
-                      )}
-                    </div>
-                    <div>
-                      <Link
-                        route="article"
-                        params={{ article: heroArticle.slug, destination: heroArticle.destination }}
-                      >
-                        <a>
-                          <Button type="secondary">{t(`${i18nPrefix}:read_article`)}</Button>
-                        </a>
-                      </Link>
-                    </div>
-                  </div>
-                </div>
+                  </Col>
+                </Row>
               </Col>
             </Row>
           </div>

@@ -1,4 +1,7 @@
 {
   "read_more": "Read more",
-  "brand": "Traveling Maude"
+  "brand": "Traveling Maude",
+  "related_articles": {
+    "title": "Recommended"
+  }
 }

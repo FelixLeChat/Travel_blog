@@ -7,12 +7,13 @@ const i18nPrefix = 'articles/common';
 
 type Props = {
   article: any,
+  hideBottomBorder: boolean,
 };
 
 @withNamespaces([i18nPrefix])
 class Top extends React.Component<Props> {
   render() {
-    const { article } = this.props;
+    const { article, hideBottomBorder } = this.props;
 
     return (
       <div className="article-top">
@@ -38,7 +39,8 @@ class Top extends React.Component<Props> {
               dangerouslySetInnerHTML={{ __html: article.top_contents[index] }}
               className="ant-margin-top ant-margin-large-bottom"
             />
-            <Divider style={{ marginBottom: 0 }} />
+            {index < article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
+            {!hideBottomBorder && <Divider style={{ marginBottom: 0 }} />}
           </Row>
         ))}
       </div>
