@@ -4,6 +4,7 @@ const defaultState = {
   error: null,
   data: {
     article: null,
+    relatedArticles: null,
   },
   isLoading: false,
 };
@@ -20,7 +21,7 @@ export const reducer = handleActions(
   {
     [fetchArticleStart]: state => ({
       ...state,
-      data: { article: null },
+      data: { article: null, relatedArticles: null },
       error: null,
       isLoading: true,
     }),
@@ -32,7 +33,7 @@ export const reducer = handleActions(
     [fetchArticleFail]: (state, { payload: { error } }) => ({
       error,
       isLoading: false,
-      data: { article: null },
+      data: { article: null, relatedArticles: null },
     }),
   },
   defaultState,

@@ -58,7 +58,7 @@ class DestinationsIndex extends React.Component<Props> {
         </div>
         <Container className="ant-margin-large-top ant-margin-medium-bottom destinations-body">
           {Object.keys(groupedDestinations).map(key => (
-            <Row>
+            <Row key={key}>
               <Col span={24}>
                 <div className="destinations-continent-title">
                   <FontAwesomeIcon icon={faMap} />

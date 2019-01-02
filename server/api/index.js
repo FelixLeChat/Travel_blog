@@ -105,15 +105,27 @@ router.get('/article/:article', (req, res) => {
     }).then((articles) => {
       if (articles && articles.length === 1) {
         const article = articles[0];
-        result = {
-          article,
-        };
 
-        // set cache
-        cache.put(cacheKey, result, 7 * day);
+        // Find related articles
+        models.Article.findAll({
+          limit: 4,
+          where: {
+            id: { $not: article.id },
+            destination_id: article.destination_id,
+          },
+          attributes: ['thumbnail', 'title', 'theme_id', 'destination_id', 'published_at', 'slug'],
+        }).then((relatedArticles) => {
+          result = {
+            article,
+            relatedArticles,
+          };
 
-        // send result
-        res.json(result);
+          // set cache
+          cache.put(cacheKey, result, 7 * day);
+
+          // send result
+          res.json(result);
+        });
       } else {
         res.status(404).send('Not found');
       }
@@ -133,7 +145,6 @@ router.get('/home', (req, res) => {
   } else {
     models.Article.findAll({
       attributes: [
-        'id',
         'hero_article',
         'image',
         'thumbnail',
