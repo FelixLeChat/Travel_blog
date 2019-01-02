@@ -113,6 +113,7 @@ class ArticleCard extends React.Component<Props, State> {
             <Dotdotdot clamp={3}>
               <p
                 style={{ marginBottom: 0 }}
+                // eslint-disable-next-line
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
             </Dotdotdot>

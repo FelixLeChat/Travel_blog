@@ -20,7 +20,6 @@ type Props = {
   url: string,
   media: string,
   title: string,
-  description: string,
   copyLinkText: string,
   shareOpenFunction: () => void,
   shareClickFunction: (name: string) => void,

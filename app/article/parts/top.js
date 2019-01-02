@@ -21,7 +21,10 @@ class Top extends React.Component<Props> {
             <Col span={24}>
               <h2>
                 <span className="emphasis">{`${index + 1}. `}</span>
-                <span dangerouslySetInnerHTML={{ __html: item }} />
+                <span
+                  // eslint-disable-next-line
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
               </h2>
             </Col>
             <Col span={24}>

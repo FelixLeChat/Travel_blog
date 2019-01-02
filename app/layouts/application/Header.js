@@ -102,16 +102,19 @@ class Header extends React.PureComponent<Props> {
                     </Menu.Item>
                     {Object.keys(groupedDestinations).map(key => (
                       <ItemGroup title={t(`${i18nCommonPrefix}:continents.${key}`)} key={key}>
-                        {groupedDestinations[key].sort().map(destination => (
-                          <Menu.Item key={destination.name}>
-                            <Link
-                              route="destination-details"
-                              params={{ destination: destination.name }}
-                            >
-                              <a>{t(`${i18nCommonPrefix}:destinations.${destination.name}`)}</a>
-                            </Link>
-                          </Menu.Item>
-                        ))}
+                        {groupedDestinations[key]
+                          .sort()
+                          .filter(destination => destination.name)
+                          .map(destination => (
+                            <Menu.Item key={destination.name}>
+                              <Link
+                                route="destination-details"
+                                params={{ destination: destination.name }}
+                              >
+                                <a>{t(`${i18nCommonPrefix}:destinations.${destination.name}`)}</a>
+                              </Link>
+                            </Menu.Item>
+                          ))}
                       </ItemGroup>
                     ))}
                   </SubMenu>

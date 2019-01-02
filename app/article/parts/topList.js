@@ -29,7 +29,10 @@ class TopList extends React.Component<Props> {
                 </div>
               </Col>
               <Col span={24} md={{ span: 18 }} lg={{ span: 20 }} className="article-top-text">
-                <span dangerouslySetInnerHTML={{ __html: item }} />
+                <span
+                  // eslint-disable-next-line
+                  dangerouslySetInnerHTML={{ __html: item }}
+                />
               </Col>
             </Row>
           ))}

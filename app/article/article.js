@@ -114,6 +114,7 @@ class Article extends React.Component<Props, State> {
               </Row>
               <div
                 className="article-content"
+                // eslint-disable-next-line
                 dangerouslySetInnerHTML={{ __html: article.content }}
               />
 
@@ -123,6 +124,7 @@ class Article extends React.Component<Props, State> {
               {article.bottom_content && (
                 <div
                   className="article-bottom-content ant-margin-large-top"
+                  // eslint-disable-next-line
                   dangerouslySetInnerHTML={{ __html: article.bottom_content }}
                 />
               )}

@@ -118,6 +118,7 @@ class Home extends React.Component<Props> {
                         <Dotdotdot clamp={4}>
                           <p
                             style={{ marginBottom: 0 }}
+                            // eslint-disable-next-line
                             dangerouslySetInnerHTML={{ __html: heroArticle.content }}
                           />
                         </Dotdotdot>
