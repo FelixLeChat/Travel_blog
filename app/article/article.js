@@ -37,14 +37,6 @@ const mapStateToProps = state => ({
 @withNamespaces([i18nPrefix])
 @connect(mapStateToProps)
 class Article extends React.Component<Props, State> {
-  state = {
-    isMounted: false,
-  };
-
-  componentDidMount() {
-    this.setState({ isMounted: true });
-  }
-
   render() {
     const {
       t,
@@ -55,7 +47,6 @@ class Article extends React.Component<Props, State> {
         data: { themes, destinations },
       },
     } = this.props;
-    const { isMounted } = this.state;
 
     let destination = null;
     let destinationTranslation = null;
@@ -93,24 +84,20 @@ class Article extends React.Component<Props, State> {
               <h1 className="ant-margin-small-bottom">{article.title}</h1>
               <Row className="ant-margin-bottom article-details-bar">
                 <Col span={24}>
-                  {isMounted && <FontAwesomeIcon icon={faClock} />}
-                  {isMounted && (
-                    <Moment
-                      format="MMM D YYYY"
-                      date={article.published_at}
-                      style={{ marginRight: 10 }}
-                    />
-                  )}
+                  <FontAwesomeIcon icon={faClock} />
+                  <Moment
+                    format="MMM D YYYY"
+                    date={article.published_at}
+                    style={{ marginRight: 10 }}
+                  />
                   {' · '}
-                  {isMounted && <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />}
-                  {isMounted && (
-                    <Link route="destination-details" params={{ destination }}>
-                      <a style={{ marginRight: 10 }}>{destinationTranslation}</a>
-                    </Link>
-                  )}
+                  <FontAwesomeIcon icon={faMap} style={{ marginLeft: 10 }} />
+                  <Link route="destination-details" params={{ destination }}>
+                    <a style={{ marginRight: 10 }}>{destinationTranslation}</a>
+                  </Link>
                   {' · '}
-                  {isMounted && <FontAwesomeIcon icon={faCameraRetro} style={{ marginLeft: 10 }} />}
-                  {isMounted && <a>{theme}</a>}
+                  <FontAwesomeIcon icon={faCameraRetro} style={{ marginLeft: 10 }} />
+                  <a>{theme}</a>
                 </Col>
               </Row>
               <div
@@ -147,9 +134,15 @@ class Article extends React.Component<Props, State> {
                 <h2>{t(`${i18nPrefix}:related_articles.title`)}</h2>
               </Container>
               <div>
-                <Row>
+                <Row type="flex" justify="center" align="top">
                   {relatedArticles.map((relatedArticle, index) => (
-                    <Col span={index < 2 ? 12 : 0} md={index < 3 ? 8 : 0} lg={6}>
+                    <Col
+                      span={index === 0 ? 24 : 0}
+                      sm={index < 2 ? 12 : 0}
+                      md={index < 3 ? 8 : 0}
+                      lg={6}
+                      key={relatedArticle.title}
+                    >
                       <SimilarArticle article={relatedArticle} />
                     </Col>
                   ))}

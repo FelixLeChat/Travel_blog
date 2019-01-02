@@ -115,16 +115,45 @@ router.get('/article/:article', (req, res) => {
           },
           attributes: ['thumbnail', 'title', 'theme_id', 'destination_id', 'published_at', 'slug'],
         }).then((relatedArticles) => {
-          result = {
-            article,
-            relatedArticles,
-          };
+          if (relatedArticles.length < 4) {
+            // Find article in similar category
+            models.Article.findAll({
+              limit: 4 - relatedArticles.length,
+              where: {
+                theme_id: article.theme_id,
+              },
+              attributes: [
+                'thumbnail',
+                'title',
+                'theme_id',
+                'destination_id',
+                'published_at',
+                'slug',
+              ],
+            }).then((similarThemeArticles) => {
+              result = {
+                article,
+                relatedArticles: relatedArticles.concat(similarThemeArticles),
+              };
 
-          // set cache
-          cache.put(cacheKey, result, 7 * day);
+              // set cache
+              cache.put(cacheKey, result, 7 * day);
 
-          // send result
-          res.json(result);
+              // send result
+              res.json(result);
+            });
+          } else {
+            result = {
+              article,
+              relatedArticles,
+            };
+
+            // set cache
+            cache.put(cacheKey, result, 7 * day);
+
+            // send result
+            res.json(result);
+          }
         });
       } else {
         res.status(404).send('Not found');
