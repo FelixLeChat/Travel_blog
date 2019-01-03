@@ -9,6 +9,7 @@ import { Link } from '../../config/routes';
 import Container from '../components/Container';
 import ArticleCard from '../shared/articles/ArticleCard';
 import MapSider from '../shared/menus/MapSider';
+import SideDestinationPageAd from '../ads/sideDestinationPageAd';
 
 const i18nPrefix = 'pages/destination';
 
@@ -78,6 +79,9 @@ class Destination extends React.Component<Props> {
             </Col>
             <Col span={0} lg={8}>
               <MapSider destination={destination} />
+              <div className="ant-margin-top">
+                <SideDestinationPageAd />
+              </div>
             </Col>
           </Row>
         </Container>
