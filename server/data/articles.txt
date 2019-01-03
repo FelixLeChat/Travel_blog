@@ -266,3 +266,34 @@
       'The Gerês National park is one of the hidden gems of Portugal with its rocky mountains and old Roman trails that extend all the way to Spain. One of the many attractions it harbour are crystal clear <a href="https://goo.gl/maps/KpA99KyhthJ2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">lagoons</a>, hidden away off the trail. A series of 7 lagoons spread out downhills, from an old hydroelectric facility that is no longer in use. The clear cold water of those lagoons, on a hot sunny day with the mountains all around, is amazing.<br/><br/>If you want to access the lagoons by yourself, a trail start from the nearest village (<a href="https://goo.gl/maps/fDHUBdqDzgA2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Azevedo</a>), where you can park your car on a paved road. From there, a 1h30 walk, that is quite easy, will get you directly to them. A dirt road also exists, that does directly to the lagoons, but is quite rocky at some point so beware if you take your car.<br/><br/>If you do not rent a car while visiting Portugal, many semi-private tours can bring you there from Porto. We personally did the “<a href="https://www.airbnb.ca/experiences/178565?locale=en&utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Hike and Swim in Gerês National Park</a>)” in the Airbnb experiences, and both the trip and the guide were great. The guide was particularly knowledgeable when asked questions about the history of Portugal and the national park. The tour starts early morning in Porto and a 2h ride separates you from Gerês park.<br/><br/>Bring a bathing suit, lunch and some comfortable shoes for the trail and you will have a great time there.',
   published_at: new Date(2019, 0, 1),
 },
+{
+  id: 9,
+  title: 'Azulejos of Portugal',
+  slug: 'azulejos-of-portugal',
+  description:
+      'Those hands painted tiles that ornate facade of churches, trains stations and houses throughout Portugal are truly a thing of beauty. We compiled a couple of places where you can find great Azulejos frescoes.',
+  image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546473668/Articles/Azulejos_maude.jpg',
+  thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1546473667/Articles/Azulejos_maude_thumbnail.jpg',
+  theme_id: 3,
+  destination_id: 2,
+  content:
+      'The famous Ajulejos. Those hands painted tiles that ornate facade of churches, trains stations and houses throughout Portugal are truly a thing of beauty. Mostly consisting of blue paint on white tiles, they are assembled to form a symmetrical pattern and historical or even biblical scenes.<br/><br/>Their history date back to the 13th century Persian mosaics, where the interlocking motif and geometrical aspect were a big thing. Those influences were then introduced to Portugal by King Manuel I, mainly for their use in many rooms of the <a href="https://www.parquesdesintra.pt/en/parks-and-monuments/national-palace-of-sintra/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Sintra National Palace</a>. Since then, many Portuguese porters have taken this art to houses, public places and historical buildings.<br/><br/>More than just tiles, the Azulejos shows the history of Portugal. Since 2013, to keep this national heritage, laws were adopted to help their protection.<br/><br/>While you travel across Portugal, you may want to spend some time admiring these masterpieces. We compiled a couple of places where you can find great Azulejos frescoes:',
+  published_at: new Date(2018, 0, 2),
+  top_titles: [
+    '<a href="https://goo.gl/maps/J5sdMgd86tp?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Sao bento train station, Porto</a>',
+    '<a href="https://goo.gl/maps/ZUrryn7bqaA2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Igreja do Carmo, Porto</a>',
+    'The entire city of Lisbon',
+  ],
+  top_contents: [
+    'Arriving at this train station after hours of traveling from Canada, we were amazed by the detailed artwork on the walls. This is really impressing since there are more than 20,000 azulejo on the walls. It is of course a real crowded attraction in Porto.<br/><br/>We recommend you read the information panels on site, as they will add many details about the presence of different historical characters in those historical scenes.',
+    'After the Sao Bento trains station, we were extremely lucky to find this fresco 2 min away from our AirBnb. That was the second time we saw an amazing sight in such a short time. That is when we realized how beautiful is Portugal.<br/><br/>This 18th century baroque church has one of his facade entirely cover by Azulejos. With the morning sun hitting the tiles, the view is one of the best you can grab in Porto. The fresco illustrates the founding of the Carmelites religious order on Mount Carmel.',
+    'Yes, the entire city of Lisbon harbors those Azulejos tiles. These are perfect backdrops, as our vacation photos show too well (We literally have pictures of us in front on dozens of different Azulejos).<br/><br/>Ranging from perfectly preserved to partly covered, the houses of Lisbon that still have the tiles on their facades are must see. You can easily walk across town for hours trying to find the most original ones for your photos.',
+  ],
+  top_images: [
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546474235/Articles/Azulejos_train_station.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546474484/Articles/Azulejos_church.jpg',
+    'https://res.cloudinary.com/heyjltyh0/image/upload/v1546475074/Articles/Azulejos_Lisbon.jpg',
+  ],
+},
