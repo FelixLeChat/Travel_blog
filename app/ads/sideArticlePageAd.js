@@ -1,16 +1,7 @@
 // @flow
 import React from 'react';
+import AD from 'react-google-publisher-tag';
 
-import GoogleAds from './google/googleAds';
-
-const SideArticlePageAd = () => (
-  <GoogleAds
-    client="ca-pub-7083575751291349"
-    slot="4780305778"
-    style={{ display: 'inline-block', width: 250, height: 250 }}
-    format="auto"
-    responsive="true"
-  />
-);
+const SideArticlePageAd = () => <AD enableSingleRequest path="/21784165674/ads" />;
 
 export default SideArticlePageAd;

@@ -45,7 +45,6 @@ class _App extends App {
     Router.router.events.on('routeChangeComplete', logPageView);
     Router.router.events.on('routeChangeStart', () => {
       this.props.store.dispatch(setMobileMenuOpenedState(false));
-      window.googletag.pubads().refresh();
     });
     Router.events.on('routeChangeComplete', () => {
       // Scroll to top

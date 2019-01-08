@@ -5332,6 +5332,11 @@ keygrip@~1.0.2:
   resolved "https://registry.yarnpkg.com/keygrip/-/keygrip-1.0.3.tgz#399d709f0aed2bab0a059e0cdd3a5023a053e1dc"
   integrity sha512-/PpesirAIfaklxUzp4Yb7xBper9MwP6hNRA6BGGUFCgbJ+BM5CKBtsoxinNXkLHAr+GXS1/lSlF2rP7cv5Fl+g==
 
+keymirror@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/keymirror/-/keymirror-0.1.1.tgz#918889ea13f8d0a42e7c557250eee713adc95c35"
+  integrity sha1-kYiJ6hP40KQufFVyUO7nE63JXDU=
+
 kind-of@^3.0.2, kind-of@^3.0.3, kind-of@^3.2.0:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-3.2.2.tgz#31ea21a734bab9bbb0f32466d893aea51e4a3c64"
@@ -7538,6 +7543,14 @@ react-ga@^2.5.3:
   optionalDependencies:
     prop-types "^15.6.0"
     react "^15.6.2 || ^16.0"
+
+react-google-publisher-tag@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/react-google-publisher-tag/-/react-google-publisher-tag-1.0.5.tgz#9bbab15d652c580392eeee7f4ac2e40b14fb3f56"
+  integrity sha512-tTYNb/SGvzw/RD8bhL6qOqc7d5HD0loCuH8BWNPD1RnrTni44F7kv33oSb4aZ4kFUxoRcAAiMsFQHnQ5Dkfc5A==
+  dependencies:
+    keymirror "^0.1.1"
+    prop-types "^15.6.0"
 
 react-i18next@^8.0.7:
   version "8.3.5"
