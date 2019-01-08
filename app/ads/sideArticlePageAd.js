@@ -3,14 +3,14 @@ import React from 'react';
 
 import GoogleAds from './google/googleAds';
 
-const SideDestinationPageAd = () => (
+const SideArticlePageAd = () => (
   <GoogleAds
     client="ca-pub-7083575751291349"
-    slot="1440365567"
+    slot="4780305778"
     style={{ display: 'block' }}
     format="auto"
     responsive="true"
   />
 );
 
-export default SideDestinationPageAd;
+export default SideArticlePageAd;

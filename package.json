@@ -44,6 +44,7 @@
     "pg-promise": "^8.5.2",
     "raf": "^3.4.0",
     "react": "^16.4.2",
+    "react-adsense": "^0.0.6",
     "react-dom": "^16.4.2",
     "react-dotdotdot": "^1.2.3",
     "react-ga": "^2.5.3",

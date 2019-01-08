@@ -44,6 +44,7 @@ export default class _Document extends Document {
           <Main />
           <NextScript />
         </body>
+        <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" />
       </html>
     );
   }
