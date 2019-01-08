@@ -124,7 +124,7 @@ class Article extends React.Component<Props, State> {
             <Col xs={0} md={8}>
               <MapSider destination={destination} />
               <div className="ant-margin-top">
-                <SideArticlePageAd />
+                <SideArticlePageAd key={article.slug} />
               </div>
             </Col>
           </Row>
