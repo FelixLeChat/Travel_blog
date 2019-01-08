@@ -79,7 +79,7 @@ class Destination extends React.Component<Props> {
             </Col>
             <Col span={0} lg={8}>
               <MapSider destination={destination} />
-              <div className="ant-margin-top">
+              <div className="ant-margin-top ant-margin-left">
                 <SideDestinationPageAd key={destination.name} />
               </div>
             </Col>

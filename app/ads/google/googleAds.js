@@ -9,6 +9,7 @@ type Props = {
   layout?: string,
   format?: string,
   responsive?: string,
+  key: string,
 };
 
 export default class GoogleAds extends React.Component<Props> {
@@ -27,6 +28,7 @@ export default class GoogleAds extends React.Component<Props> {
   render() {
     return (
       <ins
+        key={this.props.key}
         className={`${this.props.className} adsbygoogle`}
         style={this.props.style}
         data-ad-client={this.props.client}
