@@ -51,7 +51,7 @@ class _App extends App {
       window.scrollTo(0, 0);
 
       // Refresh ads
-      window.googletag.pubads().refresh();
+      if (window.googletag) window.googletag.pubads().refresh();
     });
     // Intercept back and next browser button event to force a SSR.
     Router.beforePopState(({ as }) => {

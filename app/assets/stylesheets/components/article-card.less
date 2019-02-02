@@ -2,12 +2,14 @@
 @article-card-image-height: 250px;
 
 .article-card {
-  // border: 1px solid @light-border;
   border-radius: @border-radius-base;
   overflow: hidden;
   width: 100%;
   @media (min-width: @screen-md) {
     display: inline-flex;
+  }
+  @media (max-width: @screen-md) {
+    border: 1px solid @light-border;
   }
 
   &:hover {

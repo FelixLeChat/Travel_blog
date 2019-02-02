@@ -10,6 +10,7 @@ import Container from '../components/Container';
 import ArticleCard from '../shared/articles/ArticleCard';
 import MapSider from '../shared/menus/MapSider';
 import SideDestinationPageAd from '../ads/sideDestinationPageAd';
+import { compareValues } from '../utils/utils';
 
 const i18nPrefix = 'pages/destination';
 
@@ -32,6 +33,8 @@ class Destination extends React.Component<Props> {
         data: { destination, hero, articles },
       },
     } = this.props;
+
+    const sortedArticles = articles.sort(compareValues('published_at', 'desc'));
 
     return (
       <div className="destination">
@@ -69,8 +72,8 @@ class Destination extends React.Component<Props> {
           <Row>
             <Col md={24} lg={16}>
               <div className="destination-articles">
-                {articles
-                  && articles.map(article => (
+                {sortedArticles
+                  && sortedArticles.map(article => (
                     <div className="ant-margin-bottom" key={article.id}>
                       <ArticleCard article={article} />
                     </div>
