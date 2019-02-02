@@ -11,6 +11,7 @@ import ArticleCard from '../shared/articles/ArticleCard';
 import MapSider from '../shared/menus/MapSider';
 import SideDestinationPageAd from '../ads/sideDestinationPageAd';
 import { compareValues } from '../utils/utils';
+import AdsSider from '../ads/AdsSider';
 
 const i18nPrefix = 'pages/destination';
 
@@ -82,9 +83,7 @@ class Destination extends React.Component<Props> {
             </Col>
             <Col span={0} lg={8}>
               <MapSider destination={destination} />
-              <div className="ant-margin-top ant-margin-left">
-                <SideDestinationPageAd />
-              </div>
+              <AdsSider ads={<SideDestinationPageAd />} className="ant-margin-top" />
             </Col>
           </Row>
         </Container>

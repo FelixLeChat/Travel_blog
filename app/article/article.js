@@ -16,6 +16,7 @@ import MapSider from '../shared/menus/MapSider';
 import ArticleShareButton from '../shared/articles/ArticleShareButton';
 import SimilarArticle from './parts/similarArticle';
 import SideArticlePageAd from '../ads/sideArticlePageAd';
+import AdsSider from '../ads/AdsSider';
 
 const i18nPrefix = 'articles/common';
 const i18nCommonPrefix = 'common';
@@ -123,9 +124,7 @@ class Article extends React.Component<Props, State> {
             </Col>
             <Col xs={0} md={8}>
               <MapSider destination={destination} />
-              <div className="ant-margin-top ant-margin-left">
-                <SideArticlePageAd />
-              </div>
+              <AdsSider ads={<SideArticlePageAd />} className="ant-margin-top" />
             </Col>
           </Row>
         </Container>
