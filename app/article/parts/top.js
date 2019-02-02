@@ -40,7 +40,8 @@ class Top extends React.Component<Props> {
               className="ant-margin-top ant-margin-large-bottom"
             />
             {index < article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
-            {!hideBottomBorder && <Divider style={{ marginBottom: 0 }} />}
+            {!hideBottomBorder
+              && index == article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
           </Row>
         ))}
       </div>

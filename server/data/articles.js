@@ -1,4 +1,4 @@
-const articles = [
+module.exports = [
   {
     id: 1,
     title: 'The Lopapeysa',
@@ -170,7 +170,7 @@ const articles = [
       'If you visit Portugal, you cannot leave without tasting the famous “pastéis de nata”! They are basically a whole new food group by themselves there!<br/><br/>This little desert, consisting of  a crunchy pastry filled mostly with egg and cream, is found on the tables of almost every Portuguese restaurants and coffee shops.<br/><br/>Around 1837, in the city of Belém, a neighborhood of Lisbon, a group of monks starting making those pastries to finance their church. The pastéis were such a hit that they soon were spread all across Portugal where the recipe was recreated and adapted.<br/><br/>With that in mind, we went directly to the source, in Belém, to taste the original Pasteis. After getting a dozen, we sprinkled them with sugar and cinnamon, as the tradition wants it. They were so good that they did not survive long...<br/><br/>Here are a couple of places you may want to visit to get your hands on the pastéis:',
     bottom_content:
       'Both places are really good and worth a try. We still, to this day, argue about which one was the best… But I am definitely right 😁.',
-    published_at: new Date(2018, 1, 2),
+    published_at: new Date(2019, 1, 2),
     top_titles: ['The original “Pastéis de Belém”', 'Manteigaria'],
     top_contents: [
       'This is where you will find the original recipe! It is still kept secret and sold here, at the original shop in Belém, where they take the name “pastéis de Belém”.<br/><br/>As this spot is famous, there is always a line to get to the counter, but it’s worth it. If you want the original taste of those pastries, we highly recommend you visit <a href="https://goo.gl/maps/8VAuoGYUKfP2?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">this shop</a>.',
@@ -315,5 +315,3 @@ const articles = [
     theme_id: 1,
   },
 ];
-
-export default articles;

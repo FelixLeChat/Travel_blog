@@ -1,4 +1,5 @@
 // const Theme = require('./theme');
+const articles = require('../data/articles');
 
 module.exports = (sequelize, DataTypes) => {
   const Article = sequelize.define('Article', {
@@ -63,8 +64,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   if (process.env.NODE_ENV !== 'production') {
-    // Article.sync({ force: false }).then(() => Article.bulkCreate([]));
-    // Article.sync({ force: true }).then(() => Article.bulkCreate());
+    // Article.sync({ force: true }).then(() => Article.bulkCreate(articles));
   }
   return Article;
 };

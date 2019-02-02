@@ -164,6 +164,7 @@ class Home extends React.Component<Props> {
                           <Row>
                             {articles
                               .filter(article => article.theme_id === theme.id)
+                              .sort(compareValues('published_at', 'desc'))
                               .map(article => (
                                 <Col span={24} key={article.title} className="ant-margin-bottom">
                                   <ArticleCard article={article} />
