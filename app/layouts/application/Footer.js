@@ -20,8 +20,8 @@ class Footer extends React.PureComponent<Props> {
     const { t } = this.props;
 
     return (
-      <div>
-        <Layout.Footer className="footer ant-padding-large-top ant-padding-large-bottom">
+      <Layout.Footer>
+        <div className="footer ant-padding-large-top ant-padding-large-bottom">
           <Container>
             <Row type="flex" justify="space-around" align="middle">
               {/* Tablet Up */}
@@ -66,7 +66,7 @@ class Footer extends React.PureComponent<Props> {
               </Col>
             </Row>
           </Container>
-        </Layout.Footer>
+        </div>
         <div className="subfooter">
           <Container>
             <Row>
@@ -78,7 +78,7 @@ class Footer extends React.PureComponent<Props> {
             </Row>
           </Container>
         </div>
-      </div>
+      </Layout.Footer>
     );
   }
 }

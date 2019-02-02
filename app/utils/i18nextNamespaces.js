@@ -2,6 +2,7 @@ const namespaces = [
   // Common
   'common',
   'error',
+  'privacy',
 
   // Nagivation
   'navigation/header',
