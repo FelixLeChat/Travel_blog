@@ -51,6 +51,7 @@
     "react-google-publisher-tag": "^1.0.5",
     "react-i18next": "^8.0.7",
     "react-moment": "^0.8.4",
+    "react-photo-gallery": "^6.3.1",
     "react-redux": "^5.0.7",
     "react-share": "^2.4.0",
     "react-stickynode": "^2.0.1",
