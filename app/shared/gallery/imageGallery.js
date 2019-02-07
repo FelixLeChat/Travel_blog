@@ -1,41 +1,114 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
+import { Row, Col } from 'antd';
+import Gallery from 'react-photo-gallery';
+import Lightbox from 'react-images';
+import CustomImage from './customImage';
 
-type Props = {};
+type Props = {
+  global: GlobalStore,
+};
 
-const availablePhotos = [
-  {
-    src: '',
-    thumbnail: '',
-  },
-];
+type State = {
+  currentImage: number,
+  lightboxIsOpen: boolean,
+};
 
-class DestinationSider extends React.Component<Props> {
-  state: {
-    photos: null,
+const mapStateToProps = state => ({
+  global: state.global,
+});
+
+@connect(mapStateToProps)
+class ImageGallery extends React.Component<Props, State> {
+  state = {
+    currentImage: null,
+    lightboxIsOpen: false,
   };
 
-  componentWillMount() {
-    const photoIdsArray = [];
-    while (photoIdsArray.length < 7) {
-      const newPhotoId = Math.floor(Math.random() * 30 + 1);
-      if (photoIdsArray.indexOf(newPhotoId) < 0) {
-        photoIdsArray.push(newPhotoId);
-      }
-    }
+  openLightbox = (event, obj) => {
+    this.setState({
+      currentImage: obj.index,
+      lightboxIsOpen: true,
+    });
+  };
 
-    const photos = photoIdsArray.map(index => ({
-      src: availablePhotos[index].thumbnail,
-      width: 1,
-      height: 1,
-    }));
+  closeLightbox = () => {
+    this.setState({
+      currentImage: 0,
+      lightboxIsOpen: false,
+    });
+  };
 
-    this.setState({ photos });
-  }
+  gotoPrevious = () => {
+    const { currentImage } = this.state;
+    this.setState({
+      currentImage: currentImage - 1,
+    });
+  };
+
+  gotoNext = () => {
+    const { currentImage } = this.state;
+    this.setState({
+      currentImage: currentImage + 1,
+    });
+  };
 
   render() {
-    return <div className="image-gallery" />;
+    const {
+      global: {
+        data: { imageGallery },
+      },
+    } = this.props;
+
+    if (!imageGallery) return null;
+
+    const photos = imageGallery.map(image => ({
+      src: image.thumbnail,
+      height: 1,
+      width: 1,
+      fullImage: image.src,
+    }));
+
+    return (
+      <div className="image-gallery">
+        <Row>
+          <Col span={24} md={0}>
+            <Gallery
+              photos={photos.slice(0, 3)}
+              columns={3}
+              onClick={this.openLightbox}
+              ImageComponent={CustomImage}
+            />
+          </Col>
+          <Col span={0} md={24} lg={0}>
+            <Gallery
+              photos={photos.slice(0, 5)}
+              columns={5}
+              onClick={this.openLightbox}
+              ImageComponent={CustomImage}
+            />
+          </Col>
+          <Col span={0} lg={24}>
+            <Gallery
+              photos={photos}
+              columns={7}
+              onClick={this.openLightbox}
+              ImageComponent={CustomImage}
+            />
+          </Col>
+        </Row>
+        <Lightbox
+          images={photos.map(x => ({ src: x.fullImage }))}
+          onClose={this.closeLightbox}
+          onClickPrev={this.gotoPrevious}
+          onClickNext={this.gotoNext}
+          currentImage={this.state.currentImage}
+          isOpen={this.state.lightboxIsOpen}
+        />
+      </div>
+    );
   }
 }
 
-export default DestinationSider;
+export default ImageGallery;

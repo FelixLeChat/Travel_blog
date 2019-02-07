@@ -6,6 +6,7 @@ const defaultState = {
     currentRoute: null,
     themes: [],
     destinations: [],
+    imageGallery: null,
   },
   isLoading: false,
 };
@@ -19,6 +20,9 @@ export const {
   fetchThemesStart,
   fetchThemesSuccess,
   fetchThemesFail,
+  fetchGalleryStart,
+  fetchGallerySuccess,
+  fetchGalleryFail,
 } = createActions({
   SET_CURRENT_ROUTE: currentRoute => ({ currentRoute }),
   FETCH_DESTINATIONS_START: data => ({ data }),
@@ -27,6 +31,9 @@ export const {
   FETCH_THEMES_START: data => ({ data }),
   FETCH_THEMES_SUCCESS: themesPayload => ({ themesPayload }),
   FETCH_THEMES_FAIL: error => ({ error }),
+  FETCH_GALLERY_START: data => ({ data }),
+  FETCH_GALLERY_SUCCESS: galleryPayload => ({ galleryPayload }),
+  FETCH_Gallery_FAIL: error => ({ error }),
 });
 
 // Reducer
@@ -49,7 +56,7 @@ export const reducer = handleActions(
     [fetchDestinationsFail]: (state, { payload: { error } }) => ({
       error,
       isLoading: false,
-      data: { destinations: [] },
+      data: { ...state.data, destinations: [] },
     }),
     [fetchThemesStart]: state => ({ ...state, error: null, isLoading: true }),
     [fetchThemesSuccess]: (state, { payload: { themesPayload } }) => ({
@@ -60,7 +67,18 @@ export const reducer = handleActions(
     [fetchThemesFail]: (state, { payload: { error } }) => ({
       error,
       isLoading: false,
-      data: { themes: [] },
+      data: { ...state.data, themes: [] },
+    }),
+    [fetchGalleryStart]: state => ({ ...state, error: null, isLoading: true }),
+    [fetchGallerySuccess]: (state, { payload: { galleryPayload } }) => ({
+      error: null,
+      isLoading: false,
+      data: { ...state.data, ...galleryPayload },
+    }),
+    [fetchGalleryFail]: (state, { payload: { error } }) => ({
+      error,
+      isLoading: false,
+      data: { ...state.data, gallery: null },
     }),
   },
   defaultState,

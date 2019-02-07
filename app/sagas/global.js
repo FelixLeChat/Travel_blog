@@ -9,6 +9,9 @@ import {
   fetchThemesStart,
   fetchThemesSuccess,
   fetchThemesFail,
+  fetchGalleryStart,
+  fetchGallerySuccess,
+  fetchGalleryFail,
 } from '../reducers/global';
 
 // Query server for data
@@ -45,6 +48,22 @@ export function* fetchThemes() {
   }
 }
 
+export function* fetchGallery() {
+  const url = '/gallery';
+  const cacheKey = Cache.StoreKeys.GALLERY;
+  try {
+    if (Cache.exists(cacheKey)) {
+      yield put(fetchGallerySuccess(Cache.getItem(cacheKey)));
+    } else {
+      const { data } = yield call([api(), 'get'], url, {});
+      yield put(fetchGallerySuccess(data));
+      Cache.setItem(cacheKey, data);
+    }
+  } catch (error) {
+    yield put(fetchGalleryFail(error));
+  }
+}
+
 export function* watchFetchDestinations() {
   while (true) {
     yield take(fetchDestinationsStart);
@@ -56,5 +75,12 @@ export function* watchFetchThemes() {
   while (true) {
     yield take(fetchThemesStart);
     yield call(fetchThemes);
+  }
+}
+
+export function* watchFetchGallery() {
+  while (true) {
+    yield take(fetchGalleryStart);
+    yield call(fetchGallery);
   }
 }

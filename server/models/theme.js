@@ -1,3 +1,5 @@
+const themes = require('../data/themes');
+
 module.exports = (sequelize, DataTypes) => {
   const Theme = sequelize.define('Theme', {
     id: {
@@ -15,28 +17,7 @@ module.exports = (sequelize, DataTypes) => {
 
   // Create default themes
   if (process.env.NODE_ENV !== 'production') {
-    // Theme.sync({ force: true }).then(() => Theme.bulkCreate([
-    //   {
-    //     id: 1,
-    //     name: 'itineary',
-    //     image: '',
-    //   },
-    //   {
-    //     id: 2,
-    //     name: 'guide',
-    //     image: '',
-    //   },
-    //   {
-    //     id: 3,
-    //     name: 'top',
-    //     image: '',
-    //   },
-    //   {
-    //     id: 4,
-    //     name: 'food',
-    //     image: '',
-    //   },
-    // ]));
+    // Theme.sync({ force: true }).then(() => Theme.bulkCreate(themes));
   }
 
   return Theme;

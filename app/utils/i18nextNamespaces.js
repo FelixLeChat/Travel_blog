@@ -2,7 +2,10 @@ const namespaces = [
   // Common
   'common',
   'error',
+
+  // Other pages
   'privacy',
+  'about',
 
   // Nagivation
   'navigation/header',

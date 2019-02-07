@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { Drawer, Menu } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMap } from '@fortawesome/free-regular-svg-icons';
+import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
 
 import type { UIStore } from '../../models/ui';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
@@ -73,6 +74,8 @@ class Header extends React.PureComponent<Props> {
       selectedKeys.push('all-destinations');
     } else if (currentRoute.route.name === 'index') {
       selectedKeys.push('home');
+    } else {
+      selectedKeys.push(currentRoute.route.name);
     }
 
     return (
@@ -94,6 +97,14 @@ class Header extends React.PureComponent<Props> {
           <Menu.Item key="home">
             <Link route="index">
               <a>{t(`${i18nPrefix}:navigation.home`)}</a>
+            </Link>
+          </Menu.Item>
+          <Menu.Item key="about">
+            <Link route="about">
+              <a>
+                <FontAwesomeIcon icon={faCameraRetro} className="submenu-menu-icon" />
+                {t(`${i18nPrefix}:navigation.about`)}
+              </a>
             </Link>
           </Menu.Item>
           <SubMenu

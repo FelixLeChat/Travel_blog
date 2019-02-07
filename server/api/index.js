@@ -1,6 +1,7 @@
 const express = require('express');
 const cache = require('memory-cache');
 const models = require('../models');
+const utils = require('../utils/utils');
 
 const minute = 60 * 1000;
 const hour = minute * 60;
@@ -245,6 +246,35 @@ router.get('/destinations', (req, res) => {
       cache.put(cacheKey, result, 7 * day);
 
       // send result
+      res.json(result);
+    });
+  }
+});
+
+// Get Gallery
+router.get('/gallery', (req, res) => {
+  const cacheKey = 'gallery';
+
+  let result = cache.get(cacheKey);
+  if (result) {
+    // eslint-disable-next-line
+    console.log(`Cache hit with : ${cacheKey}`);
+
+    result.imageGallery = utils.getRandoms(result.imageGallery, 7);
+    res.json(result);
+  } else {
+    models.Gallery.findAll({
+      attributes: ['thumbnail', 'src', 'destination_id'],
+    }).then((photos) => {
+      result = {
+        imageGallery: photos,
+      };
+
+      // set cache
+      cache.put(cacheKey, result, 7 * day);
+
+      // send result
+      result.imageGallery = utils.getRandoms(result.imageGallery, 7);
       res.json(result);
     });
   }

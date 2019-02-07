@@ -118,6 +118,11 @@ class Header extends React.PureComponent<Props> {
                       </ItemGroup>
                     ))}
                   </SubMenu>
+                  <Menu.Item key="3">
+                    <Link route="about">
+                      <a>{t(`${i18nPrefix}:navigation.about`)}</a>
+                    </Link>
+                  </Menu.Item>
                 </Menu>
               </Col>
               <Col span={4} className="ant-text-right" />

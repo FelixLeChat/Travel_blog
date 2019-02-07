@@ -31,4 +31,5 @@ module.exports = routes
   .add('destination-details', '/destinations/:destination', 'destinations/destination')
   .add('article', '/destinations/:destination/:article', 'articles/article')
   .add('privacy', '/privacy', 'privacy')
+  .add('about', '/about', 'about')
   .add('error', '/:error', 'error');

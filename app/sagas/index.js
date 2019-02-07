@@ -1,5 +1,5 @@
 import { all } from 'redux-saga/effects';
-import { watchFetchDestinations, watchFetchThemes } from './global';
+import { watchFetchDestinations, watchFetchThemes, watchFetchGallery } from './global';
 import { watchFetchDestination } from './destination';
 import { watchFetchHome } from './home';
 import { watchFetchArticle } from './article';
@@ -10,6 +10,7 @@ export default function* rootSaga() {
       // Global data
       watchFetchDestinations(),
       watchFetchThemes(),
+      watchFetchGallery(),
 
       // Destination and details
       watchFetchDestination(),

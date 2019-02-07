@@ -20,7 +20,7 @@ module.exports = (sequelize, DataTypes) => {
 
   // Create default gallery
   if (process.env.NODE_ENV !== 'production') {
-    Gallery.sync({ force: true }).then(() => Gallery.bulkCreate(images));
+    // Gallery.sync({ force: true }).then(() => Gallery.bulkCreate(images));
   }
 
   return Gallery;
