@@ -28,7 +28,7 @@ class AboutIndex extends React.Component<Props> {
             <div className="ext-box">
               <div className="int-box">
                 <Row type="flex" justify="center" align="top">
-                  <Col span={16}>
+                  <Col span={16} style={{ position: 'relative' }}>
                     <div
                       className="about-avatar"
                       style={{
@@ -36,6 +36,7 @@ class AboutIndex extends React.Component<Props> {
                           'url(https://res.cloudinary.com/heyjltyh0/image/upload/v1549500010/Hero/profile_2.jpg)',
                       }}
                     />
+                    <div className="about-avatar-background" />
                   </Col>
                   <Col span={16} className="ant-text-center">
                     <div
