@@ -6,6 +6,7 @@ const defaultState = {
     currentRoute: null,
     themes: [],
     destinations: [],
+    instagramPosts: [],
     imageGallery: null,
   },
   isLoading: false,
@@ -23,6 +24,9 @@ export const {
   fetchGalleryStart,
   fetchGallerySuccess,
   fetchGalleryFail,
+  fetchInstagramStart,
+  fetchInstagramSuccess,
+  fetchInstagramFail,
 } = createActions({
   SET_CURRENT_ROUTE: currentRoute => ({ currentRoute }),
   FETCH_DESTINATIONS_START: data => ({ data }),
@@ -34,6 +38,9 @@ export const {
   FETCH_GALLERY_START: data => ({ data }),
   FETCH_GALLERY_SUCCESS: galleryPayload => ({ galleryPayload }),
   FETCH_Gallery_FAIL: error => ({ error }),
+  FETCH_INSTAGRAM_START: data => ({ data }),
+  FETCH_INSTAGRAM_SUCCESS: instagramPayload => ({ instagramPayload }),
+  FETCH_INSTAGRAM_FAIL: error => ({ error }),
 });
 
 // Reducer
@@ -79,6 +86,17 @@ export const reducer = handleActions(
       error,
       isLoading: false,
       data: { ...state.data, gallery: null },
+    }),
+    [fetchInstagramStart]: state => ({ ...state, error: null, isLoading: true }),
+    [fetchInstagramSuccess]: (state, { payload: { instagramPayload } }) => ({
+      error: null,
+      isLoading: false,
+      data: { ...state.data, ...instagramPayload },
+    }),
+    [fetchInstagramFail]: (state, { payload: { error } }) => ({
+      error,
+      isLoading: false,
+      data: { ...state.data, instagramPosts: null },
     }),
   },
   defaultState,

@@ -1,5 +1,6 @@
 const express = require('express');
 const cache = require('memory-cache');
+const axios = require('axios');
 const models = require('../models');
 const utils = require('../utils/utils');
 
@@ -277,6 +278,41 @@ router.get('/gallery', (req, res) => {
       result.imageGallery = utils.getRandoms(result.imageGallery, 7);
       res.json(result);
     });
+  }
+});
+
+router.get('/instagram', (req, res) => {
+  const cacheKey = 'instagram';
+
+  let result = cache.get(cacheKey);
+  if (result) {
+    // eslint-disable-next-line
+    console.log(`Cache hit with : ${cacheKey}`);
+    res.json(result);
+  } else {
+    const token = process.env.INSTAGRAM_ACCESS_TOKEN;
+    const username = 'traveling_maude';
+
+    axios
+      .get('https://api.instagram.com/v1/users/search', {
+        params: { access_token: token, q: username },
+      })
+      .then((response) => {
+        console.log(response);
+
+        let images;
+        for (x in data.data) {
+          images.push(data.data[x].images.low_resolution.url);
+        }
+
+        result = {
+          instagramPosts: images,
+        };
+
+        cache.put(cacheKey, result, 7 * day);
+        res.json(result);
+      })
+      .catch((error) => {});
   }
 });
 

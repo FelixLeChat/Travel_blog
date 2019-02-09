@@ -9,7 +9,12 @@ import { setMobileMenuOpenedState } from '../app/reducers/ui';
 import configureStore from '../app/store';
 import initialI18nInstance from '../lib/i18n';
 import Routes, { Router } from '../config/routes';
-import { setCurrentRoute, fetchDestinationsStart, fetchThemesStart } from '../app/reducers/global';
+import {
+  setCurrentRoute,
+  fetchDestinationsStart,
+  fetchThemesStart,
+  fetchInstagramStart,
+} from '../app/reducers/global';
 import { initGA, logPageView } from '../app/utils/analytics';
 import ErrorPage from './_error';
 
@@ -35,6 +40,7 @@ class _App extends App {
 
     await ctx.store.dispatch(fetchDestinationsStart());
     await ctx.store.dispatch(fetchThemesStart());
+    await ctx.store.dispatch(fetchInstagramStart());
 
     return { pageProps };
   }

@@ -1,4 +1,5 @@
 import { take, put, call } from 'redux-saga/effects';
+import axios from 'axios';
 
 import api from '../api';
 import Cache from '../cache';
@@ -12,6 +13,9 @@ import {
   fetchGalleryStart,
   fetchGallerySuccess,
   fetchGalleryFail,
+  fetchInstagramStart,
+  fetchInstagramSuccess,
+  fetchInstagramFail,
 } from '../reducers/global';
 
 // Query server for data
@@ -64,6 +68,22 @@ export function* fetchGallery() {
   }
 }
 
+export function* fetchInstagram() {
+  const url = '/instagram';
+  const cacheKey = Cache.StoreKeys.INSTAGRAM;
+  try {
+    if (Cache.exists(cacheKey)) {
+      yield put(fetchInstagramSuccess(Cache.getItem(cacheKey)));
+    } else {
+      const response = call([api(), 'get'], url, {});
+      yield put(fetchInstagramSuccess(response));
+      Cache.setItem(cacheKey, response);
+    }
+  } catch (error) {
+    yield put(fetchInstagramFail(error));
+  }
+}
+
 export function* watchFetchDestinations() {
   while (true) {
     yield take(fetchDestinationsStart);
@@ -82,5 +102,12 @@ export function* watchFetchGallery() {
   while (true) {
     yield take(fetchGalleryStart);
     yield call(fetchGallery);
+  }
+}
+
+export function* watchFetchInstagram() {
+  while (true) {
+    yield take(fetchInstagramStart);
+    yield call(fetchInstagram);
   }
 }
