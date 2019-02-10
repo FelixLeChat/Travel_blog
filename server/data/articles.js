@@ -314,4 +314,48 @@ module.exports = [
     destination_id: 1,
     theme_id: 1,
   },
+  {
+    id: 11,
+    title: 'Dulce de leche',
+    slug: 'dulce-de-leche',
+    description:
+      'You can\'t go to Argentina without seeing a thousand places and market stalls that sell "Dulce de leche"',
+    content:
+      'You can\'t go to Argentina without seeing a thousand places and market stalls that sell "Dulce de leche". Many country as Argentina, Brazil and Chili claim they invented the recipe but nonetheless, you will have to try it while you are there.<br/><br/>This sweet spread is made of reduced and caramelized condensed milk... Literally only that. The name "Dulce de leche" translation to "candy from milk" is quite accurate!<br/><br/>It is often used to flavor churros, so we recommend you try both together if you plan a trip to Argentina and want to try this native sweet.',
+    image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549831116/Articles/dulce_de_leche.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549831184/Articles/dulce_de_leche_thumbnail.jpg',
+    published_at: new Date(2019, 1, 10),
+    destination_id: 10,
+    theme_id: 4,
+  },
+  {
+    id: 12,
+    title: 'Argentinian bbq',
+    slug: 'argentinian-bbq',
+    description:
+      'The well renowned Argentinian meat is known all across the world. Going to Buenos Aires we had no choice but to try it out at least once!',
+    content:
+      'The well renowned Argentinian meat is known all across the world. Going to Buenos Aires we had no choice but to try it out at least once!<br/><br/>We asked some local where we could grab a typical Barbacoa and they pointed us toward La Boca. We arrived in La Boca while a Futbol match was happening. The Barbacoa was everywhere... Literally in the streets on some made-us barbecue grills from cut up steel drums. This was quite the cultural shock! Locals were at every street corners, enjoying beer and great barbecue directly in the street (Like a open street tailgate).<br/><br/>We did not have the courage to join a group of locals in their celebrations. We ended up finding a well known place in this particular neighborhood called "Gran Paraíso". I never ate such a good chorizo and chimichurri sandwich!<br/><br/>I still can’t believe how much meat we ate in the few days we were there. Meat with a side of meat was sometimes the only options in some restaurant we went to.<br/><br/>Here are some places we went to that you may want to check out:',
+    image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549831895/Articles/argentinian_bbq.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549831895/Articles/argentinian_bbq_thumbnail.jpg',
+    published_at: new Date(2019, 1, 9),
+    destination_id: 10,
+    theme_id: 4,
+    top_titles: [
+      '<a href="https://goo.gl/maps/HvHgXLFfwHu?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Gran Paraíso</a>',
+      '<a href="https://goo.gl/maps/jgEmxAwaom32?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Las Cabras</a>',
+    ],
+    top_contents: [
+      'Best place to grab a chorizo and chimichurri in the La Bomba neighborhood!',
+      'This local place serve everything! You want guts and brain barbecue or some premium pieces and a side salad to feel less guilty? This place has it! We tried a few options with an Argentinian friend of ours and everything was amazing!',
+    ],
+    top_images: [
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549832097/Articles/gran_paraiso.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1549832180/Articles/las_cabras.jpg',
+    ],
+  },
 ];
