@@ -16,7 +16,10 @@ class TopList extends React.Component<Props> {
 
     return (
       <div className="article-top-list ant-margin-large-top">
-        <h2>{article.top_list_title}</h2>
+        <h2
+          // eslint-disable-next-line
+          dangerouslySetInnerHTML={{ __html: article.top_list_title }}
+        />
         {article.top_list_items
           && article.top_list_items.map((item, index) => (
             <Row key={item} className="ant-margin-large-top" type="flex" align="middle">
