@@ -372,7 +372,8 @@ module.exports = [
     theme_id: 2,
     destination_id: 5,
     published_at: new Date(2019, 1, 13),
-    top_list_title: 'Here are a couple of tricks to have the best experience in Keukenhof:',
+    top_list_title:
+      'Here are a couple of tricks to have the best experience in <a href="https://goo.gl/maps/Tx7GhqfYmbU2" rel="noreferrer noopener" target="_blank">Keukenhof</a>:',
     top_list_items: [
       'Be there early! As one of the most popular attraction in the area, you must expect a lot of tourists. Be there early to enjoy the first hour of the garden without too many people.',
       'Buy your tickets online. This will greatly facilitate the process on site and you can also get the bus tickets if you select the option.',
