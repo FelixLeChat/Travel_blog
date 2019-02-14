@@ -350,12 +350,40 @@ module.exports = [
       '<a href="https://goo.gl/maps/jgEmxAwaom32?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Las Cabras</a>',
     ],
     top_contents: [
-      'Best place to grab a chorizo and chimichurri in the La Bomba neighborhood!',
+      "Best place to grab a chorizo and chimichurri in the La Bomba neighborhood! You don't even have to sit in the restaurant to grab one of those famous sandwiches, you can just grab one to go and continue exploring the Bobma neighbourhood. We highly recommend you take one each as you won't want to share yours after tasting it.",
       'This local place serve everything! You want guts and brain barbecue or some premium pieces and a side salad to feel less guilty? This place has it! We tried a few options with an Argentinian friend of ours and everything was amazing!',
     ],
     top_images: [
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1549832097/Articles/gran_paraiso.jpg',
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1549832180/Articles/las_cabras.jpg',
+    ],
+  },
+  {
+    id: 13,
+    title: 'Visit of the Keukenhof',
+    slug: 'visit-of-the-keukenhof',
+    description:
+      'If you asked me to choose only one place to visit in Holland, I would answer without question the Keukenhof garden! As one of the largest flower garden in the world with more than 7 millions tulips, exploring it is quite the experience.',
+    content:
+      'If you asked me to choose only one place to visit in Holland, I would answer without question the Keukenhof garden! As one of the largest flower garden in the world with more than 7 millions tulips, exploring it is quite the experience.<br/><br/>The quickest and easiest way to reach Keukenhof from Amsterdam is to take the train to the airport (Schiphol) and transfer to the #858 bus. There is also a bus directly from Amsterdam, but the trip is longer that way.<br/><br/>The regular entry ticket is 18€ for an adult, but you can buy a 25€ ticket from the <a href="https://keukenhof.nl/en/buy-tickets" rel="noreferrer noopener" target="_blank">Keukenhof website</a> that include the entrance and the bus (from Schiphol). These busses departs quite often and take about 25-35 min to reach the garden.<br/><br/>As tulips are seasonal, this garden only open between April and the end of May. This visit definitely require some planning ahead!',
+    image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1550109592/Articles/keukenhof.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1550109592/Articles/keukenhof_thumbnail.jpg',
+    theme_id: 2,
+    destination_id: 5,
+    published_at: new Date(2019, 1, 13),
+    top_list_title: 'Here are a couple of tricks to have the best experience in Keukenhof:',
+    top_list_items: [
+      'Be there early! As one of the most popular attraction in the area, you must expect a lot of tourists. Be there early to enjoy the first hour of the garden without too many people.',
+      'Buy your tickets online. This will greatly facilitate the process on site and you can also get the bus tickets if you select the option.',
+      'Pack a lunch. There is also a small cafeteria where you can grab a bite if you forgot yours. One of the highlights of our visit was having lunch surrounded by the tulips.',
+      'Take your time as it is not often that you can enjoy one of the largest garden in the world.',
+    ],
+    top_list_images: [
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1550110163/Articles/morning.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1543891046/Articles/Price_tag.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1550110070/Articles/picnic.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1550109983/Articles/tulips.jpg',
     ],
   },
 ];

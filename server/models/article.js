@@ -64,7 +64,7 @@ module.exports = (sequelize, DataTypes) => {
   });
 
   if (process.env.NODE_ENV !== 'production') {
-    Article.sync({ force: true }).then(() => Article.bulkCreate(articles));
+    // Article.sync({ force: true }).then(() => Article.bulkCreate(articles));
   }
   return Article;
 };
