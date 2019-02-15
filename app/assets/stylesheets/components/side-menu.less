@@ -1,3 +1,5 @@
+@social-media-icon-size: 25px;
+
 .side-menu {
   & .ant-drawer-body {
     padding-left: 0px;
@@ -7,5 +9,16 @@
   & .submenu-menu-icon {
     color: @highlight-color;
     margin-right: 10px;
+  }
+
+  & .mobile-sidemenu-socials a {
+    font-size: @social-media-icon-size;
+    color: #717171 !important;
+
+    & svg {
+      height: @social-media-icon-size;
+      width: @social-media-icon-size;
+      margin-left: 20px;
+    }
   }
 }

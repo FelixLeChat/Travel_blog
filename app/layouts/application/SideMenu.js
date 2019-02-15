@@ -7,6 +7,7 @@ import { Drawer, Menu } from 'antd';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMap } from '@fortawesome/free-regular-svg-icons';
 import { faCameraRetro } from '@fortawesome/free-solid-svg-icons';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import type { UIStore } from '../../models/ui';
 import { setMobileMenuOpenedState } from '../../reducers/ui';
@@ -134,6 +135,34 @@ class Header extends React.PureComponent<Props> {
             ))}
           </SubMenu>
         </Menu>
+
+        <div
+          style={{
+            position: 'absolute',
+            bottom: 0,
+            width: '100%',
+            padding: '10px 16px',
+            textAlign: 'center',
+            left: 0,
+            right: 0,
+          }}
+          className="mobile-sidemenu-socials"
+        >
+          <a
+            href="https://www.instagram.com/traveling_maude/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FontAwesomeIcon icon={faInstagram} />
+          </a>
+          <a
+            href="https://www.linkedin.com/company/traveling-maude/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            <FontAwesomeIcon icon={faLinkedin} />
+          </a>
+        </div>
       </Drawer>
     );
   }
