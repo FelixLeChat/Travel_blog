@@ -42,5 +42,7 @@
     "food": "Food"
   },
   "location": "Location",
-  "partner": "Partner"
+  "partner": "Partner",
+  "instagram": "Instagram",
+  "follow": "Follow us on"
 }

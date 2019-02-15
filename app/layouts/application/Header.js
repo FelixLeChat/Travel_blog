@@ -7,6 +7,8 @@ import {
   Layout, Row, Col, Menu, Icon,
 } from 'antd';
 import Sticky from 'react-stickynode';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 import { Link } from '../../../config/routes';
 import Container from '../../components/Container';
@@ -125,7 +127,22 @@ class Header extends React.PureComponent<Props> {
                   </Menu.Item>
                 </Menu>
               </Col>
-              <Col span={4} className="ant-text-right" />
+              <Col span={4} className="ant-text-right header-icons">
+                <a
+                  href="https://www.instagram.com/traveling_maude/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/traveling-maude/"
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  <FontAwesomeIcon icon={faLinkedin} />
+                </a>
+              </Col>
             </Row>
 
             {/* Menu for mobile app */}

@@ -13,6 +13,7 @@ import DestinationSider from '../shared/menus/DestinationSider';
 import { Link } from '../../config/routes';
 import { compareValues } from '../utils/utils';
 import ArticleCard from '../shared/articles/ArticleCard';
+import InstagramSider from '../shared/menus/InstagramSider';
 
 const i18nPrefix = 'pages/home';
 const i18nCommonPrefix = 'common';
@@ -180,6 +181,7 @@ class Home extends React.Component<Props> {
             <Col span={0} lg={8}>
               <div style={{ marginTop: -10 }}>
                 <DestinationSider />
+                <InstagramSider className="ant-margin-large-top" />
               </div>
             </Col>
           </Row>
