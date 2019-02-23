@@ -38,7 +38,6 @@ class About extends React.Component<Props> {
           description={t(`${i18nPrefix}:seo.description`)}
           currentLocale={i18n.language}
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
-          noIndexPage
         />
         <AboutIndex />
       </>

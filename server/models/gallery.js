@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const images = require('../data/galleryImages');
 
 module.exports = (sequelize, DataTypes) => {

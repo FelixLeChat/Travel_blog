@@ -41,7 +41,7 @@ class Top extends React.Component<Props> {
             />
             {index < article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
             {!hideBottomBorder
-              && index == article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
+              && index === article.top_titles.length - 1 && <Divider style={{ marginBottom: 0 }} />}
           </Row>
         ))}
       </div>

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 const destinations = require('../data/destinations');
 
 module.exports = (sequelize, DataTypes) => {
