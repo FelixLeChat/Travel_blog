@@ -391,6 +391,7 @@ module.exports = [
     id: 14,
     title: 'Iceland trip on a budget',
     slug: 'iceland-trip-on-a-budget',
+    hero_article: true,
     description:
       'As you probably already know, a trip to Iceland can get pretty expensive. If you plan to save on your trip, we have some tips on other ways you can save along the way.',
     content:
