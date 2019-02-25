@@ -387,4 +387,60 @@ module.exports = [
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1550109983/Articles/tulips.jpg',
     ],
   },
+  {
+    id: 14,
+    title: 'Iceland trip on a budget',
+    slug: 'iceland-trip-on-a-budget',
+    description:
+      'As you probably already know, a trip to Iceland can get pretty expensive. If you plan to save on your trip, we have some tips on other ways you can save along the way.',
+    content:
+      'As you probably already know, a trip to Iceland can get pretty expensive. If you plan to save on your trip, we have some tips on other ways you can save along the way.',
+    image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551052299/Articles/waterfall_plan.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551052749/Articles/iceland_on_a_budget_thumbnail.jpg',
+    theme_id: 2,
+    destination_id: 1,
+    published_at: new Date(2019, 1, 24),
+    top_titles: ['Camping 🏕️', 'Transport 🚗', 'Food 🍞', 'Plan your trip ✈️'],
+    top_contents: [
+      'Camping us the perfect way to go all around Iceland on a budget. Compared to 200$ a night, you will only have around 30$ or less to pay for your spot and still have access to a bathroom and hot water for a shower. You will need to plan your trip in the summer and bring your own camping gear, but it is worth the hassle!<br/><br/>If you are not up to the camping challenge, you can rent a camper van that will still allow you to park on camping ground for a lot less than sleeping in hotel rooms.',
+      "The easiest way to get around Iceland is to rent a car. Depending on the places you want to see (going inland as examples) and the amount of comfort you want, it can vary a lot in price. The least expensive option is to get a regular car. You won't be able to get inland or camp in it, but you won't break your bank.<br/><br/>Campers can also be a great way to combine getting around and a place to sleep.",
+      'As restaurant are a luxury in Iceland, raiding the local supermarket is the alternative to save a buck. We found that bringing our own foldable burner was the best way to prepare hot food on the go. You will also need to bring your own camping cooking gear. You will have to buy your fuel in a supermarket, as you won\'t be able to bring it by plane.<br/><br/>The best meal we had was with lamb or salmon. These two are great values over there as they are local products. To spice things up a bit, you can even bring your own spices (We do love our Montreal Steak Spices)!<br/><br/>We still enjoyed some restaurant food along our trip! You can find out about them <a href="https://www.travelingmaude.com/destinations/iceland/eat-in-iceland" rel="noreferrer noopener" target="_blank">here</a>.',
+      'This sounds obvious, but nonetheless. Planning your trip in advance can get you more time to check flights and car rental prices and book at the right moment.<br/><br/>It will also make you plan each day as you won\'t just "run around". By booking our plane tickets with WowAir, we were able to save quite a lot. You don\'t get much space but hey!!! It get you to your destination!',
+    ],
+    top_images: [
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551051830/Articles/camping.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551051895/Articles/road.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551052077/Articles/food.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551051553/Articles/iceland_on_a_budget.jpg',
+    ],
+  },
+  {
+    id: 15,
+    title: 'Things to do in Buenos Aires',
+    slug: 'things-to-do-in-buenos-aires',
+    description:
+      'Buenos Aires is truly a city worth visiting. If you plan a trip there, we got a couple of things you may want to try!',
+    content:
+      'Buenos Aires is truly a city worth visiting. If you plan a trip there, we got a couple of things you may want to try!',
+    image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053040/Articles/Buenos-aires.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053038/Articles/Buenos-aires_thumbnail.jpg',
+    theme_id: 2,
+    destination_id: 10,
+    published_at: new Date(2019, 1, 24),
+    top_titles: ['Food', 'Drink', 'Visit'],
+    top_contents: [
+      'As you know, Argentina is well known for the quality of its meat. You must try a <a href="https://www.travelingmaude.com/destinations/argentina/argentinian-bbq" rel="noreferrer noopener" target="_blank">chorizo sandwich with chimichurri</a> at least once in your life and this is the perfect place to strike that one from your bucket list. It\'s on this trip that we had the best barbecue yet, so treat yourself.<br/><br/>Being there, you may also want to taste <a href="https://www.travelingmaude.com/destinations/argentina/dulce-de-leche" rel="noreferrer noopener" target="_blank">Dulce de leche</a> and churros, as it originated there (as they allegedly say).',
+      'Argentina is also well known for its great wine. If you have the chance, get a bottle of Malbec wine. This aromatic and intense wine is produced locally and pair extremely well with their Barbacoa.<br/><br/>Another alcohol the are famous for is the Fernet. Even if the liquor originated from Italy, south america is where they drink it the most. They usually drink it with cola or as is. This is not for everyone, and as Maude would say : “It taste like death”... I personally quite like it!',
+      'Buenos Aires if full of great places to visit. From the renowned Recoleta cemetery to the El Ateneo Grand Splendid bookstore, there is something for everyone. We highly recommend you also visit the La Bomba neighborhood for its history, culture and street food.',
+    ],
+    top_images: [
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053786/Articles/meat_buenos_aires.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053992/Articles/mate_tea.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053677/Articles/Recoleta.jpg',
+    ],
+  },
 ];
