@@ -38,7 +38,7 @@ class Destinations extends React.Component<Props> {
       i18n,
       currentRoute,
       destination: {
-        data: { destination },
+        data: { destination, description },
       },
     } = this.props;
 
@@ -48,7 +48,11 @@ class Destinations extends React.Component<Props> {
           title={`Destination : ${t(
             `${i18nCommonPrefix}:destinations.${destination}`,
           )} | Traveling Maude`}
-          description={t(`${i18nCommonPrefix}:destination_description.${destination}`)}
+          description={
+            description
+              ? `${description} ${t(`${i18nCommonPrefix}:description`)}`
+              : t(`${i18nCommonPrefix}:description`)
+          }
           currentLocale={i18n.language}
           currentUrl={currentRoute ? currentRoute.parsedUrl.path : ''}
         />

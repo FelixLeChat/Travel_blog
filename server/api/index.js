@@ -25,7 +25,7 @@ router.get('/destination/:destination', (req, res) => {
       where: {
         name: destinationName,
       },
-      attributes: ['id', 'name', 'image'],
+      attributes: ['id', 'name', 'image', 'description'],
     }).then((destinations) => {
       if (destinations && destinations.length === 1) {
         const destination = destinations[0];
@@ -51,6 +51,7 @@ router.get('/destination/:destination', (req, res) => {
           result = {
             id: destination.id,
             destination: destination.name,
+            description: destination.description,
             hero: destination.image,
             articles,
           };

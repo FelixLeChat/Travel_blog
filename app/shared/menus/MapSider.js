@@ -9,12 +9,13 @@ const i18nCommonPrefix = 'common';
 type Props = {
   t: TFunction,
   destination: string,
+  description?: string,
 };
 
 @withNamespaces([i18nCommonPrefix])
 class DestinationSider extends React.Component<Props> {
   render() {
-    const { t, destination } = this.props;
+    const { t, destination, description } = this.props;
 
     let destinationUrl = 'https://res.cloudinary.com/heyjltyh0/image/upload/';
     switch (destination) {
@@ -56,7 +57,9 @@ class DestinationSider extends React.Component<Props> {
       <div className="map-menu-container ant-margin-left">
         <h3 className="border-bottom-box">
           <FontAwesomeIcon icon={faMapMarkedAlt} />
-          {t(`${i18nCommonPrefix}:location`)}
+          {`${t(`${i18nCommonPrefix}:location`)} - ${t(
+            `${i18nCommonPrefix}:destinations.${destination}`,
+          )}`}
         </h3>
         <div
           className="map-container"
@@ -64,6 +67,7 @@ class DestinationSider extends React.Component<Props> {
             backgroundImage: `url(${destinationUrl})`,
           }}
         />
+        {description && <p className="ant-text-center">{description}</p>}
       </div>
     );
   }

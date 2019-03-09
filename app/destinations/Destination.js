@@ -31,7 +31,9 @@ class Destination extends React.Component<Props> {
     const {
       t,
       destination: {
-        data: { destination, hero, articles },
+        data: {
+          destination, description, hero, articles,
+        },
       },
     } = this.props;
 
@@ -72,6 +74,9 @@ class Destination extends React.Component<Props> {
         <Container className="ant-margin-large-top ant-margin-medium-bottom destination-body">
           <Row>
             <Col md={24} lg={16}>
+              <div className="ant-hidden@m ant-text-center ant-margin-medium-bottom">
+                <p>{description}</p>
+              </div>
               <div className="destination-articles">
                 {sortedArticles
                   && sortedArticles.map(article => (
@@ -82,7 +87,7 @@ class Destination extends React.Component<Props> {
               </div>
             </Col>
             <Col span={0} lg={8}>
-              <MapSider destination={destination} />
+              <MapSider destination={destination} description={description} />
               <AdsSider ads={<SideDestinationPageAd />} className="ant-margin-top" />
             </Col>
           </Row>
