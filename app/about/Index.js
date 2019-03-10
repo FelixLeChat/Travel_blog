@@ -70,7 +70,12 @@ class AboutIndex extends React.Component<Props> {
             <div className="about-color" />
           </Col>
           <Col span={24} className="ant-margin-large-top ant-margin-large-bottom">
-            <ImageMosaic images={imageGallery} imageContainer={PolaroidStyleImage} maxColumns={7} />
+            <ImageMosaic
+              images={imageGallery}
+              imageContainer={PolaroidStyleImage}
+              maxColumns={7}
+              maxRows={1}
+            />
           </Col>
         </Row>
       </Container>

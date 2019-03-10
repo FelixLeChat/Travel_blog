@@ -106,7 +106,12 @@ class ImageMosaic extends React.Component<Props, State> {
           <Col span={24} md={0}>
             <Gallery
               photos={
-                maxRows ? photos.slice(0, Math.floor(photos.length / maxSmCol) * maxSmCol) : photos
+                maxRows
+                  ? photos.slice(
+                    0,
+                    Math.min(Math.floor(photos.length / maxSmCol) * maxSmCol, maxRows * maxSmCol),
+                  )
+                  : photos
               }
               columns={maxSmCol}
               onClick={this.openLightbox}
@@ -116,7 +121,12 @@ class ImageMosaic extends React.Component<Props, State> {
           <Col span={0} md={24} lg={0}>
             <Gallery
               photos={
-                maxRows ? photos.slice(0, Math.floor(photos.length / maxMdCol) * maxMdCol) : photos
+                maxRows
+                  ? photos.slice(
+                    0,
+                    Math.min(Math.floor(photos.length / maxMdCol) * maxMdCol, maxRows * maxMdCol),
+                  )
+                  : photos
               }
               columns={maxMdCol}
               onClick={this.openLightbox}
@@ -126,7 +136,12 @@ class ImageMosaic extends React.Component<Props, State> {
           <Col span={0} lg={24}>
             <Gallery
               photos={
-                maxRows ? photos.slice(0, Math.floor(photos.length / maxLgCol) * maxLgCol) : photos
+                maxRows
+                  ? photos.slice(
+                    0,
+                    Math.min(Math.floor(photos.length / maxLgCol) * maxLgCol, maxRows * maxLgCol),
+                  )
+                  : photos
               }
               columns={maxLgCol}
               onClick={this.openLightbox}

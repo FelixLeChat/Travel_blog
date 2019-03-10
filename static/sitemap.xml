@@ -1,0 +1,156 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Homepage -->
+  <url>
+    <loc>https://www.travelingmaude.com/</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>1.00</priority>
+  </url>
+
+  <!-- About -->
+  <url>
+    <loc>https://www.travelingmaude.com/about</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Destinations -->
+  <url>
+    <loc>https://www.travelingmaude.com/destinations</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/portugal</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/greece</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/croatia</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/holland</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/denmark</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/italy</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/philippines</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/vietnam</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/argentina</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Articles - Iceland -->
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland/iceland-trip-on-a-budget</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland/eat-in-iceland</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland/the-lopapeysa</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland/icelandic-foss</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/iceland/day-trip-in-reykjavik</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Articles - Portugal -->
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/portugal/pasteis-de-nata</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/portugal/azulejos-of-portugal</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/portugal/geres-national-park</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/portugal/porto-cellar-visit</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Articles - Holland -->
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/holland/visit-of-the-keukenhof</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/holland/stroopwafel</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/holland/a-weekend-in-amsterdam</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+
+  <!-- Articles - Argentina -->
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/argentina/things-to-do-in-buenos-aires</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/argentina/dulce-de-leche</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://www.travelingmaude.com/destinations/argentina/argentinian-bbq</loc>
+    <lastmod>2019-03-10T18:40:57+00:00</lastmod>
+    <priority>0.80</priority>
+  </url>
+</urlset>
