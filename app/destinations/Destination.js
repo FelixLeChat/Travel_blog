@@ -2,8 +2,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
-
 import { Row, Col } from 'antd';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faImages } from '@fortawesome/free-regular-svg-icons';
+
 import type { DestinationStore } from '../models/destination';
 import { Link } from '../../config/routes';
 import Container from '../components/Container';
@@ -12,6 +14,8 @@ import MapSider from '../shared/menus/MapSider';
 import SideDestinationPageAd from '../ads/sideDestinationPageAd';
 import { compareValues } from '../utils/utils';
 import AdsSider from '../ads/AdsSider';
+import ImageMosaic from '../shared/gallery/imageMosaic';
+import RegularStyleImage from '../shared/gallery/regularStyleImage';
 
 const i18nPrefix = 'pages/destination';
 
@@ -26,7 +30,34 @@ const mapStateToProps = state => ({
 
 @withNamespaces([i18nPrefix])
 @connect(mapStateToProps)
-class Destination extends React.Component<Props> {
+class Destination extends React.PureComponent<Props> {
+  formattedImages = [];
+
+  constructor(props) {
+    super(props);
+    this.initialiseFormattedImages(props);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.initialiseFormattedImages(nextProps);
+  }
+
+  initialiseFormattedImages = (props) => {
+    const {
+      destination: {
+        data: { images },
+      },
+    } = props;
+
+    if (images) {
+      this.formattedImages = images.map(image => ({
+        ...image,
+        width: 1,
+        height: 1,
+      }));
+    }
+  };
+
   render() {
     const {
       t,
@@ -90,6 +121,21 @@ class Destination extends React.Component<Props> {
               <MapSider destination={destination} description={description} />
               <AdsSider ads={<SideDestinationPageAd />} className="ant-margin-top" />
             </Col>
+            {this.formattedImages
+              && this.formattedImages.length > 4 && (
+                <Col span={24} className="ant-margin-large-top ant-margin-medium-bottom">
+                  <h3 className="border-bottom-box">
+                    <FontAwesomeIcon icon={faImages} />
+                    {t(`${i18nPrefix}:gallery`)}
+                  </h3>
+                  <ImageMosaic
+                    images={this.formattedImages}
+                    imageContainer={RegularStyleImage}
+                    maxColumns={8}
+                    maxRows={3}
+                  />
+                </Col>
+            )}
           </Row>
         </Container>
       </div>

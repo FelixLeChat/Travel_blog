@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 // @flow
 import React from 'react';
+import classnames from 'classnames';
 
 type Props = {
   index: number,
@@ -19,7 +20,7 @@ const cont = {
   position: 'relative',
 };
 
-const CustomImage = ({
+const PolaroidStyleImage = ({
   index, onClick, photo, margin, direction, top, left,
 }: Props) => {
   if (direction === 'column') {
@@ -36,7 +37,7 @@ const CustomImage = ({
         width: photo.width,
         ...cont,
       }}
-      className={!photo.selected ? 'not-selected' : ''}
+      className={classnames(!photo.selected ? 'not-selected' : '', 'polaroid-style-image')}
     >
       <img
         {...photo}
@@ -48,4 +49,4 @@ const CustomImage = ({
   );
 };
 
-export default CustomImage;
+export default PolaroidStyleImage;

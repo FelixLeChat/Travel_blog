@@ -1,17 +1,35 @@
 // @flow
 import React from 'react';
+import { connect } from 'react-redux';
 import { withNamespaces } from 'react-i18next';
 import { Row, Col } from 'antd';
 import Container from '../components/Container';
-import ImageGallery from '../shared/gallery/imageGallery';
+import ImageMosaic from '../shared/gallery/imageMosaic';
+import PolaroidStyleImage from '../shared/gallery/polaroidStyleImage';
 
 const i18nPrefix = 'about';
 const i18nCommonPrefix = 'common';
 
+type Props = {
+  t: TFunction,
+  global: GlobalStore,
+};
+
+const mapStateToProps = state => ({
+  global: state.global,
+});
+
+@connect(mapStateToProps)
 @withNamespaces([i18nPrefix, i18nCommonPrefix])
 class AboutIndex extends React.Component<Props> {
   render() {
-    const { t } = this.props;
+    const {
+      t,
+      global: {
+        data: { imageGallery },
+      },
+    } = this.props;
+
     return (
       <Container>
         <Row>
@@ -52,7 +70,7 @@ class AboutIndex extends React.Component<Props> {
             <div className="about-color" />
           </Col>
           <Col span={24} className="ant-margin-large-top ant-margin-large-bottom">
-            <ImageGallery />
+            <ImageMosaic images={imageGallery} imageContainer={PolaroidStyleImage} maxColumns={7} />
           </Col>
         </Row>
       </Container>

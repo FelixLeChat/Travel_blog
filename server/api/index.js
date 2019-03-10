@@ -48,19 +48,27 @@ router.get('/destination/:destination', (req, res) => {
             'slug',
           ],
         }).then((articles) => {
-          result = {
-            id: destination.id,
-            destination: destination.name,
-            description: destination.description,
-            hero: destination.image,
-            articles,
-          };
+          models.Gallery.findAll({
+            where: {
+              destination_id: destination.id,
+            },
+            attributes: ['id', 'src', 'thumbnail'],
+          }).then((images) => {
+            result = {
+              id: destination.id,
+              destination: destination.name,
+              description: destination.description,
+              hero: destination.image,
+              articles,
+              images,
+            };
 
-          // set cache
-          cache.put(cacheKey, result, 7 * day);
+            // set cache
+            cache.put(cacheKey, result, 7 * day);
 
-          // send result
-          res.json(result);
+            // send result
+            res.json(result);
+          });
         });
       } else {
         res.status(404).send('Not found');
