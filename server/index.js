@@ -59,7 +59,7 @@ i18n
         const server = express();
 
         // Only lowercase paths
-        server.use(lowercasePaths());
+        // server.use(lowercasePaths());
 
         // Use morgan for logs
         server.use(morgan('combined'));
