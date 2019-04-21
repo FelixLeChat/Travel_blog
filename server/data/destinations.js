@@ -110,12 +110,3 @@ module.exports = [
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1555853879/Themes/Switzerland_thumbnail.jpg',
   },
 ];
-
-// {
-//   id: 12,
-//   name: 'Mexico',
-//   description: '',
-//   continent: 'south_america',
-//   image: '',
-//   thumbnail: '',
-// },
