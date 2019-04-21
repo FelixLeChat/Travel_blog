@@ -3,7 +3,7 @@ module.exports = [
     id: 1,
     name: 'iceland',
     description:
-      'With its stunning lunar landscape and monumental waterfalls, Iceland is truly one of the best destination for a nature trip.',
+      'With its stunning lunar landscape and monumental waterfalls, Iceland is truly one of the best destinations for a nature trip.',
     continent: 'europe',
     image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1542488893/Themes/Iceland.jpg',
     thumbnail:
@@ -23,7 +23,7 @@ module.exports = [
     id: 3,
     name: 'greece',
     description:
-      'There is no better place on earth to enjoy the sun and the turquoise water than in Greece. From festivities to food, grec do know how to have fun.',
+      'There is no better place on earth to enjoy the sun and the turquoise water than in Greece. From festivities to food, Greeks do know how to have fun.',
     continent: 'europe',
     image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1542489507/Themes/Greece.jpg',
     thumbnail:
@@ -53,7 +53,7 @@ module.exports = [
     id: 6,
     name: 'denmark',
     description:
-      'With its avangarde culture and design, Denmark is an innovative example to follow. For tourists, this place is a perfect inspiration source.',
+      'With its avant-garde culture and design, Denmark is an innovative example to follow. For tourists, this place is a perfect inspiration source.',
     continent: 'europe',
     image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1543073125/Themes/Denmark.jpg',
     thumbnail:
@@ -73,7 +73,7 @@ module.exports = [
     id: 8,
     name: 'philippines',
     description:
-      'As the country of thousand islands, the Philippines stand out with the diversity of it’s fauna. You will undoubtedly enjoy exploring its rugged landscape and discover their culture.',
+      'As the country of thousand islands, the Philippines stands out with the diversity of its fauna. You will undoubtedly enjoy exploring its rugged landscape and discover their culture.',
     continent: 'asia',
     image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1543074013/Themes/Philippines.jpg',
     thumbnail:
@@ -99,4 +99,23 @@ module.exports = [
     thumbnail:
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1543074740/Themes/Argentina_thumbnail.jpg',
   },
+  {
+    id: 11,
+    name: 'switzerland',
+    description:
+      'With its amazing peoples and impressive vista, Switzerland is a wonderful country worth visiting again and again.',
+    continent: 'europe',
+    image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1555853807/Themes/Switzerland.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555853879/Themes/Switzerland_thumbnail.jpg',
+  },
 ];
+
+// {
+//   id: 12,
+//   name: 'Mexico',
+//   description: '',
+//   continent: 'south_america',
+//   image: '',
+//   thumbnail: '',
+// },

@@ -11,7 +11,7 @@ const router = express.Router();
 
 // Get Destination details
 router.get('/destination/:destination', (req, res) => {
-  const destinationName = req.params.destination;
+  const destinationName = req.params.destination.toLowerCase();
   const cacheKey = `destination_details_${destinationName}`;
 
   let result = cache.get(cacheKey);
@@ -79,7 +79,7 @@ router.get('/destination/:destination', (req, res) => {
 
 // Get Article
 router.get('/article/:article', (req, res) => {
-  const articleSlug = req.params.article;
+  const articleSlug = req.params.article.toLowerCase();
   const cacheKey = `article_${articleSlug}`;
 
   let result = cache.get(cacheKey);

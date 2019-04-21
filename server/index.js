@@ -6,6 +6,7 @@ const path = require('path');
 const next = require('next');
 const i18nextMiddleware = require('i18next-express-middleware');
 const Backend = require('i18next-node-fs-backend');
+const lowercasePaths = require('express-lowercase-paths');
 const i18nextNamespaces = require('../app/utils/i18nextNamespaces');
 
 const dev = process.env.NODE_ENV !== 'production';
@@ -18,7 +19,10 @@ const api = require('./api');
 const port = parseInt(process.env.PORT, 10) || 3000;
 const app = next({ dev });
 
+// Routing
 const routes = require('../config/routes');
+
+// Translation
 const i18n = require('../lib/i18n');
 
 const handle = routes.getRequestHandler(app);
@@ -52,6 +56,9 @@ i18n
     () => {
       app.prepare().then(() => {
         const server = express();
+
+        // Only lowercase paths
+        server.use(lowercasePaths());
 
         // Use morgan for logs
         server.use(morgan('combined'));

@@ -396,8 +396,7 @@ module.exports = [
       'As you probably already know, a trip to Iceland can get pretty expensive. If you plan to save on your trip, we have some tips on other ways you can save along the way.',
     content:
       'As you probably already know, a trip to Iceland can get pretty expensive. If you plan to save on your trip, we have some tips on other ways you can save along the way.',
-    image:
-      'https://res.cloudinary.com/heyjltyh0/image/upload/v1551052299/Articles/waterfall_plan.jpg',
+    image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1555854790/Hero/Iceland_2.jpg',
     thumbnail:
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1551052749/Articles/iceland_on_a_budget_thumbnail.jpg',
     theme_id: 2,
@@ -442,6 +441,54 @@ module.exports = [
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053786/Articles/meat_buenos_aires.jpg',
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053992/Articles/mate_tea.jpg',
       'https://res.cloudinary.com/heyjltyh0/image/upload/v1551053677/Articles/Recoleta.jpg',
+    ],
+  },
+  {
+    id: 16,
+    title: 'New year in Switzerland',
+    slug: 'new-year-in-switzerland',
+    description:
+      "Switzerland is a special place for us. It's where great friends reside and where we feel we have a family each time we come to visit.",
+    content:
+      "Switzerland is a special place for us. It's where great friends reside and where we feel we have a family each time we come to visit. Our tradition is to visit Switzerland around the new year to experience one of the craziest event happening that night.<br/><br/>In Valais, one of the cantons in Switzerland, a big party is organized in one of it's most famous alpine village Verbier. Renowned for its ski resort and impressive wooden lodges, this is a place where Swiss and foreigners come to party on New Year's Eve.<br/><br/>Just before midnight, everyone gathers at the town center to countdown and throw all the fireworks and champaign they can at each other. This night of the year, Verbier grow from 3 000 local residents to nearly 40 000 Swiss and tourists. As you can imagine, this amount of people in a small village is insane.<br/><br/>We usually then proceed to one of the many bars there is around, and since we are with Swiss friends, all this is ten times more fun! We have some crazy stories between us about those nights.<br/><br/>When the bars start to slow down and people leave, our last tradition and a well-kept secret is to order the famous ham sandwich from a local bakery through the kitchen window. You pass a couple of bill to the chef and he hands you one of those famous sandwiches. Since everyone is starting to eat something at this point, this tradition is always welcomed!<br/><br/>At this point in the night, the village dispatch snow plower in the streets to gather all the glass bottles in the streets so the next day, seems like nothing happened at all. This will start all over the following year!",
+    image: 'https://res.cloudinary.com/heyjltyh0/image/upload/v1555854312/Articles/Verbier.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555854311/Articles/Verbier_thumbnail.jpg',
+    theme_id: 2,
+    destination_id: 11,
+    published_at: new Date(2019, 3, 20),
+  },
+  {
+    id: 17,
+    title: 'Things to do in Switzerland',
+    slug: 'things-to-do-in-switzerland',
+    description:
+      'If you are planning a trip to Switzerland, here are some things you may want to do',
+    content: 'If you are planning a trip to Switzerland, here are some things you may want to do :',
+    image:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555857057/Articles/Switzerland_2.jpg',
+    thumbnail:
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555857124/Articles/Switzerland_2_thumbnail.jpg',
+    theme_id: 3,
+    destination_id: 11,
+    published_at: new Date(2019, 3, 21),
+    top_titles: [
+      'Visit Geneva',
+      'Go to natural hot springs (<a href="https://www.bains-lavey.ch/en/?utm_source=travelingmaude.com&utm_medium=referral" rel="noreferrer noopener" target="_blank">Lavey</a>)',
+      'Trip to the mountains',
+      'Eat raclette',
+    ],
+    top_contents: [
+      'If you travel by plane, chances are that you will arrive either in Geneva or Zurich. If you happen to land in Geneva, taking some time to visit the city is a must.',
+      'For a relaxing experience, you may want to visit one of the many hot springs in this country. We went to Lavey city Bath and enjoyed a couple of relaxing hours with the most amazing views, surrounded by mountains and vineyard.',
+      'A well-known attraction in Switzerland is its mountains and you definitely need to explore them a bit. From gondola to pedestrian trails, there are many ways to get around and explore all the history that they hide. Old fortress, world war bunker, vineyard, waterfall and Lake, these are only a few of the attractions that you can find!<br/><br/>We went up to the ‘<a href="https://www.myswitzerland.com/en-ca/passerelle-farinet.html?utm_source=travelingmaude.com&utm_medium=referral">La Passerelle à Farinet</a>’ and enjoyed a great view of all the Rhone Valley.',
+      'Ohhhh yesssss! What can you ask more than cheese, charcuterie, wine, and friends! The Swiss raclette is the one thing you must eat on your trip. There are two types of raclette you can eat and we highly recommend the traditional approach (with half cheese wheels).',
+    ],
+    top_images: [
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555856690/Articles/Geneva.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555856891/Articles/Lavey_les_bains.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555857892/Articles/farinet.jpg',
+      'https://res.cloudinary.com/heyjltyh0/image/upload/v1555858245/Articles/Raclette.jpg',
     ],
   },
 ];

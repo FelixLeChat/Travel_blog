@@ -49,6 +49,9 @@ class DestinationSider extends React.Component<Props> {
       case 'iceland':
         destinationUrl += 'v1546030449/Map/map_iceland.png';
         break;
+      case 'switzerland':
+        destinationUrl += 'v1555855931/Map/map_switzerland.png';
+        break;
       default:
         destinationUrl = '';
     }

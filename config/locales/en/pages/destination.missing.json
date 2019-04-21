@@ -1,3 +1,7 @@
 {
-  "gallery": "gallery"
+  "hero": {
+    "switzerland": {
+      "title": "hero.switzerland.title"
+    }
+  }
 }
