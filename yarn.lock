@@ -7692,10 +7692,10 @@ react-dom@^16.4.2:
     prop-types "^15.6.2"
     scheduler "^0.13.6"
 
-react-dotdotdot@^1.2.3:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/react-dotdotdot/-/react-dotdotdot-1.3.0.tgz#a8208bcc819019241dbfbf45cc7440d0bf954e7b"
-  integrity sha512-yW/Dyfjv8B3FSMPEQ9JAt3o0DGacxcmbzb7UPj1NnIK9Nh9TzCNDZpOLZ6U/KGRHjFruQi3PokmhTj7XpyaBSA==
+react-dotdotdot@1.2.4:
+  version "1.2.4"
+  resolved "https://registry.yarnpkg.com/react-dotdotdot/-/react-dotdotdot-1.2.4.tgz#facb515f997981a79d142bc9206c9eebcb5c4a7b"
+  integrity sha512-NsnaErhmi3jyadNlVyr/4Bokeu7aRAPfzI09NF47e3S24TYaea8fkhYodImNHX4Fy0DCRl+tPVfuzRAE3aOSyQ==
   dependencies:
     object.pick "^1.3.0"
 

@@ -13,7 +13,7 @@ type Props = {
 };
 
 @withNamespaces([i18nCommonPrefix])
-class DestinationSider extends React.Component<Props> {
+class MapSider extends React.Component<Props> {
   render() {
     const { t, destination, description } = this.props;
 
@@ -76,4 +76,4 @@ class DestinationSider extends React.Component<Props> {
   }
 }
 
-export default DestinationSider;
+export default MapSider;

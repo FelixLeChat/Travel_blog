@@ -26,7 +26,7 @@ const images = [
 ];
 
 @withNamespaces([i18nCommonPrefix])
-class DestinationSider extends React.Component<Props> {
+class InstagramSider extends React.Component<Props> {
   render() {
     const { t, className } = this.props;
 
@@ -43,8 +43,8 @@ class DestinationSider extends React.Component<Props> {
             rel="noreferrer noopener"
           >
             <Row gutter={4}>
-              {images.map(image => (
-                <Col span={8} style={{ marginBottom: 4 }}>
+              {images.map((image, i) => (
+                <Col key={`instagram-image-${i}`} span={8} style={{ marginBottom: 4 }}>
                   <img src={image} alt="instagram collection" />
                 </Col>
               ))}
@@ -56,4 +56,4 @@ class DestinationSider extends React.Component<Props> {
   }
 }
 
-export default DestinationSider;
+export default InstagramSider;

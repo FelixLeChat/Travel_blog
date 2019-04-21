@@ -49,7 +49,7 @@
     "react": "^16.4.2",
     "react-adsense": "^0.0.6",
     "react-dom": "^16.4.2",
-    "react-dotdotdot": "^1.2.3",
+    "react-dotdotdot": "1.2.4",
     "react-ga": "^2.5.3",
     "react-google-publisher-tag": "^1.0.5",
     "react-i18next": "^8.0.7",
